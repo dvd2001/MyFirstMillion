@@ -12,9 +12,14 @@ export class ThemeService {
 
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
-    const localTheme = this.isBrowser && typeof window !== 'undefined'
-      ? window.localStorage.getItem('theme') ?? 'light'
-      : 'light';
+    let localTheme;
+
+    if (this.isBrowser && typeof window !== 'undefined') {
+      if (!window.localStorage.getItem('theme')) {
+        window.localStorage.setItem('theme', 'dark');
+      }
+      localTheme = window.localStorage.getItem('theme');
+    }
 
     this.currentTheme.set(localTheme === 'dark' ? 'dark' : 'light');
 
