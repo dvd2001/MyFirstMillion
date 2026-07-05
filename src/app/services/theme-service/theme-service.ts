@@ -16,7 +16,8 @@ export class ThemeService {
 
     if (this.isBrowser && typeof window !== 'undefined') {
       if (!window.localStorage.getItem('theme')) {
-        window.localStorage.setItem('theme', 'dark');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        window.localStorage.setItem('theme', prefersDark ? 'dark' : 'light');
       }
       localTheme = window.localStorage.getItem('theme');
     }
