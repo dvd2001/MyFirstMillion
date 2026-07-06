@@ -36,6 +36,7 @@ div {
     #backBtn {
         font-size: 22px;
         padding: 0px;
-        margin-left: -10px;
+        padding-right: 10px;
+        margin-left: 0px;
     }
 }
