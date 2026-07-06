@@ -10,10 +10,7 @@ import { Router } from "@angular/router";
 })
 export class StartPage implements OnInit {
   constructor(public themeService: ThemeService, private router: Router) { }
-  ngOnInit(): void {
-    window.sessionStorage.removeItem('startField');
-    window.sessionStorage.removeItem('maxOnline');
-  }
+  ngOnInit(): void { }
   starFieldDown(): void {
     const startField = document.querySelector('#startField') as HTMLInputElement;
     if (startField) {
