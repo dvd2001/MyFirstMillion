@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from '../../services/theme-service/theme-service';
 
 @Component({
   selector: 'app-game-page',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './game-page.html',
   styleUrl: './game-page.css',
 })
-export class GamePage {}
+export class GamePage {
+  constructor(themeService: ThemeService) { }
+}
