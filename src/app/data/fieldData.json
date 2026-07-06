@@ -1,5 +1,5 @@
-{
-    "1": {
+[
+    {
         "goal": false,
         "gold": 250,
         "mine": 50,
@@ -22,7 +22,7 @@
         "onlineSell4": 750,
         "onlineSell5": 900
     },
-    "2": {
+    {
         "goal": false,
         "gold": 250,
         "mine": 50,
@@ -45,7 +45,7 @@
         "onlineSell4": 750,
         "onlineSell5": 900
     },
-    "3": {
+    {
         "goal": false,
         "gold": 275,
         "mine": 66,
@@ -68,7 +68,7 @@
         "onlineSell4": 825,
         "onlineSell5": 990
     },
-    "4": {
+    {
         "goal": false,
         "gold": 275,
         "mine": 55,
@@ -91,7 +91,7 @@
         "onlineSell4": 825,
         "onlineSell5": 990
     },
-    "5": {
+    {
         "goal": false,
         "gold": 275,
         "mine": 77,
@@ -114,7 +114,7 @@
         "onlineSell4": 825,
         "onlineSell5": 990
     },
-    "6": {
+    {
         "goal": false,
         "gold": 225,
         "mine": 54,
@@ -137,7 +137,7 @@
         "onlineSell4": 675,
         "onlineSell5": 810
     },
-    "7": {
+    {
         "goal": false,
         "gold": 250,
         "mine": 55,
@@ -160,7 +160,7 @@
         "onlineSell4": 750,
         "onlineSell5": 900
     },
-    "8": {
+    {
         "goal": false,
         "gold": 300,
         "mine": 60,
@@ -183,7 +183,7 @@
         "onlineSell4": 900,
         "onlineSell5": 1080
     },
-    "9": {
+    {
         "goal": false,
         "gold": 250,
         "mine": 45,
@@ -206,7 +206,7 @@
         "onlineSell4": 750,
         "onlineSell5": 900
     },
-    "10": {
+    {
         "goal": false,
         "gold": 300,
         "mine": 48,
@@ -229,7 +229,7 @@
         "onlineSell4": 900,
         "onlineSell5": 1080
     },
-    "11": {
+    {
         "goal": false,
         "gold": 325,
         "mine": 65,
@@ -252,7 +252,7 @@
         "onlineSell4": 975,
         "onlineSell5": 1170
     },
-    "12": {
+    {
         "goal": false,
         "gold": 300,
         "mine": 54,
@@ -275,7 +275,7 @@
         "onlineSell4": 900,
         "onlineSell5": 1080
     },
-    "13": {
+    {
         "goal": false,
         "gold": 350,
         "mine": 63,
@@ -298,7 +298,7 @@
         "onlineSell4": 1050,
         "onlineSell5": 1260
     },
-    "14": {
+    {
         "goal": false,
         "gold": 275,
         "mine": 55,
@@ -321,7 +321,7 @@
         "onlineSell4": 825,
         "onlineSell5": 990
     },
-    "15": {
+    {
         "goal": false,
         "gold": 325,
         "mine": 65,
@@ -344,7 +344,7 @@
         "onlineSell4": 975,
         "onlineSell5": 1170
     },
-    "16": {
+    {
         "goal": false,
         "gold": 375,
         "mine": 90,
@@ -367,7 +367,7 @@
         "onlineSell4": 1125,
         "onlineSell5": 1350
     },
-    "17": {
+    {
         "goal": false,
         "gold": 400,
         "mine": 96,
@@ -390,7 +390,7 @@
         "onlineSell4": 1200,
         "onlineSell5": 1440
     },
-    "18": {
+    {
         "goal": false,
         "gold": 375,
         "mine": 105,
@@ -413,7 +413,7 @@
         "onlineSell4": 1125,
         "onlineSell5": 1350
     },
-    "19": {
+    {
         "goal": false,
         "gold": 325,
         "mine": 78,
@@ -436,7 +436,7 @@
         "onlineSell4": 975,
         "onlineSell5": 1170
     },
-    "20": {
+    {
         "goal": false,
         "gold": 350,
         "mine": 91,
@@ -459,7 +459,7 @@
         "onlineSell4": 1050,
         "onlineSell5": 1260
     },
-    "21": {
+    {
         "goal": false,
         "gold": 350,
         "mine": 91,
@@ -482,7 +482,7 @@
         "onlineSell4": 1050,
         "onlineSell5": 1260
     },
-    "22": {
+    {
         "goal": false,
         "gold": 300,
         "mine": 84,
@@ -505,7 +505,7 @@
         "onlineSell4": 900,
         "onlineSell5": 1080
     },
-    "23": {
+    {
         "goal": false,
         "gold": 325,
         "mine": 91,
@@ -528,7 +528,7 @@
         "onlineSell4": 975,
         "onlineSell5": 1170
     },
-    "24": {
+    {
         "goal": false,
         "gold": 350,
         "mine": 91,
@@ -551,7 +551,7 @@
         "onlineSell4": 1050,
         "onlineSell5": 1260
     },
-    "25": {
+    {
         "goal": false,
         "gold": 375,
         "mine": 90,
@@ -574,7 +574,7 @@
         "onlineSell4": 1125,
         "onlineSell5": 1350
     },
-    "26": {
+    {
         "goal": false,
         "gold": 400,
         "mine": 80,
@@ -597,7 +597,7 @@
         "onlineSell4": 1200,
         "onlineSell5": 1440
     },
-    "27": {
+    {
         "goal": false,
         "gold": 425,
         "mine": 102,
@@ -620,7 +620,7 @@
         "onlineSell4": 1275,
         "onlineSell5": 1530
     },
-    "28": {
+    {
         "goal": false,
         "gold": 375,
         "mine": 105,
@@ -643,7 +643,7 @@
         "onlineSell4": 1125,
         "onlineSell5": 1350
     },
-    "29": {
+    {
         "goal": false,
         "gold": 450,
         "mine": 117,
@@ -666,7 +666,7 @@
         "onlineSell4": 1350,
         "onlineSell5": 1620
     },
-    "30": {
+    {
         "goal": false,
         "gold": 500,
         "mine": 120,
@@ -689,7 +689,7 @@
         "onlineSell4": 1500,
         "onlineSell5": 1800
     },
-    "31": {
+    {
         "goal": false,
         "gold": 475,
         "mine": 95,
@@ -712,7 +712,7 @@
         "onlineSell4": 1425,
         "onlineSell5": 1710
     },
-    "32": {
+    {
         "goal": false,
         "gold": 450,
         "mine": 81,
@@ -735,7 +735,7 @@
         "onlineSell4": 1350,
         "onlineSell5": 1620
     },
-    "33": {
+    {
         "goal": false,
         "gold": 450,
         "mine": 72,
@@ -758,7 +758,7 @@
         "onlineSell4": 1350,
         "onlineSell5": 1620
     },
-    "34": {
+    {
         "goal": false,
         "gold": 475,
         "mine": 95,
@@ -781,7 +781,7 @@
         "onlineSell4": 1350,
         "onlineSell5": 1620
     },
-    "35": {
+    {
         "goal": false,
         "gold": 500,
         "mine": 90,
@@ -804,7 +804,7 @@
         "onlineSell4": 1500,
         "onlineSell5": 1800
     },
-    "36": {
+    {
         "goal": false,
         "gold": 500,
         "mine": 60,
@@ -827,7 +827,7 @@
         "onlineSell4": 1500,
         "onlineSell5": 1800
     },
-    "37": {
+    {
         "goal": false,
         "gold": 525,
         "mine": 63,
@@ -850,7 +850,7 @@
         "onlineSell4": 1575,
         "onlineSell5": 1890
     },
-    "38": {
+    {
         "goal": false,
         "gold": 450,
         "mine": 63,
@@ -873,7 +873,7 @@
         "onlineSell4": 1350,
         "onlineSell5": 1620
     },
-    "39": {
+    {
         "goal": false,
         "gold": 525,
         "mine": 84,
@@ -896,7 +896,7 @@
         "onlineSell4": 1575,
         "onlineSell5": 1890
     },
-    "40": {
+    {
         "goal": false,
         "gold": 600,
         "mine": 108,
@@ -919,7 +919,7 @@
         "onlineSell4": 1800,
         "onlineSell5": 2160
     },
-    "41": {
+    {
         "goal": false,
         "gold": 500,
         "mine": 100,
@@ -942,7 +942,7 @@
         "onlineSell4": 1500,
         "onlineSell5": 1800
     },
-    "42": {
+    {
         "goal": false,
         "gold": 650,
         "mine": 143,
@@ -965,7 +965,7 @@
         "onlineSell4": 1950,
         "onlineSell5": 2340
     },
-    "43": {
+    {
         "goal": false,
         "gold": 575,
         "mine": 115,
@@ -988,7 +988,7 @@
         "onlineSell4": 1725,
         "onlineSell5": 2070
     },
-    "44": {
+    {
         "goal": false,
         "gold": 600,
         "mine": 96,
@@ -1011,7 +1011,7 @@
         "onlineSell4": 1800,
         "onlineSell5": 2160
     },
-    "45": {
+    {
         "goal": false,
         "gold": 600,
         "mine": 84,
@@ -1034,7 +1034,7 @@
         "onlineSell4": 1800,
         "onlineSell5": 2160
     },
-    "46": {
+    {
         "goal": false,
         "gold": 325,
         "mine": 75,
@@ -1057,7 +1057,7 @@
         "onlineSell4": 1875,
         "onlineSell5": 2250
     },
-    "47": {
+    {
         "goal": false,
         "gold": 575,
         "mine": 46,
@@ -1080,7 +1080,7 @@
         "onlineSell4": 1725,
         "onlineSell5": 2070
     },
-    "48": {
+    {
         "goal": false,
         "gold": 650,
         "mine": 65,
@@ -1103,7 +1103,7 @@
         "onlineSell4": 1950,
         "onlineSell5": 2340
     },
-    "49": {
+    {
         "goal": false,
         "gold": 700,
         "mine": 84,
@@ -1126,7 +1126,7 @@
         "onlineSell4": 2100,
         "onlineSell5": 2520
     },
-    "50": {
+    {
         "goal": false,
         "gold": 675,
         "mine": 81,
@@ -1149,7 +1149,7 @@
         "onlineSell4": 2025,
         "onlineSell5": 2430
     },
-    "51": {
+    {
         "goal": false,
         "gold": 675,
         "mine": 108,
@@ -1172,7 +1172,7 @@
         "onlineSell4": 2025,
         "onlineSell5": 2430
     },
-    "52": {
+    {
         "goal": false,
         "gold": 650,
         "mine": 91,
@@ -1195,7 +1195,7 @@
         "onlineSell4": 1950,
         "onlineSell5": 2340
     },
-    "53": {
+    {
         "goal": false,
         "gold": 700,
         "mine": 140,
@@ -1218,7 +1218,7 @@
         "onlineSell4": 2100,
         "onlineSell5": 2520
     },
-    "54": {
+    {
         "goal": false,
         "gold": 725,
         "mine": 145,
@@ -1241,7 +1241,7 @@
         "onlineSell4": 2175,
         "onlineSell5": 2610
     },
-    "55": {
+    {
         "goal": false,
         "gold": 700,
         "mine": 154,
@@ -1264,7 +1264,7 @@
         "onlineSell4": 2100,
         "onlineSell5": 2520
     },
-    "56": {
+    {
         "goal": false,
         "gold": 750,
         "mine": 165,
@@ -1287,7 +1287,7 @@
         "onlineSell4": 2250,
         "onlineSell5": 2700
     },
-    "57": {
+    {
         "goal": false,
         "gold": 750,
         "mine": 150,
@@ -1310,7 +1310,7 @@
         "onlineSell4": 2250,
         "onlineSell5": 2700
     },
-    "58": {
+    {
         "goal": false,
         "gold": 775,
         "mine": 155,
@@ -1333,7 +1333,7 @@
         "onlineSell4": 2325,
         "onlineSell5": 2790
     },
-    "59": {
+    {
         "goal": false,
         "gold": 850,
         "mine": 187,
@@ -1356,7 +1356,7 @@
         "onlineSell4": 2550,
         "onlineSell5": 3060
     },
-    "60": {
+    {
         "goal": false,
         "gold": 800,
         "mine": 192,
@@ -1379,7 +1379,7 @@
         "onlineSell4": 2400,
         "onlineSell5": 2880
     },
-    "61": {
+    {
         "goal": false,
         "gold": 825,
         "mine": 231,
@@ -1402,7 +1402,7 @@
         "onlineSell4": 2475,
         "onlineSell5": 2970
     },
-    "62": {
+    {
         "goal": false,
         "gold": 850,
         "mine": 170,
@@ -1425,7 +1425,7 @@
         "onlineSell4": 2550,
         "onlineSell5": 3060
     },
-    "63": {
+    {
         "goal": false,
         "gold": 850,
         "mine": 204,
@@ -1448,7 +1448,7 @@
         "onlineSell4": 2550,
         "onlineSell5": 3060
     },
-    "64": {
+    {
         "goal": false,
         "gold": 875,
         "mine": 210,
@@ -1471,7 +1471,7 @@
         "onlineSell4": 2625,
         "onlineSell5": 3150
     },
-    "65": {
+    {
         "goal": false,
         "gold": 900,
         "mine": 234,
@@ -1494,7 +1494,7 @@
         "onlineSell4": 2700,
         "onlineSell5": 3240
     },
-    "66": {
+    {
         "goal": false,
         "gold": 900,
         "mine": 234,
@@ -1517,7 +1517,7 @@
         "onlineSell4": 2700,
         "onlineSell5": 3240
     },
-    "67": {
+    {
         "goal": false,
         "gold": 925,
         "mine": 259,
@@ -1540,7 +1540,7 @@
         "onlineSell4": 2775,
         "onlineSell5": 3330
     },
-    "68": {
+    {
         "goal": false,
         "gold": 950,
         "mine": 190,
@@ -1563,7 +1563,7 @@
         "onlineSell4": 2850,
         "onlineSell5": 3420
     },
-    "69": {
+    {
         "goal": false,
         "gold": 975,
         "mine": 273,
@@ -1586,7 +1586,7 @@
         "onlineSell4": 2925,
         "onlineSell5": 3510
     },
-    "70": {
+    {
         "goal": false,
         "gold": 1000,
         "mine": 200,
@@ -1609,7 +1609,7 @@
         "onlineSell4": 3000,
         "onlineSell5": 3600
     },
-    "71": {
+    {
         "goal": false,
         "gold": 1000,
         "mine": 220,
@@ -1632,7 +1632,7 @@
         "onlineSell4": 3000,
         "onlineSell5": 3600
     },
-    "72": {
+    {
         "goal": false,
         "gold": 1050,
         "mine": 294,
@@ -1655,7 +1655,7 @@
         "onlineSell4": 3150,
         "onlineSell5": 3780
     },
-    "73": {
+    {
         "goal": false,
         "gold": 1100,
         "mine": 330,
@@ -1678,7 +1678,7 @@
         "onlineSell4": 3300,
         "onlineSell5": 3960
     },
-    "74": {
+    {
         "goal": false,
         "gold": 1025,
         "mine": 287,
@@ -1701,7 +1701,7 @@
         "onlineSell4": 3075,
         "onlineSell5": 3690
     },
-    "75": {
+    {
         "goal": false,
         "gold": 1050,
         "mine": 252,
@@ -1724,7 +1724,7 @@
         "onlineSell4": 3150,
         "onlineSell5": 3780
     },
-    "76": {
+    {
         "goal": false,
         "gold": 1100,
         "mine": 264,
@@ -1747,7 +1747,7 @@
         "onlineSell4": 3300,
         "onlineSell5": 3960
     },
-    "77": {
+    {
         "goal": false,
         "gold": 1125,
         "mine": 270,
@@ -1770,7 +1770,7 @@
         "onlineSell4": 3375,
         "onlineSell5": 4050
     },
-    "78": {
+    {
         "goal": false,
         "gold": 1150,
         "mine": 322,
@@ -1793,7 +1793,7 @@
         "onlineSell4": 3450,
         "onlineSell5": 4140
     },
-    "79": {
+    {
         "goal": false,
         "gold": 1175,
         "mine": 329,
@@ -1816,7 +1816,7 @@
         "onlineSell4": 3525,
         "onlineSell5": 4230
     },
-    "80": {
+    {
         "goal": false,
         "gold": 1250,
         "mine": 375,
@@ -1839,7 +1839,7 @@
         "onlineSell4": 3750,
         "onlineSell5": 4500
     },
-    "81": {
+    {
         "goal": true,
         "gold": 1200,
         "mine": 312,
@@ -1862,7 +1862,7 @@
         "onlineSell4": 3600,
         "onlineSell5": 4320
     },
-    "82": {
+    {
         "goal": true,
         "gold": 1225,
         "mine": 392,
@@ -1885,7 +1885,7 @@
         "onlineSell4": 3675,
         "onlineSell5": 4410
     },
-    "83": {
+    {
         "goal": true,
         "gold": 1250,
         "mine": 325,
@@ -1908,7 +1908,7 @@
         "onlineSell4": 3750,
         "onlineSell5": 4500
     },
-    "84": {
+    {
         "goal": true,
         "gold": 1275,
         "mine": 408,
@@ -1931,7 +1931,7 @@
         "onlineSell4": 3825,
         "onlineSell5": 4590
     },
-    "85": {
+    {
         "goal": true,
         "gold": 1300,
         "mine": 390,
@@ -1954,7 +1954,7 @@
         "onlineSell4": 3900,
         "onlineSell5": 4680
     },
-    "86": {
+    {
         "goal": true,
         "gold": 1325,
         "mine": 424,
@@ -1977,4 +1977,4 @@
         "onlineSell4": 3975,
         "onlineSell5": 4770
     }
-}
+]
