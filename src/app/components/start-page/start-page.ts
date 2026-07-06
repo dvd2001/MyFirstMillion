@@ -64,7 +64,7 @@ export class StartPage {
     }
 
     if (maxOnline) {
-      const selectedValue = maxOnline.options[maxOnline.selectedIndex]?.value ?? '0';
+      const selectedValue = maxOnline.options[maxOnline.selectedIndex]?.value ?? Number.MAX_SAFE_INTEGER;
       window.sessionStorage.setItem('maxOnline', selectedValue);
     }
 
