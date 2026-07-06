@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ThemeService } from '../../services/theme-service/theme-service';
 import { Router } from "@angular/router";
 
@@ -8,9 +8,8 @@ import { Router } from "@angular/router";
   templateUrl: './start-page.html',
   styleUrl: './start-page.css'
 })
-export class StartPage implements OnInit {
+export class StartPage {
   constructor(public themeService: ThemeService, private router: Router) { }
-  ngOnInit(): void { }
   starFieldDown(): void {
     const startField = document.querySelector('#startField') as HTMLInputElement;
     if (startField) {
