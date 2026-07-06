@@ -25,6 +25,7 @@ export class GamePage implements OnInit {
         this.maxOnline = parseInt(online);
       }
     }
+    console.log(`${this.startField}, ${this.maxOnline}\n${this.fields}`);
   }
   ngOnInit(): void {
     this.fields = this.reader.readingFields();
