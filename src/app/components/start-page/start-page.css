@@ -58,7 +58,7 @@ select {
     width: 35px;
     padding: 0px;
     background-color: var(--bg-sp-button);
-    color: var(--sp-button);
+    color: var(--button);
     border: none;
     border-radius: 7px;
     text-align: center;
@@ -68,7 +68,7 @@ select {
 .startGameBtn {
     font-size: 42px;
     background-color: var(--bg-sp-button);
-    color: var(--sp-button);
+    color: var(--button);
     border: none;
     border-radius: 55px;
     padding: 30px;
@@ -86,7 +86,6 @@ select {
     justify-content: space-between;
     align-items: left;
     width: 99.7%;
-    height: fit-content;
     margin: -8px 0px 20px 0px;
     justify-self: center;
     background-color: var(--bg-nav);
