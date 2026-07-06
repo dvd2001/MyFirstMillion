@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DataReadingSercive } from './data-reading-sercive';
+import { DataReadingService } from './data-reading-service';
 
-describe('DataReadingSercive', () => {
-  let service: DataReadingSercive;
+describe('DataReadingService', () => {
+  let service: DataReadingService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DataReadingSercive);
+    service = TestBed.inject(DataReadingService);
   });
 
   it('should be created', () => {

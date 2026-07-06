@@ -6,7 +6,7 @@ import data from '../../data/fieldData.json';
   providedIn: 'root',
 })
 
-export class DataReadingSercive {
+export class DataReadingService {
   readingFields(): Field[] {
     const jsonString = JSON.stringify(data);
     const fields: Field[] = JSON.parse(jsonString);
