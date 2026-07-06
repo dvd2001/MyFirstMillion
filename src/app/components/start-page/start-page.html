@@ -23,11 +23,11 @@
     <div class="online">
         <label class="onlineLabel" for="online">Max online üzletek:</label>
         <select class="onlineSelect" id="online" formControlName="online">
-            <option value="true">Nincs</option>
-            <option value="false">4</option>
+            <option value="0" selected>Nincs</option>
+            <option value="4">4</option>
         </select>
     </div>
     <div class="startGame">
-        <Button class="startGameBtn" (click)="onSubmit()">Indítás</Button>
+        <button class="startGameBtn" (click)="onSubmit()">Indítás</button>
     </div>
 </div>

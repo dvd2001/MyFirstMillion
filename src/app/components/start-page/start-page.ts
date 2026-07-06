@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from '../../services/theme-service/theme-service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-start-page',
@@ -8,8 +9,11 @@ import { ThemeService } from '../../services/theme-service/theme-service';
   styleUrl: './start-page.css'
 })
 export class StartPage implements OnInit {
-  constructor(public themeService: ThemeService) { }
-  ngOnInit(): void { }
+  constructor(public themeService: ThemeService, private router: Router) { }
+  ngOnInit(): void {
+    window.sessionStorage.removeItem('startField');
+    window.sessionStorage.removeItem('maxOnline');
+  }
   starFieldDown(): void {
     const startField = document.querySelector('#startField') as HTMLInputElement;
     if (startField) {
@@ -56,6 +60,18 @@ export class StartPage implements OnInit {
     this.themeService.toggleTheme();
   }
   onSubmit(): void {
-    console.log('submit');
+    const startField = document.querySelector('#startField') as HTMLInputElement | null;
+    const maxOnline = document.querySelector('#online') as HTMLSelectElement | null;
+
+    if (startField) {
+      window.sessionStorage.setItem('startField', startField.value);
+    }
+
+    if (maxOnline) {
+      const selectedValue = maxOnline.options[maxOnline.selectedIndex]?.value ?? '0';
+      window.sessionStorage.setItem('maxOnline', selectedValue);
+    }
+
+    this.router.navigate(['/game']);
   }
 }
