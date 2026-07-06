@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
   styleUrl: './start-page.css'
 })
 export class StartPage implements OnInit {
-  constructor(public themeService: ThemeService, private router: Router) { }
+  constructor(private themeService: ThemeService, private router: Router) { }
   ngOnInit(): void {
     window.sessionStorage.removeItem('startField');
     window.sessionStorage.removeItem('maxOnline');
