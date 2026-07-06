@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Field } from '../../models/Field';
-import data from '../../data/fieldData.json';
+import data from '../../../assets/data/fieldData.json';
 
 @Injectable({
   providedIn: 'root',
