@@ -21,7 +21,7 @@ body {
     --bg-ds-primary: #64016433;
     --bg-ds-secondary: darkblue;
     --bg-option: #0099ccaa;
-    --bg-back-hover: #0099cc88;
+    --bg-back-hover: #ffffff55;
 }
 
 [data-theme="dark"] {
