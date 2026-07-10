@@ -170,6 +170,10 @@ h1 {
         margin: 10px
     }
 
+    .mobileList {
+        width: 98%;
+    }
+
     #backBtn {
         font-size: 20px;
         padding: 0px;
