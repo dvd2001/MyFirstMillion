@@ -24,7 +24,8 @@ div {
     height: fit-content;
     border: none;
     border-radius: 30px;
-    padding: 10px;
+    padding: 0px;
+    margin-top: 5px;
 }
 
 #backBtn:hover {
