@@ -49,10 +49,11 @@ select {
     border: none;
     border-radius: 15px;
     font-size: 32px;
-    padding: 10px;
+    padding: 7px;
     padding-left: 20px;
     padding-right: 20px;
     text-align: right;
+    margin: 0px;
 }
 
 .startField {
@@ -78,14 +79,18 @@ select {
 
 .left {
     display: flex;
-    margin: 10px;
+    margin-top: 7px;
+    margin-bottom: 5px;
     justify-content: left;
+    align-self: center;
+
 }
 
 .right {
     display: flex;
     margin: 0px;
     justify-content: right;
+    align-self: center;
 }
 
 .plus,
@@ -206,7 +211,8 @@ select {
 
     select {
         font-size: 22px;
-        padding: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     .onlineLabel {
@@ -216,7 +222,8 @@ select {
     .plus,
     .minus {
         font-size: 22px;
-        width: 25px;
+        width: 27px;
+        padding: 2px;
         border-radius: 5px;
     }
 
