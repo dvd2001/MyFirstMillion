@@ -4,6 +4,10 @@ div {
     padding: 5px;
 }
 
+section {
+    scroll-margin-top: 40px;
+}
+
 #navbar {
     display: flex;
     background-image: linear-gradient(to right, var(--bg-gradiant-primary), var(--bg-gradiant-secondary));
