@@ -15,17 +15,29 @@
         <h1>Játék beállítások</h1>
     </div>
     <div class="startField">
-        <label for="startField">Kezdő mező:</label>
-        <button class="minus" (click)="starFieldDown()">-</button>
-        <input type="number" id="startField" formControlName="startField" min="1" max="6" value="1">
-        <button class="plus" (click)="startFieldUp()">+</button>
+        <div class="input">
+            <div class="left">
+                <label for="startField">Kezdő mező:</label>
+            </div>
+            <div class="right">
+                <button class="minus" (click)="starFieldDown()">-</button>
+                <input type="number" id="startField" formControlName="startField" min="1" max="6" value="1">
+                <button class="plus" (click)="startFieldUp()">+</button>
+            </div>
+        </div>
     </div>
     <div class="online">
-        <label class="onlineLabel" for="online">Max online üzletek:</label>
-        <select class="onlineSelect" id="online" formControlName="online">
-            <option value="9007199254740991" selected>Nincs</option>
-            <option value="4">4</option>
-        </select>
+        <div class="input">
+            <div class="left">
+                <label class="onlineLabel" for="online">Max online üzletek:</label>
+            </div>
+            <div class="right">
+                <select class="onlineSelect" id="online" formControlName="online">
+                    <option value="9007199254740991" selected>Nincs</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+        </div>
     </div>
     <div class="startGame">
         <button class="startGameBtn" (click)="onSubmit()">Indítás</button>
