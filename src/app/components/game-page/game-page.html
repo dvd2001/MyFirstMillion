@@ -2,24 +2,57 @@
     <button id="backBtn" (click)="onBack()">〈 Back</button>
 </div>
 <section id="stocks">
-    <div id="stockContainer">
-        <div id="gold"></div>
-        <div id="mine"></div>
-        <div id="chocolate"></div>
+    <div class="title">
+        <h1>Részvények</h1>
+    </div>
+    <div class="container">
+        <div id="gold" class="stock cards"></div>
+        <div id="mine" class="stock cards"></div>
+        <div id="chocolate" class="stock cards"></div>
     </div>
 </section>
-<section id="accomodations">
-    <div id="acContainer">
-        <div id="flat"></div>
-        <div id="pansion"></div>
+<section id="accomondations">
+    <div class="title">
+        <h1>Bérlakás/Panzió</h1>
+    </div>
+    <div class="container">
+        <div class="listContainer acList">
+            <div id="flat" class="accomodation cards"></div>
+            <div *ngIf="showFlat" id="flatList" class="lists"></div>
+        </div>
+        <div class="listContainer acList">
+            <div id="pansion" class="accomodation cards"></div>
+            <div *ngIf="showPansion" id="pansionList" class="lists"></div>
+        </div>
     </div>
 </section>
 <section id="online">
-    <div id="onlineContainer">
-        <div class="online" id="level1"></div>
-        <div class="online" id="level2"></div>
-        <div class="online" id="level3"></div>
-        <div class="online" id="level4"></div>
-        <div class="online" id="level5"></div>
+    <div class="title">
+        <h1>Online Üzlet</h1>
+    </div>
+    <div id="onlineContainer" class="container lists">
+        <div class="online cards" id="basicOnline"></div>
+        <div id="levels" class="container">
+            <div class="listContainer onlineList">
+                <div class="online cards" id="level1"></div>
+                <div *ngIf="showLevel1" id="level1List" class="lists bgOnlineList"></div>
+            </div>
+            <div class="listContainer onlineList">
+                <div class="online cards" id="level2"></div>
+                <div *ngIf="showLevel2" id="level2List" class="lists bgOnlineList"></div>
+            </div>
+            <div class="listContainer onlineList">
+                <div class="online cards" id="level3"></div>
+                <div *ngIf="showLevel3" id="level3List" class="lists bgOnlineList"></div>
+            </div>
+            <div class="listContainer onlineList">
+                <div class="online cards" id="level4"></div>
+                <div *ngIf="showLevel4" id="level4List" class="lists bgOnlineList"></div>
+            </div>
+            <div class="listContainer onlineList">
+                <div class="online cards" id="level5"></div>
+                <div *ngIf="showLevel5" id="level5List" class="lists bgOnlineList"></div>
+            </div>
+        </div>
     </div>
 </section>

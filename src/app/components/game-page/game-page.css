@@ -6,10 +6,82 @@ div {
 
 section {
     scroll-margin-top: 40px;
+    background-color: #d0e4ebc5;
+    justify-items: center;
+    padding: 0px;
+    border-radius: 20px;
+    margin: 15px;
+    margin-top: 35px;
+    border: none;
+}
+
+h1 {
+    height: fit-content;
+    width: fit-content;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-self: center;
+    padding: 15px;
+    width: 98%;
+}
+
+.stock {
+    width: 30%;
+    border-color: #00000088;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.accomodation {
+    width: 100%;
+    border-color: #00000088;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.online {
+    background-color: #00b8b8;
+    width: 100%;
+    border-color: #00000088;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.acList {
+    width: 47%;
+}
+
+.onlineList {
+    width: 18%
+}
+
+.bgOnlineList {
+    margin-top: -10px;
+    background-color: #00b8b873;
+    width: 98%;
+    border-radius: 20px;
+    padding-top: 10px;
+}
+
+.lists {
+    flex-direction: column;
+    align-items: center;
 }
 
 #navbar {
     display: flex;
+    justify-content: space-between;
     background-image: linear-gradient(to right, var(--bg-gradiant-primary), var(--bg-gradiant-secondary));
     position: sticky;
     top: 0;
@@ -18,6 +90,49 @@ section {
     margin: 0px;
     width: 99.7%;
     padding: 0px;
+    padding-bottom: 5px;
+}
+
+#gold {
+    background-color: yellow;
+}
+
+#mine {
+    background-color: green;
+}
+
+#chocolate {
+    background-color: brown;
+}
+
+#flat {
+    background-color: blue;
+}
+
+#flatList {
+    margin-top: -15px;
+    background-color: #0000ff73;
+    width: 99.5%;
+    border-radius: 20px;
+    padding-top: 10px;
+}
+
+#pansion {
+    background-color: red;
+}
+
+#pansionList {
+    margin-top: -15px;
+    background-color: #ff000073;
+    width: 99.5%;
+    border-radius: 20px;
+    padding-top: 10px;
+}
+
+#basicOnline {
+    width: 98%;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 #backBtn {
@@ -38,6 +153,23 @@ section {
 }
 
 @media (max-width: 1200px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        align-content: center;
+        padding: 15px;
+        width: 90%;
+        margin: 10px;
+    }
+
+    .cards {
+        width: 98%;
+        border-color: #00000088;
+        border-radius: 20px;
+        margin: 10px
+    }
+
     #backBtn {
         font-size: 20px;
         padding: 0px;
