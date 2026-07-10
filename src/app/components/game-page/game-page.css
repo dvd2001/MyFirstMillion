@@ -19,7 +19,7 @@ div {
 #backBtn {
     background-color: transparent;
     color: var(--button);
-    font-size: 32px;
+    font-size: 28px;
     width: fit-content;
     height: fit-content;
     border: none;
@@ -32,11 +32,10 @@ div {
     cursor: pointer;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
     #backBtn {
-        font-size: 22px;
+        font-size: 20px;
         padding: 0px;
-        padding-right: 12px;
-        margin-left: 0px;
+        margin-left: -8px;
     }
 }
