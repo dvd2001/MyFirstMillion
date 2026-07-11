@@ -111,7 +111,7 @@ h1 {
 }
 
 #flatList {
-    margin-top: -15px;
+    margin-top: -17px;
     background-color: var(--bg-list-flat);
     width: 99.5%;
     border-radius: 20px;
@@ -123,7 +123,7 @@ h1 {
 }
 
 #pansionList {
-    margin-top: -15px;
+    margin-top: -17px;
     background-color: var(--bg-list-pansion);
     width: 99.5%;
     border-radius: 20px;
@@ -172,7 +172,20 @@ h1 {
     }
 
     .mobileList {
-        width: 98%;
+        width: 100%;
+    }
+
+    .bgOnlineList {
+        margin-top: -17px;
+        width: 96%;
+    }
+
+    #flatList {
+        width: 96%;
+    }
+
+    #pansionList {
+        width: 96%;
     }
 
     #backBtn {
