@@ -31,7 +31,7 @@ body {
     --bg-pansion: #ff4a4a;
     --bg-list-pansion: #ff4a4a73;
     --bg-online: mediumturquoise;
-    --bg-list-online: #48d1cd73;
+    --bg-list-online: #48d1cd90;
 }
 
 [data-theme="dark"] {
