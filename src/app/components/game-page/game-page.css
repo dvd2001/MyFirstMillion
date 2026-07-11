@@ -6,7 +6,7 @@ div {
 
 section {
     scroll-margin-top: 40px;
-    background-color: #d0e4ebc5;
+    background-color: var(--bg-form);
     justify-items: center;
     padding: 0px;
     border-radius: 20px;
@@ -16,6 +16,7 @@ section {
 }
 
 h1 {
+    color: var(--form);
     height: fit-content;
     width: fit-content;
 }
@@ -32,22 +33,22 @@ h1 {
 
 .stock {
     width: 30%;
-    border-color: #00000088;
+    border-color: var(--border-form);
     border-radius: 20px;
     margin: 10px;
 }
 
 .accomodation {
     width: 100%;
-    border-color: #00000088;
+    border-color: var(--border-form);
     border-radius: 20px;
     margin: 10px;
 }
 
 .online {
-    background-color: #00b8b8;
+    background-color: var(--bg-online);
     width: 100%;
-    border-color: #00000088;
+    border-color: var(--border-form);
     border-radius: 20px;
     margin-top: 10px;
 }
@@ -67,8 +68,8 @@ h1 {
 }
 
 .bgOnlineList {
-    margin-top: -10px;
-    background-color: #00b8b873;
+    margin-top: -7px;
+    background-color: var(--bg-list-online);
     width: 98%;
     border-radius: 20px;
     padding-top: 10px;
@@ -94,36 +95,36 @@ h1 {
 }
 
 #gold {
-    background-color: yellow;
+    background-color: var(--bg-gold);
 }
 
 #mine {
-    background-color: green;
+    background-color: var(--bg-mine);
 }
 
 #chocolate {
-    background-color: brown;
+    background-color: var(--bg-chocolate);
 }
 
 #flat {
-    background-color: blue;
+    background-color: var(--bg-flat);
 }
 
 #flatList {
     margin-top: -15px;
-    background-color: #0000ff73;
+    background-color: var(--bg-list-flat);
     width: 99.5%;
     border-radius: 20px;
     padding-top: 10px;
 }
 
 #pansion {
-    background-color: red;
+    background-color: var(--bg-pansion);
 }
 
 #pansionList {
     margin-top: -15px;
-    background-color: #ff000073;
+    background-color: var(--bg-list-pansion);
     width: 99.5%;
     border-radius: 20px;
     padding-top: 10px;
@@ -143,7 +144,7 @@ h1 {
     height: fit-content;
     border: none;
     border-radius: 30px;
-    padding: 0px;
+    padding: 7px;
     margin-top: 5px;
 }
 
@@ -165,7 +166,7 @@ h1 {
 
     .cards {
         width: 98%;
-        border-color: #00000088;
+        border-color: var(--border-form);
         border-radius: 20px;
         margin: 10px
     }
