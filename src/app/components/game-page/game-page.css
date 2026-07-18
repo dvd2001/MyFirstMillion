@@ -15,10 +15,25 @@ section {
     border: none;
 }
 
+p {
+    color: var(--form);
+    font-size: 18px;
+    margin: 2px;
+}
+
 h1 {
     color: var(--form);
     height: fit-content;
     width: fit-content;
+}
+
+h2 {
+    color: var(--form);
+    height: fit-content;
+    width: fit-content;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 28px;
 }
 
 .container {
@@ -50,6 +65,7 @@ h1 {
     border-color: var(--border-form);
     border-radius: 20px;
     margin: 10px;
+    padding: 12px;
 }
 
 .online {
@@ -61,6 +77,7 @@ h1 {
     border-color: var(--border-form);
     border-radius: 20px;
     margin-top: 10px;
+    padding: 12px;
 }
 
 .listContainer {
@@ -113,6 +130,37 @@ h1 {
 .infoBtn:hover {
     background-color: var(--bg-back-hover);
     cursor: pointer;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-self: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.detail {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
+    height: fit-content;
+    width: 100%;
+}
+
+.level {
+    justify-content: center;
+}
+
+.title {
+    font-weight: bold;
 }
 
 #navbar {
@@ -189,6 +237,14 @@ h1 {
 }
 
 @media (max-width: 1200px) {
+    p {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
     .container {
         display: flex;
         flex-direction: column;

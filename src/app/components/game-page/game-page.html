@@ -8,6 +8,17 @@
     <div class="container">
         <div id="gold" class="stock cards">
             <img class="icon" src="assets/images/gold.png" alt="Gold Bars">
+            <div class="text">
+                <h2>Arany</h2>
+                <div class="detail">
+                    <p class="title">Vételár:</p>
+                    <p class="price"></p>
+                </div>
+                <div class="detail">
+                    <p class="title">Mennyiség:</p>
+                    <p class="price"></p>
+                </div>
+            </div>
             <button class="infoBtn" (click)="goldInfo()">
                 <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
                     alt="Information" class="info">
@@ -15,6 +26,17 @@
         </div>
         <div id="mine" class="stock cards">
             <img src="assets/images/mine.png" alt="Mine" class="icon">
+            <div class="text">
+                <h2>Bánya</h2>
+                <div class="detail">
+                    <p class="title">Vételár:</p>
+                    <p class="price"></p>
+                </div>
+                <div class="detail">
+                    <p class="title">Mennyiség:</p>
+                    <p class="price"></p>
+                </div>
+            </div>
             <button class="infoBtn" (click)="mineInfo()">
                 <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
                     alt="Information" class="info">
@@ -22,6 +44,17 @@
         </div>
         <div id="chocolate" class="stock cards">
             <img src="assets/images/chocolate.png" alt="Chocolate" class="icon">
+            <div class="text">
+                <h2>Csoki</h2>
+                <div class="detail">
+                    <p class="title">Vételár:</p>
+                    <p class="price"></p>
+                </div>
+                <div class="detail">
+                    <p class="title">Mennyiség:</p>
+                    <p class="price"></p>
+                </div>
+            </div>
             <button class="infoBtn" (click)="chocolateInfo()">
                 <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
                     alt="Information" class="info">
@@ -37,6 +70,13 @@
         <div class="listContainer acList mobileList">
             <div id="flat" class="accomodation cards">
                 <img src="assets/images/building.png" alt="Building" class="icon">
+                <div class="text">
+                    <h2>Bérlakás</h2>
+                    <div class="detail">
+                        <p class="title">Vételár:</p>
+                        <p class="price"></p>
+                    </div>
+                </div>
                 <button class="infoBtn" (click)="flatInfo()">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
                         alt="Information" class="info">
@@ -47,6 +87,13 @@
         <div class="listContainer acList mobileList">
             <div id="pansion" class="accomodation cards">
                 <img src="assets/images/pansion.png" alt="Guest house" class="icon">
+                <div class="text">
+                    <h2>Panzió</h2>
+                    <div class="detail">
+                        <p class="title">Vételár:</p>
+                        <p class="price"></p>
+                    </div>
+                </div>
                 <button class="infoBtn" (click)="pansionInfo()">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
                         alt="Information" class="info">
@@ -63,6 +110,13 @@
     <div id="onlineContainer" class="container lists">
         <div class="online cards" id="basicOnline">
             <img src="assets/images/online.png" alt="Online Shop" class="icon">
+            <div class="text">
+                <h2>Alapítás</h2>
+                <div class="detail">
+                    <p class="title">Vételár:</p>
+                    <p class="price"></p>
+                </div>
+            </div>
             <button class="infoBtn" (click)="onlineInfo()">
                 <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
                     alt="Information" class="info">
@@ -70,23 +124,43 @@
         </div>
         <div id="levels" class="container">
             <div class="listContainer onlineList mobileList">
-                <div class="online cards" id="level1"></div>
+                <div class="online level cards" id="level1">
+                    <div class="text">
+                        <h2>1. szint</h2>
+                    </div>
+                </div>
                 <div *ngIf="showLevel1" id="level1List" class="lists bgOnlineList"></div>
             </div>
             <div class="listContainer onlineList mobileList">
-                <div class="online cards" id="level2"></div>
+                <div class="online level cards" id="level2">
+                    <div class="text">
+                        <h2>2. szint</h2>
+                    </div>
+                </div>
                 <div *ngIf="showLevel2" id="level2List" class="lists bgOnlineList"></div>
             </div>
             <div class="listContainer onlineList mobileList">
-                <div class="online cards" id="level3"></div>
+                <div class="online level cards" id="level3">
+                    <div class="text">
+                        <h2>3. szint</h2>
+                    </div>
+                </div>
                 <div *ngIf="showLevel3" id="level3List" class="lists bgOnlineList"></div>
             </div>
             <div class="listContainer onlineList mobileList">
-                <div class="online cards" id="level4"></div>
+                <div class="online level cards" id="level4">
+                    <div class="text">
+                        <h2>4. szint</h2>
+                    </div>
+                </div>
                 <div *ngIf="showLevel4" id="level4List" class="lists bgOnlineList"></div>
             </div>
             <div class="listContainer onlineList mobileList">
-                <div class="online cards" id="level5"></div>
+                <div class="online level cards" id="level5">
+                    <div class="text">
+                        <h2>5. szint</h2>
+                    </div>
+                </div>
                 <div *ngIf="showLevel5" id="level5List" class="lists bgOnlineList"></div>
             </div>
         </div>
