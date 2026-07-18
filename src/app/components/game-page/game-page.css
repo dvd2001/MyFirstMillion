@@ -91,13 +91,28 @@ h1 {
 }
 
 .icon {
-    height: 120px;
+    height: 100px;
 }
 
 .info {
     height: 35px;
+}
+
+.infoBtn {
     align-self: center;
-    margin-right: 10px;
+    background-color: transparent;
+    color: var(--button);
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    border-radius: 30px;
+    padding: 7px;
+    padding-bottom: 3px;
+}
+
+.infoBtn:hover {
+    background-color: var(--bg-back-hover);
+    cursor: pointer;
 }
 
 #navbar {
@@ -198,6 +213,14 @@ h1 {
     .bgOnlineList {
         margin-top: -17px;
         width: 96%;
+    }
+
+    .icon {
+        height: 60px;
+    }
+
+    .info {
+        height: 20px;
     }
 
     #flatList {

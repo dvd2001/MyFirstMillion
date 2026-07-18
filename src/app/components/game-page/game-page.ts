@@ -45,4 +45,28 @@ export class GamePage implements OnInit {
       window.sessionStorage.removeItem('maxOnline');
     }
   }
+
+  goldInfo(): void {
+    console.log('Gold Info');
+  }
+
+  mineInfo(): void {
+    console.log('Mine Info');
+  }
+
+  chocolateInfo(): void {
+    console.log('Chocolate Info');
+  }
+
+  flatInfo(): void {
+    console.log('Flat Info');
+  }
+
+  pansionInfo(): void {
+    console.log('Pansion Info');
+  }
+
+  onlineInfo(): void {
+    console.log('Online Info');
+  }
 }
