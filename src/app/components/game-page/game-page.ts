@@ -69,4 +69,24 @@ export class GamePage implements OnInit {
   onlineInfo(): void {
     console.log('Online Info');
   }
+
+  level1Info(): void {
+    console.log('Level 1 Info');
+  }
+
+  level2Info(): void {
+    console.log('Level 1 Info');
+  }
+
+  level3Info(): void {
+    console.log('Level 1 Info');
+  }
+
+  level4Info(): void {
+    console.log('Level 1 Info');
+  }
+
+  level5Info(): void {
+    console.log('Level 1 Info');
+  }
 }
