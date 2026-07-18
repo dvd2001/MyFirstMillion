@@ -4,6 +4,7 @@ import { DataReadingService } from '../../services/data-reading-service/data-rea
 import { Router } from '@angular/router';
 import { Field } from '../../models/Field';
 import { NgIf } from '@angular/common';
+import { Console } from 'node:console';
 
 @Component({
   selector: 'app-game-page',
@@ -75,18 +76,18 @@ export class GamePage implements OnInit {
   }
 
   level2Info(): void {
-    console.log('Level 1 Info');
+    console.log('Level 2 Info');
   }
 
   level3Info(): void {
-    console.log('Level 1 Info');
+    console.log('Level 3 Info');
   }
 
   level4Info(): void {
-    console.log('Level 1 Info');
+    console.log('Level 4 Info');
   }
 
   level5Info(): void {
-    console.log('Level 1 Info');
+    console.log('Level 5 Info');
   }
 }
