@@ -15,11 +15,11 @@ export class ThemeService {
     let localTheme;
 
     if (this.isBrowser && typeof window !== 'undefined') {
-      if (!window.sessionStorage.getItem('theme')) {
+      if (!window.localStorage.getItem('theme')) {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        window.sessionStorage.setItem('theme', prefersDark ? 'dark' : 'light');
+        window.localStorage.setItem('theme', prefersDark ? 'dark' : 'light');
       }
-      localTheme = window.sessionStorage.getItem('theme');
+      localTheme = window.localStorage.getItem('theme');
     }
 
     this.currentTheme.set(localTheme === 'dark' ? 'dark' : 'light');
@@ -41,7 +41,7 @@ export class ThemeService {
     }
 
     if (this.isBrowser && typeof window !== 'undefined') {
-      window.sessionStorage.setItem('theme', theme);
+      window.localStorage.setItem('theme', theme);
     }
   }
 
