@@ -22,7 +22,7 @@ export class GamePage implements OnInit {
   public showLevel5 = false;
   public showFlat = false;
   public showPansion = false;
-  constructor(private themeService: ThemeService, private router: Router, private reader: DataReadingService) {
+  constructor(public themeService: ThemeService, private router: Router, private reader: DataReadingService) {
     if (typeof window !== 'undefined') {
       const start = window.sessionStorage.getItem('startField');
       const online = window.sessionStorage.getItem('maxOnline');

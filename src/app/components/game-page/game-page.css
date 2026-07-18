@@ -32,13 +32,20 @@ h1 {
 }
 
 .stock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: 30%;
     border-color: var(--border-form);
     border-radius: 20px;
     margin: 10px;
+    padding: 12px;
 }
 
 .accomodation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
     border-color: var(--border-form);
     border-radius: 20px;
@@ -46,6 +53,9 @@ h1 {
 }
 
 .online {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: var(--bg-online);
     width: 100%;
     border-color: var(--border-form);
@@ -78,6 +88,16 @@ h1 {
 .lists {
     flex-direction: column;
     align-items: center;
+}
+
+.icon {
+    height: 120px;
+}
+
+.info {
+    height: 35px;
+    align-self: center;
+    margin-right: 10px;
 }
 
 #navbar {

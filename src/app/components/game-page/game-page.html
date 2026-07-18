@@ -6,9 +6,21 @@
         <h1>Részvények</h1>
     </div>
     <div class="container">
-        <div id="gold" class="stock cards"></div>
-        <div id="mine" class="stock cards"></div>
-        <div id="chocolate" class="stock cards"></div>
+        <div id="gold" class="stock cards">
+            <img class="icon" src="assets/images/gold.png" alt="Gold Bars">
+            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
+                alt="Information" class="info">
+        </div>
+        <div id="mine" class="stock cards">
+            <img src="assets/images/mine.png" alt="Mine" class="icon">
+            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
+                alt="Information" class="info">
+        </div>
+        <div id="chocolate" class="stock cards">
+            <img src="assets/images/chocolate.png" alt="Chocolate" class="icon">
+            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
+                alt="Information" class="info">
+        </div>
     </div>
 </section>
 <section id="accomodations">
@@ -17,11 +29,19 @@
     </div>
     <div class="container">
         <div class="listContainer acList mobileList">
-            <div id="flat" class="accomodation cards"></div>
+            <div id="flat" class="accomodation cards">
+                <img src="assets/images/building.png" alt="Building" class="icon">
+                <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
+                    alt="Information" class="info">
+            </div>
             <div *ngIf="showFlat" id="flatList" class="lists"></div>
         </div>
         <div class="listContainer acList mobileList">
-            <div id="pansion" class="accomodation cards"></div>
+            <div id="pansion" class="accomodation cards">
+                <img src="assets/images/pansion.png" alt="Guest house" class="icon">
+                <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
+                    alt="Information" class="info">
+            </div>
             <div *ngIf="showPansion" id="pansionList" class="lists"></div>
         </div>
     </div>
@@ -31,7 +51,11 @@
         <h1>Online Üzlet</h1>
     </div>
     <div id="onlineContainer" class="container lists">
-        <div class="online cards" id="basicOnline"></div>
+        <div class="online cards" id="basicOnline">
+            <img src="assets/images/online.png" alt="Online Shop" class="icon">
+            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
+                alt="Information" class="info">
+        </div>
         <div id="levels" class="container">
             <div class="listContainer onlineList mobileList">
                 <div class="online cards" id="level1"></div>
