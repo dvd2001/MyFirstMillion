@@ -123,65 +123,50 @@
             </button>
         </div>
         <div id="levels" class="container">
-            <div class="listContainer onlineList mobileList">
-                <div class="online cards" id="level1">
-                    <div class="text">
-                        <h2 class="level">1. szint</h2>
-                    </div>
-                    <button class="infoBtn" (click)="level1Info()">
-                        <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
-                            alt="Information" class="info">
-                    </button>
+            <div class="online onlineList cards" id="level1">
+                <div class="text">
+                    <h2 class="level">1. szint</h2>
                 </div>
-                <div *ngIf="showLevel1" id="level1List" class="lists bgOnlineList"></div>
+                <button class="infoBtn" (click)="level1Info()">
+                    <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
+                        alt="Information" class="info">
+                </button>
             </div>
-            <div class="listContainer onlineList mobileList">
-                <div class="online cards" id="level2">
-                    <div class="text">
-                        <h2 class="level">2. szint</h2>
-                    </div>
-                    <button class="infoBtn" (click)="level2Info()">
-                        <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
-                            alt="Information" class="info">
-                    </button>
+            <div class="online onlineList cards" id="level2">
+                <div class="text">
+                    <h2 class="level">2. szint</h2>
                 </div>
-                <div *ngIf="showLevel2" id="level2List" class="lists bgOnlineList"></div>
+                <button class="infoBtn" (click)="level2Info()">
+                    <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
+                        alt="Information" class="info">
+                </button>
             </div>
-            <div class="listContainer onlineList mobileList">
-                <div class="online cards" id="level3">
-                    <div class="text">
-                        <h2 class="level">3. szint</h2>
-                    </div>
-                    <button class="infoBtn" (click)="level3Info()">
-                        <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
-                            alt="Information" class="info">
-                    </button>
+            <div class="online onlineList cards" id="level3">
+                <div class="text">
+                    <h2 class="level">3. szint</h2>
                 </div>
-                <div *ngIf="showLevel3" id="level3List" class="lists bgOnlineList"></div>
+                <button class="infoBtn" (click)="level3Info()">
+                    <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
+                        alt="Information" class="info">
+                </button>
             </div>
-            <div class="listContainer onlineList mobileList">
-                <div class="online cards" id="level4">
-                    <div class="text">
-                        <h2 class="level">4. szint</h2>
-                    </div>
-                    <button class="infoBtn" (click)="level4Info()">
-                        <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
-                            alt="Information" class="info">
-                    </button>
+            <div class="online onlineList cards" id="level4">
+                <div class="text">
+                    <h2 class="level">4. szint</h2>
                 </div>
-                <div *ngIf="showLevel4" id="level4List" class="lists bgOnlineList"></div>
+                <button class="infoBtn" (click)="level4Info()">
+                    <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
+                        alt="Information" class="info">
+                </button>
             </div>
-            <div class="listContainer onlineList mobileList">
-                <div class="online cards" id="level5">
-                    <div class="text">
-                        <h2 class="level">5. szint</h2>
-                    </div>
-                    <button class="infoBtn" (click)="level5Info()">
-                        <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
-                            alt="Information" class="info">
-                    </button>
+            <div class="online onlineList cards" id="level5">
+                <div class="text">
+                    <h2 class="level">5. szint</h2>
                 </div>
-                <div *ngIf="showLevel5" id="level5List" class="lists bgOnlineList"></div>
+                <button class="infoBtn" (click)="level5Info()">
+                    <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
+                        alt="Information" class="info">
+                </button>
             </div>
         </div>
     </div>
