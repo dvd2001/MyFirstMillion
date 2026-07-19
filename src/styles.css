@@ -32,6 +32,12 @@ body {
     --bg-list-pansion: #ff4a4a73;
     --bg-online: mediumturquoise;
     --bg-list-online: #48d1cd90;
+    --bg-buy-btn: green;
+    --bg-buy-btn-hover: #00ff0088;
+    --bg-sell-btn: red;
+    --bg-sell-btn-hover: #ff000088;
+    --bg-debt-btn: violet;
+    --bg-debt-btn-hover: #ee82ee88;
 }
 
 [data-theme="dark"] {
@@ -60,4 +66,10 @@ body {
     --bg-list-pansion: #8b000073;
     --bg-online: darkcyan;
     --bg-list-online: #008b8b73;
+    --bg-buy-btn: darkgreen;
+    --bg-buy-btn-hover: #00640088;
+    --bg-sell-btn: darkred;
+    --bg-sell-btn-hover: #8b000088;
+    --bg-debt-btn: purple;
+    --bg-debt-btn-hover: #80008088;
 }
