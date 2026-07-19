@@ -45,8 +45,24 @@ export class GamePage implements OnInit {
       const chocolatePrice = document.querySelector('#chocolatePrice') as HTMLElement;
       const chocolateAmount = document.querySelector('#chocolateAmount') as HTMLElement;
       const flatPrice = document.querySelector('#flatPrice') as HTMLElement;
+      const flatDebt = document.querySelector('#flatDebt') as HTMLElement;
+      const flatSell = document.querySelector('#flatSell') as HTMLElement;
+      const flatRent = document.querySelector('#flatRent') as HTMLElement;
       const pansionPrice = document.querySelector('#pansionPrice') as HTMLElement;
+      const pansionDebt = document.querySelector('#pansionDebt') as HTMLElement;
+      const pansionSell = document.querySelector('#pansionSell') as HTMLElement;
+      const pansionIncome = document.querySelector('#pansionIncome') as HTMLElement;
       const onlinePrice = document.querySelector('#onlinePrice') as HTMLElement;
+      const online1Income = document.querySelector('#online1Income') as HTMLElement;
+      const online1Sell = document.querySelector('#online1Sell') as HTMLElement;
+      const online2Income = document.querySelector('#online2Income') as HTMLElement;
+      const online2Sell = document.querySelector('#online2Sell') as HTMLElement;
+      const online3Income = document.querySelector('#online3Income') as HTMLElement;
+      const online3Sell = document.querySelector('#online3Sell') as HTMLElement;
+      const online4Income = document.querySelector('#online4Income') as HTMLElement;
+      const online4Sell = document.querySelector('#online4Sell') as HTMLElement;
+      const online5Income = document.querySelector('#online5Income') as HTMLElement;
+      const online5Sell = document.querySelector('#online5Sell') as HTMLElement;
       const start = this.fields[this.startField];
       goldPrice.innerText = `$${(start.gold * 1000).toLocaleString('hu-HU')}`;
       goldAmount.innerText = '0 db';
@@ -55,8 +71,24 @@ export class GamePage implements OnInit {
       chocolatePrice.innerText = `$${(start.chocolate * 1000).toLocaleString('hu-HU')}`;
       chocolateAmount.innerText = '0 db';
       flatPrice.innerText = `$${(start.flatBuy * 1000).toLocaleString('hu-HU')}`;
+      flatDebt.innerText = `$${(start.flatDebt * 1000).toLocaleString('hu-HU')}`;
+      flatSell.innerText = `$${(start.flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+      flatRent.innerText = `$${(start.flatRent * 1000).toLocaleString('hu-HU')}`;
       pansionPrice.innerText = `$${(start.pansionBuy * 1000).toLocaleString('hu-HU')}`;
+      pansionDebt.innerText = `$${(start.pansionDebt * 1000).toLocaleString('hu-HU')}`;
+      pansionSell.innerText = `$${(start.pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+      pansionIncome.innerText = `$${(start.pansionIncome * 1000).toLocaleString('hu-HU')}`;
       onlinePrice.innerText = `$${(start.onlineBuy * 1000).toLocaleString('hu-HU')}`;
+      online1Income.innerText = `$${(start.onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
+      online1Sell.innerText = `$${(start.onlineSell1 * 1000).toLocaleString('hu-HU')}`;
+      online2Income.innerText = `$${(start.onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
+      online2Sell.innerText = `$${(start.onlineSell2 * 1000).toLocaleString('hu-HU')}`;
+      online3Income.innerText = `$${(start.onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
+      online3Sell.innerText = `$${(start.onlineSell3 * 1000).toLocaleString('hu-HU')}`;
+      online4Income.innerText = `$${(start.onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
+      online4Sell.innerText = `$${(start.onlineSell4 * 1000).toLocaleString('hu-HU')}`;
+      online5Income.innerText = `$${(start.onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
+      online5Sell.innerText = `$${(start.onlineSell5 * 1000).toLocaleString('hu-HU')}`;
     }
   }
   onBack(): void {

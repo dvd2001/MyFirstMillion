@@ -98,14 +98,6 @@ h2 {
     width: 18%
 }
 
-.bgOnlineList {
-    margin-top: -7px;
-    background-color: var(--bg-list-online);
-    width: 98%;
-    border-radius: 20px;
-    padding-top: 10px;
-}
-
 .lists {
     flex-direction: column;
     align-items: center;
@@ -145,8 +137,14 @@ h2 {
     align-items: center;
     padding: 0px;
     margin: 0px;
-    width: 50%;
+    width: 55%;
     height: fit-content;
+}
+
+.levelText {
+    width: 85%;
+    align-items: center;
+    padding-left: 10px;
 }
 
 .detail {
@@ -163,6 +161,18 @@ h2 {
 .title {
     font-weight: bold;
     font-size: 20px;
+}
+
+.onlineText {
+    width: 15%;
+}
+
+.price {
+    margin-top: 4px;
+}
+
+.levelDetail {
+    width: 75%;
 }
 
 #navbar {
@@ -240,7 +250,7 @@ h2 {
 
 @media (max-width: 1200px) {
     p {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     h2 {
@@ -268,11 +278,6 @@ h2 {
         width: 100%;
     }
 
-    .bgOnlineList {
-        margin-top: -17px;
-        width: 96%;
-    }
-
     .icon {
         height: 50px;
     }
@@ -282,7 +287,11 @@ h2 {
     }
 
     .title {
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    .onlineText {
+        width: 55%;
     }
 
     #flatList {

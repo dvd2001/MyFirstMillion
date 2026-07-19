@@ -75,6 +75,14 @@
                     <div class="detail">
                         <p class="title">Vételár:</p>
                         <p id="flatPrice" class="price"></p>
+                        <p class="title">Max Hitel:</p>
+                        <p id="flatDebt" class="price"></p>
+                    </div>
+                    <div class="detail">
+                        <p class="title">Eladási ár:</p>
+                        <p id="flatSell" class="price"></p>
+                        <p class="title">Bérleti díj:</p>
+                        <p id="flatRent" class="price"></p>
                     </div>
                 </div>
                 <button class="infoBtn" (click)="flatInfo()">
@@ -92,6 +100,14 @@
                     <div class="detail">
                         <p class="title">Vételár:</p>
                         <p id="pansionPrice" class="price"></p>
+                        <p class="title">Max Hitel:</p>
+                        <p id="pansionDebt" class="price"></p>
+                    </div>
+                    <div class="detail">
+                        <p class="title">Eladási ár:</p>
+                        <p id="pansionSell" class="price"></p>
+                        <p class="title">Hozam:</p>
+                        <p id="pansionIncome" class="price"></p>
                     </div>
                 </div>
                 <button class="infoBtn" (click)="pansionInfo()">
@@ -110,10 +126,10 @@
     <div id="onlineContainer" class="container lists">
         <div class="online cards" id="basicOnline">
             <img src="assets/images/online.png" alt="Online Shop" class="icon">
-            <div class="text">
+            <div class="text onlineText">
                 <h2>Alapítás</h2>
                 <div class="detail">
-                    <p class="title">Vételár:</p>
+                    <p class="title">Alapítási ár:</p>
                     <p id="onlinePrice" class="price"></p>
                 </div>
             </div>
@@ -124,8 +140,16 @@
         </div>
         <div id="levels" class="container">
             <div class="online onlineList cards" id="level1">
-                <div class="text">
+                <div class="text levelText">
                     <h2 class="level">1. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Hozam:</p>
+                        <p id="online1Income" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Eladási ár:</p>
+                        <p id="online1Sell" class="price"></p>
+                    </div>
                 </div>
                 <button class="infoBtn" (click)="level1Info()">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
@@ -133,8 +157,16 @@
                 </button>
             </div>
             <div class="online onlineList cards" id="level2">
-                <div class="text">
+                <div class="text levelText">
                     <h2 class="level">2. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Hozam:</p>
+                        <p id="online2Income" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Eladási ár:</p>
+                        <p id="online2Sell" class="price"></p>
+                    </div>
                 </div>
                 <button class="infoBtn" (click)="level2Info()">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
@@ -142,8 +174,16 @@
                 </button>
             </div>
             <div class="online onlineList cards" id="level3">
-                <div class="text">
+                <div class="text levelText">
                     <h2 class="level">3. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Hozam:</p>
+                        <p id="online3Income" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Eladási ár:</p>
+                        <p id="online3Sell" class="price"></p>
+                    </div>
                 </div>
                 <button class="infoBtn" (click)="level3Info()">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
@@ -151,8 +191,16 @@
                 </button>
             </div>
             <div class="online onlineList cards" id="level4">
-                <div class="text">
+                <div class="text levelText">
                     <h2 class="level">4. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Hozam:</p>
+                        <p id="online4Income" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Eladási ár:</p>
+                        <p id="online4Sell" class="price"></p>
+                    </div>
                 </div>
                 <button class="infoBtn" (click)="level4Info()">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
@@ -160,8 +208,16 @@
                 </button>
             </div>
             <div class="online onlineList cards" id="level5">
-                <div class="text">
+                <div class="text levelText">
                     <h2 class="level">5. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Hozam:</p>
+                        <p id="online5Income" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Eladási ár:</p>
+                        <p id="online5Sell" class="price"></p>
+                    </div>
                 </div>
                 <button class="infoBtn" (click)="level5Info()">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
