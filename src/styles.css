@@ -33,9 +33,9 @@ body {
     --bg-online: mediumturquoise;
     --bg-list-online: #48d1cd90;
     --bg-buy-btn: green;
-    --bg-buy-btn-hover: #00ff0088;
+    --bg-buy-btn-hover: #00ff00aa;
     --bg-sell-btn: red;
-    --bg-sell-btn-hover: #ff000088;
+    --bg-sell-btn-hover: #ff0000aa;
     --bg-debt-btn: violet;
     --bg-debt-btn-hover: #ee82ee88;
 }
@@ -67,9 +67,9 @@ body {
     --bg-online: darkcyan;
     --bg-list-online: #008b8b73;
     --bg-buy-btn: darkgreen;
-    --bg-buy-btn-hover: #00640088;
+    --bg-buy-btn-hover: #006400aa;
     --bg-sell-btn: darkred;
-    --bg-sell-btn-hover: #8b000088;
+    --bg-sell-btn-hover: #8b0000aa;
     --bg-debt-btn: purple;
     --bg-debt-btn-hover: #80008088;
 }

@@ -152,6 +152,7 @@ h2 {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     margin: 0px;
     padding: 0px;
     height: fit-content;
@@ -164,7 +165,7 @@ h2 {
 }
 
 .onlineText {
-    width: 15%;
+    width: 25%;
 }
 
 .price {
@@ -173,6 +174,61 @@ h2 {
 
 .levelDetail {
     width: 75%;
+}
+
+.buy {
+    display: flex;
+    background-color: var(--bg-buy-btn);
+    color: var(--form);
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+}
+
+.buy:hover {
+    background-color: var(--bg-buy-btn-hover);
+    cursor: pointer;
+}
+
+.sell {
+    display: flex;
+    background-color: var(--bg-sell-btn);
+    color: var(--form);
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+}
+
+.sell:hover {
+    background-color: var(--bg-sell-btn-hover);
+    cursor: pointer;
+}
+
+.btnIcon {
+    height: 25px;
+    margin-right: 10px;
+}
+
+.detailBtn {
+    justify-content: center;
+}
+
+.stockBuyBtn {
+    margin-right: 40px;
 }
 
 #navbar {
@@ -248,6 +304,10 @@ h2 {
     cursor: pointer;
 }
 
+#onlineBuyBtn {
+    margin: 0px;
+}
+
 @media (max-width: 1200px) {
     p {
         font-size: 12px;
@@ -292,6 +352,10 @@ h2 {
 
     .onlineText {
         width: 55%;
+    }
+
+    .stockBuyBtn {
+        margin-right: 0px;
     }
 
     #flatList {

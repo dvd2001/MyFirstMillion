@@ -18,6 +18,18 @@
                     <p class="title">Mennyiség:</p>
                     <p id="goldAmount" class="price"></p>
                 </div>
+                <div class="detail detailBtn">
+                    <button class="buy stockBuyBtn" (click)="goldBuy()">
+                        <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/buy.png':'assets/images/buyWhite.png'"
+                            alt="Buy" class="btnIcon">
+                        <p>Vétel</p>
+                    </button>
+                    <button class="sell" (click)="goldSell()">
+                        <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/sell.png':'assets/images/sellWhite.png'"
+                            alt="Sell" class="btnIcon">
+                        <p>Eladás</p>
+                    </button>
+                </div>
             </div>
             <button class="infoBtn" (click)="goldInfo()">
                 <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
@@ -36,6 +48,18 @@
                     <p class="title">Mennyiség:</p>
                     <p id="mineAmount" class="price"></p>
                 </div>
+                <div class="detail detailBtn">
+                    <button class="buy stockBuyBtn" (click)="mineBuy()">
+                        <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/buy.png':'assets/images/buyWhite.png'"
+                            alt="Buy" class="btnIcon">
+                        <p>Vétel</p>
+                    </button>
+                    <button class="sell" (click)="mineSell()">
+                        <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/sell.png':'assets/images/sellWhite.png'"
+                            alt="Sell" class="btnIcon">
+                        <p>Eladás</p>
+                    </button>
+                </div>
             </div>
             <button class="infoBtn" (click)="mineInfo()">
                 <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
@@ -53,6 +77,18 @@
                 <div class="detail">
                     <p class="title">Mennyiség:</p>
                     <p id="chocolateAmount" class="price"></p>
+                </div>
+                <div class="detail detailBtn">
+                    <button class="buy stockBuyBtn" (click)="chocolateBuy()">
+                        <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/buy.png':'assets/images/buyWhite.png'"
+                            alt="Buy" class="btnIcon">
+                        <p>Vétel</p>
+                    </button>
+                    <button class="sell" (click)="chocolateSell()">
+                        <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/sell.png':'assets/images/sellWhite.png'"
+                            alt="Sell" class="btnIcon">
+                        <p>Eladás</p>
+                    </button>
                 </div>
             </div>
             <button class="infoBtn" (click)="chocolateInfo()">
@@ -84,6 +120,13 @@
                         <p class="title">Bérleti díj:</p>
                         <p id="flatRent" class="price"></p>
                     </div>
+                    <div class="detail detailBtn">
+                        <button class="buy" (click)="flatBuy()">
+                            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/buy.png':'assets/images/buyWhite.png'"
+                                alt="Buy" class="btnIcon">
+                            <p>Vétel</p>
+                        </button>
+                    </div>
                 </div>
                 <button class="infoBtn" (click)="flatInfo()">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
@@ -109,6 +152,13 @@
                         <p class="title">Hozam:</p>
                         <p id="pansionIncome" class="price"></p>
                     </div>
+                    <div class="detail detailBtn">
+                        <button class="buy" (click)="pansionBuy()">
+                            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/buy.png':'assets/images/buyWhite.png'"
+                                alt="Buy" class="btnIcon">
+                            <p>Vétel</p>
+                        </button>
+                    </div>
                 </div>
                 <button class="infoBtn" (click)="pansionInfo()">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
@@ -131,6 +181,18 @@
                 <div class="detail">
                     <p class="title">Alapítási ár:</p>
                     <p id="onlinePrice" class="price"></p>
+                    <button *ngIf="!mobile" id="onlineBuyBtn" class="buy" (click)="onlineBuy()">
+                        <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/buy.png':'assets/images/buyWhite.png'"
+                            alt="Buy" class="btnIcon">
+                        <p>Alapítás</p>
+                    </button>
+                </div>
+                <div class="detail detailBtn">
+                    <button *ngIf="mobile" class="buy" (click)="onlineBuy()">
+                        <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/buy.png':'assets/images/buyWhite.png'"
+                            alt="Buy" class="btnIcon">
+                        <p>Alapítás</p>
+                    </button>
                 </div>
             </div>
             <button class="infoBtn" (click)="onlineInfo()">
@@ -150,6 +212,17 @@
                         <p class="title">Eladási ár:</p>
                         <p id="online1Sell" class="price"></p>
                     </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Mennyiség:</p>
+                        <p id="online1Amount" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail detailBtn">
+                        <button class="sell" (click)="online1Sell()">
+                            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/sell.png':'assets/images/sellWhite.png'"
+                                alt="Sell" class="btnIcon">
+                            <p>Eladás</p>
+                        </button>
+                    </div>
                 </div>
                 <button class="infoBtn" (click)="level1Info()">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
@@ -166,6 +239,17 @@
                     <div class="detail levelDetail">
                         <p class="title">Eladási ár:</p>
                         <p id="online2Sell" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Mennyiség:</p>
+                        <p id="online2Amount" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail detailBtn">
+                        <button class="sell" (click)="online2Sell()">
+                            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/sell.png':'assets/images/sellWhite.png'"
+                                alt="Sell" class="btnIcon">
+                            <p>Eladás</p>
+                        </button>
                     </div>
                 </div>
                 <button class="infoBtn" (click)="level2Info()">
@@ -184,6 +268,17 @@
                         <p class="title">Eladási ár:</p>
                         <p id="online3Sell" class="price"></p>
                     </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Mennyiség:</p>
+                        <p id="online3Amount" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail detailBtn">
+                        <button class="sell" (click)="online3Sell()">
+                            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/sell.png':'assets/images/sellWhite.png'"
+                                alt="Sell" class="btnIcon">
+                            <p>Eladás</p>
+                        </button>
+                    </div>
                 </div>
                 <button class="infoBtn" (click)="level3Info()">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
@@ -201,6 +296,17 @@
                         <p class="title">Eladási ár:</p>
                         <p id="online4Sell" class="price"></p>
                     </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Mennyiség:</p>
+                        <p id="online4Amount" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail detailBtn">
+                        <button class="sell" (click)="online4Sell()">
+                            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/sell.png':'assets/images/sellWhite.png'"
+                                alt="Sell" class="btnIcon">
+                            <p>Eladás</p>
+                        </button>
+                    </div>
                 </div>
                 <button class="infoBtn" (click)="level4Info()">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
@@ -217,6 +323,17 @@
                     <div class="detail levelDetail">
                         <p class="title">Eladási ár:</p>
                         <p id="online5Sell" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Mennyiség:</p>
+                        <p id="online5Amount" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail detailBtn">
+                        <button class="sell" (click)="online5Sell()">
+                            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/sell.png':'assets/images/sellWhite.png'"
+                                alt="Sell" class="btnIcon">
+                            <p>Eladás</p>
+                        </button>
                     </div>
                 </div>
                 <button class="infoBtn" (click)="level5Info()">
