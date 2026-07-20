@@ -233,7 +233,8 @@ h2 {
 }
 
 .income {
-    font-size: 28px;
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
 #navbar {
@@ -252,7 +253,7 @@ h2 {
 
 #cash {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     background-image: linear-gradient(to right, var(--bg-gradiant-primary), var(--bg-gradiant-secondary));
     position: sticky;
     bottom: 0;
@@ -346,7 +347,7 @@ h2 {
 #wallet {
     display: flex;
     justify-content: space-between;
-    width: 18%;
+    width: 20%;
     padding: 10px;
 }
 
@@ -429,6 +430,6 @@ h2 {
     }
 
     #wallet {
-        width: 70%;
+        width: 60%;
     }
 }
