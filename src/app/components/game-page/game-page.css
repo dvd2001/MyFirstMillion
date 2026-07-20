@@ -245,6 +245,22 @@ h2 {
     padding-bottom: 5px;
 }
 
+#roll {
+    background-color: var(--bg-sp-button);
+    color: var(--button);
+    font-size: 32px;
+    border: none;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 5px;
+}
+
+#roll:hover {
+    background-color: var(--bg-sp-button-hover);
+    cursor: pointer;
+}
+
 #gold {
     background-color: var(--bg-gold);
 }

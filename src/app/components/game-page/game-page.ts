@@ -4,6 +4,8 @@ import { DataReadingService } from '../../services/data-reading-service/data-rea
 import { Router } from '@angular/router';
 import { Field } from '../../models/Field';
 import { NgIf } from '@angular/common';
+import { isNull } from 'node:util';
+import { ParseError } from '@angular/compiler';
 
 @Component({
   selector: 'app-game-page',
@@ -15,6 +17,7 @@ export class GamePage implements OnInit {
   private fields: Field[] = [];
   private startField: number = 0;
   private maxOnline: number = 0;
+  private field: number = 0;
   public showLevel1 = false;
   public showLevel2 = false;
   public showLevel3 = false;
@@ -211,5 +214,18 @@ export class GamePage implements OnInit {
 
   online5Sell(): void {
 
+  }
+
+  roll(): void {
+    let next = prompt('Hanyas volt a dobás?');
+    try {
+      if (next !== null) {
+        let nextRoll: number = parseInt(next);
+        if (isNaN(nextRoll) || nextRoll < 1 || nextRoll > 6) throw ParseError;
+        this.field += nextRoll;
+      }
+    } catch (error) {
+      alert('Nincs ilyen szám a dobókockán, próbáld újra!');
+    }
   }
 }

@@ -11,7 +11,7 @@ body {
     --bg-gradiant-secondary: #004d66;
     --bg-sp-button: #0099cc;
     --button: black;
-    --bg-sp-button-hover: #0099cc88;
+    --bg-sp-button-hover: #0099ccaa;
     --bg-nav: #004d6633;
     --border-nav: #0000001f;
     --bg-form: #ccf2ffcc;
@@ -45,7 +45,7 @@ body {
     --bg-gradiant-secondary: black;
     --bg-sp-button: darkblue;
     --button: white;
-    --bg-sp-button-hover: #00008b88;
+    --bg-sp-button-hover: #00008baa;
     --bg-nav: #00000033;
     --border-nav: #0000001f;
     --bg-form: #191919aa;
