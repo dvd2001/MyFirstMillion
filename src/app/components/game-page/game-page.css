@@ -232,6 +232,10 @@ h2 {
     margin-right: 40px;
 }
 
+.income {
+    font-size: 28px;
+}
+
 #navbar {
     display: flex;
     justify-content: space-between;
@@ -346,10 +350,6 @@ h2 {
     padding: 10px;
 }
 
-.income {
-    font-size: 28px;
-}
-
 @media (max-width: 1200px) {
     p {
         font-size: 12px;
@@ -396,6 +396,10 @@ h2 {
         width: 55%;
     }
 
+    .income {
+        font-size: 20px;
+    }
+
     .stockBuyBtn {
         margin-right: 0px;
     }
@@ -412,5 +416,19 @@ h2 {
         font-size: 20px;
         padding: 0px;
         margin-left: -8px;
+    }
+
+    #roll {
+        font-size: 20px;
+        padding: 10px;
+        margin: 0px;
+    }
+
+    #cash {
+        justify-content: center;
+    }
+
+    #wallet {
+        width: 70%;
     }
 }
