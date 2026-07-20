@@ -15,9 +15,17 @@ import { ParseError } from '@angular/compiler';
 })
 export class GamePage implements OnInit {
   private fields: Field[] = [];
-  private startField: number = 0;
-  private maxOnline: number = 0;
   private field: number = 0;
+  private maxOnline: number = 0;
+  private cash: number = 1000000;
+  private gold: number = 0;
+  private mine: number = 0;
+  private chocolate: number = 0;
+  private online1: number = 0;
+  private online2: number = 0;
+  private online3: number = 0;
+  private online4: number = 0;
+  private online5: number = 0;
   public showLevel1 = false;
   public showLevel2 = false;
   public showLevel3 = false;
@@ -28,10 +36,10 @@ export class GamePage implements OnInit {
   public mobile = false;
   constructor(public themeService: ThemeService, private router: Router, private reader: DataReadingService) {
     if (typeof window !== 'undefined') {
-      const start = window.sessionStorage.getItem('startField');
+      const start = window.sessionStorage.getItem('field');
       const online = window.sessionStorage.getItem('maxOnline');
       if (start) {
-        this.startField = parseInt(start);
+        this.field = parseInt(start);
       }
       if (online) {
         this.maxOnline = parseInt(online);
@@ -44,7 +52,12 @@ export class GamePage implements OnInit {
       if (window.screen.width <= 1200) this.mobile = true;
     }
     this.fields = this.reader.readingFields();
+    this.update();
+  }
+
+  update(): void {
     if (typeof document !== 'undefined') {
+      const money = document.querySelector('#money') as HTMLElement;
       const goldPrice = document.querySelector('#goldPrice') as HTMLElement;
       const goldAmount = document.querySelector('#goldAmount') as HTMLElement;
       const minePrice = document.querySelector('#minePrice') as HTMLElement;
@@ -75,13 +88,14 @@ export class GamePage implements OnInit {
       const online5Income = document.querySelector('#online5Income') as HTMLElement;
       const online5Sell = document.querySelector('#online5Sell') as HTMLElement;
       const online5Amount = document.querySelector('#online5Amount') as HTMLElement;
-      const start = this.fields[this.startField];
+      const start = this.fields[this.field];
+      money.innerText = `$${this.cash.toLocaleString('hu-HU')}`;
       goldPrice.innerText = `$${(start.gold * 1000).toLocaleString('hu-HU')}`;
-      goldAmount.innerText = '0 db';
+      goldAmount.innerText = `${this.gold} db`;
       minePrice.innerText = `$${(start.mine * 1000).toLocaleString('hu-HU')}`;
-      mineAmount.innerText = '0 db';
+      mineAmount.innerText = `${this.mine} db`;
       chocolatePrice.innerText = `$${(start.chocolate * 1000).toLocaleString('hu-HU')}`;
-      chocolateAmount.innerText = '0 db';
+      chocolateAmount.innerText = `${this.chocolate} db`;
       flatPrice.innerText = `$${(start.flatBuy * 1000).toLocaleString('hu-HU')}`;
       flatDebt.innerText = `$${(start.flatDebt * 1000).toLocaleString('hu-HU')}`;
       flatSell.innerText = `$${(start.flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
@@ -93,25 +107,26 @@ export class GamePage implements OnInit {
       onlinePrice.innerText = `$${(start.onlineBuy * 1000).toLocaleString('hu-HU')}`;
       online1Income.innerText = `$${(start.onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
       online1Sell.innerText = `$${(start.onlineSell1 * 1000).toLocaleString('hu-HU')}`;
-      online1Amount.innerText = '0 db';
+      online1Amount.innerText = `${this.online1} db`;
       online2Income.innerText = `$${(start.onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
       online2Sell.innerText = `$${(start.onlineSell2 * 1000).toLocaleString('hu-HU')}`;
-      online2Amount.innerText = '0 db';
+      online2Amount.innerText = `${this.online2} db`;
       online3Income.innerText = `$${(start.onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
       online3Sell.innerText = `$${(start.onlineSell3 * 1000).toLocaleString('hu-HU')}`;
-      online3Amount.innerText = '0 db';
+      online3Amount.innerText = `${this.online3} db`;
       online4Income.innerText = `$${(start.onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
       online4Sell.innerText = `$${(start.onlineSell4 * 1000).toLocaleString('hu-HU')}`;
-      online4Amount.innerText = '0 db';
+      online4Amount.innerText = `${this.online4} db`;
       online5Income.innerText = `$${(start.onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
       online5Sell.innerText = `$${(start.onlineSell5 * 1000).toLocaleString('hu-HU')}`;
-      online5Amount.innerText = '0 db';
+      online5Amount.innerText = `${this.online5} db`;
     }
   }
+
   onBack(): void {
     this.router.navigate(['']);
     if (typeof window !== 'undefined') {
-      window.sessionStorage.removeItem('startField');
+      window.sessionStorage.removeItem('field');
       window.sessionStorage.removeItem('maxOnline');
     }
   }
@@ -121,11 +136,36 @@ export class GamePage implements OnInit {
   }
 
   goldBuy(): void {
-
+    let text = prompt('Hány uncia aranyat vásárolsz?');
+    try {
+      if (text !== null) {
+        let amount: number = parseInt(text);
+        if (isNaN(amount)) throw ParseError;
+        let cost: number = amount * this.fields[this.field].gold * 1000;
+        if (cost > this.cash) throw ParseError;
+        this.cash -= cost;
+        this.gold += amount;
+        this.update();
+      }
+    } catch (error) {
+      alert('Nem teljesíthető vásárlás!');
+    }
   }
 
   goldSell(): void {
-
+    let text = prompt('Hány uncia aranyat adsz el?');
+    try {
+      if (text !== null) {
+        let amount: number = parseInt(text);
+        if (isNaN(amount) || amount > this.gold) throw ParseError;
+        let income: number = amount * this.fields[this.field].gold * 1000;
+        this.cash += income;
+        this.gold -= amount;
+        this.update();
+      }
+    } catch (error) {
+      alert('Nem teljesíthető eladás!');
+    }
   }
 
   mineInfo(): void {
@@ -133,11 +173,36 @@ export class GamePage implements OnInit {
   }
 
   mineBuy(): void {
-
+    let text = prompt('Hány darab bánya részvényt vásárolsz?');
+    try {
+      if (text !== null) {
+        let amount: number = parseInt(text);
+        if (isNaN(amount)) throw ParseError;
+        let cost: number = amount * this.fields[this.field].mine * 1000;
+        if (cost > this.cash) throw ParseError;
+        this.cash -= cost;
+        this.mine += amount;
+        this.update();
+      }
+    } catch (error) {
+      alert('Nem teljesíthető vásárlás!');
+    }
   }
 
   mineSell(): void {
-
+    let text = prompt('Hány darab bánya részvényt adsz el?');
+    try {
+      if (text !== null) {
+        let amount: number = parseInt(text);
+        if (isNaN(amount) || amount > this.mine) throw ParseError;
+        let income: number = amount * this.fields[this.field].mine * 1000;
+        this.cash += income;
+        this.mine -= amount;
+        this.update();
+      }
+    } catch (error) {
+      alert('Nem teljesíthető eladás!');
+    }
   }
 
   chocolateInfo(): void {
@@ -145,11 +210,36 @@ export class GamePage implements OnInit {
   }
 
   chocolateBuy(): void {
-
+    let text = prompt('Hány darab csoki részvényt vásárolsz?');
+    try {
+      if (text !== null) {
+        let amount: number = parseInt(text);
+        if (isNaN(amount)) throw ParseError;
+        let cost: number = amount * this.fields[this.field].chocolate * 1000;
+        if (cost > this.cash) throw ParseError;
+        this.cash -= cost;
+        this.chocolate += amount;
+        this.update();
+      }
+    } catch (error) {
+      alert('Nem teljesíthető vásárlás!');
+    }
   }
 
   chocolateSell(): void {
-
+    let text = prompt('Hány darab csoki részvényt adsz el?');
+    try {
+      if (text !== null) {
+        let amount: number = parseInt(text);
+        if (isNaN(amount) || amount > this.chocolate) throw ParseError;
+        let income: number = amount * this.fields[this.field].chocolate * 1000;
+        this.cash += income;
+        this.chocolate -= amount;
+        this.update();
+      }
+    } catch (error) {
+      alert('Nem teljesíthető eladás!');
+    }
   }
 
   flatInfo(): void {
@@ -173,7 +263,21 @@ export class GamePage implements OnInit {
   }
 
   onlineBuy(): void {
-
+    let text = prompt('Hány darab online üzletet indítasz?');
+    try {
+      if (text !== null) {
+        let amount: number = parseInt(text);
+        let owned: number = this.online1 + this.online2 + this.online3 + this.online4 + this.online5;
+        if (isNaN(amount) || (amount + owned) > this.maxOnline) throw ParseError;
+        let cost: number = amount * this.fields[this.field].onlineBuy * 1000;
+        if (cost > this.cash) throw ParseError;
+        this.cash -= cost;
+        this.online1 += amount;
+        this.update();
+      }
+    } catch (error) {
+      alert('Nem teljesíthető vásárlás!');
+    }
   }
 
   level1Info(): void {
@@ -181,7 +285,19 @@ export class GamePage implements OnInit {
   }
 
   online1Sell(): void {
-
+    let text = prompt('Hány darab 1-es szintű üzletet adsz el?');
+    try {
+      if (text !== null) {
+        let amount: number = parseInt(text);
+        if (isNaN(amount) || amount > this.online1) throw ParseError;
+        let income: number = amount * this.fields[this.field].onlineSell1 * 1000;
+        this.cash += income;
+        this.online1 -= amount;
+        this.update();
+      }
+    } catch (error) {
+      alert('Nem teljesíthető eladás!');
+    }
   }
 
   level2Info(): void {
@@ -189,7 +305,19 @@ export class GamePage implements OnInit {
   }
 
   online2Sell(): void {
-
+    let text = prompt('Hány darab 2-es szintű üzletet adsz el?');
+    try {
+      if (text !== null) {
+        let amount: number = parseInt(text);
+        if (isNaN(amount) || amount > this.online2) throw ParseError;
+        let income: number = amount * this.fields[this.field].onlineSell2 * 1000;
+        this.cash += income;
+        this.online2 -= amount;
+        this.update();
+      }
+    } catch (error) {
+      alert('Nem teljesíthető eladás!');
+    }
   }
 
   level3Info(): void {
@@ -197,7 +325,19 @@ export class GamePage implements OnInit {
   }
 
   online3Sell(): void {
-
+    let text = prompt('Hány darab 3-as szintű üzletet adsz el?');
+    try {
+      if (text !== null) {
+        let amount: number = parseInt(text);
+        if (isNaN(amount) || amount > this.online3) throw ParseError;
+        let income: number = amount * this.fields[this.field].onlineSell3 * 1000;
+        this.cash += income;
+        this.online3 -= amount;
+        this.update();
+      }
+    } catch (error) {
+      alert('Nem teljesíthető eladás!');
+    }
   }
 
   level4Info(): void {
@@ -205,7 +345,19 @@ export class GamePage implements OnInit {
   }
 
   online4Sell(): void {
-
+    let text = prompt('Hány darab 4-es szintű üzletet adsz el?');
+    try {
+      if (text !== null) {
+        let amount: number = parseInt(text);
+        if (isNaN(amount) || amount > this.online4) throw ParseError;
+        let income: number = amount * this.fields[this.field].onlineSell4 * 1000;
+        this.cash += income;
+        this.online4 -= amount;
+        this.update();
+      }
+    } catch (error) {
+      alert('Nem teljesíthető eladás!');
+    }
   }
 
   level5Info(): void {
@@ -213,7 +365,19 @@ export class GamePage implements OnInit {
   }
 
   online5Sell(): void {
-
+    let text = prompt('Hány darab 5-ös szintű üzletet adsz el?');
+    try {
+      if (text !== null) {
+        let amount: number = parseInt(text);
+        if (isNaN(amount) || amount > this.online5) throw ParseError;
+        let income: number = amount * this.fields[this.field].onlineSell5 * 1000;
+        this.cash += income;
+        this.online5 -= amount;
+        this.update();
+      }
+    } catch (error) {
+      alert('Nem teljesíthető eladás!');
+    }
   }
 
   roll(): void {
