@@ -41,6 +41,7 @@ body {
     --bg-bank: lightgray;
     --bg-devisa: yellow;
     --bg-save-btn: #00eb00;
+    --bg-save-btn-hover: #00eb00aa;
 }
 
 [data-theme="dark"] {
@@ -78,4 +79,5 @@ body {
     --bg-bank: gray;
     --bg-devisa: orangered;
     --bg-save-btn: green;
+    --bg-save-btn-hover: #008000aa;
 }

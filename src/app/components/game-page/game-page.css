@@ -105,6 +105,11 @@ input[type=number] {
     margin-top: 10px;
 }
 
+.save:hover {
+    background-color: var(--bg-save-btn-hover);
+    cursor: pointer;
+}
+
 .level {
     margin: 0px;
 }
