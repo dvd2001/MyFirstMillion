@@ -33,8 +33,76 @@ h2 {
     height: fit-content;
     width: fit-content;
     margin: 0px;
+    margin-top: 10px;
     margin-bottom: 10px;
     font-size: 28px;
+}
+
+label {
+    color: var(--form);
+    text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.bank {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    border-color: var(--border-form);
+    border-radius: 20px;
+    margin: 10px;
+    padding: 12px;
+}
+
+.devisa {
+    background-color: var(--bg-devisa);
+}
+
+.bankLbl {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.bankInp {
+    background-color: var(--bg-input);
+    color: var(--form);
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-align: center;
+    width: 90%;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+}
+
+.save {
+    display: flex;
+    background-color: var(--bg-save-btn);
+    color: var(--form);
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
 }
 
 .level {
@@ -281,6 +349,10 @@ h2 {
     cursor: pointer;
 }
 
+#bankCard {
+    background-color: var(--bg-bank);
+}
+
 #gold {
     background-color: var(--bg-gold);
 }
@@ -358,6 +430,14 @@ h2 {
 
     h2 {
         font-size: 20px;
+    }
+
+    .bankLbl {
+        font-size: 16px;
+    }
+
+    .bankInp {
+        font-size: 18px;
     }
 
     .container {

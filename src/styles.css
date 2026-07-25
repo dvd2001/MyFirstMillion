@@ -38,6 +38,9 @@ body {
     --bg-sell-btn-hover: #ff0000aa;
     --bg-debt-btn: violet;
     --bg-debt-btn-hover: #ee82ee88;
+    --bg-bank: lightgray;
+    --bg-devisa: yellow;
+    --bg-save-btn: #00eb00;
 }
 
 [data-theme="dark"] {
@@ -72,4 +75,7 @@ body {
     --bg-sell-btn-hover: #8b0000aa;
     --bg-debt-btn: purple;
     --bg-debt-btn-hover: #80008088;
+    --bg-bank: gray;
+    --bg-devisa: orangered;
+    --bg-save-btn: green;
 }

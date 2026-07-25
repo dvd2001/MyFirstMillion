@@ -6,6 +6,7 @@ import { Field } from '../../models/Field';
 import { NgIf } from '@angular/common';
 import { isNull } from 'node:util';
 import { ParseError } from '@angular/compiler';
+import { channel } from 'node:diagnostics_channel';
 
 @Component({
   selector: 'app-game-page',
@@ -26,6 +27,10 @@ export class GamePage implements OnInit {
   private online3: number = 0;
   private online4: number = 0;
   private online5: number = 0;
+  private bank: number = 0;
+  private grp: number = 0;
+  private eur: number = 0;
+  private usd: number = 0;
   public showLevel1 = false;
   public showLevel2 = false;
   public showLevel3 = false;
@@ -390,6 +395,67 @@ export class GamePage implements OnInit {
       }
     } catch (error) {
       alert('Nincs ilyen szám a dobókockán, próbáld újra!');
+    }
+  }
+
+  bankSave(): void {
+    if (typeof document !== 'undefined') {
+      const bankInp = document.querySelector('#bankAmount') as HTMLInputElement;
+      let bank = parseInt(bankInp.value);
+      if (isNaN(bank)) bank = 0;
+      const differance = bank - this.bank;
+      if (differance <= this.cash) {
+        this.cash -= differance;
+        this.bank += differance;
+        this.update();
+        return;
+      }
+      alert('Nincs elég pénzed ehhez a tranzakcióhoz!');
+    }
+  }
+  grpSave(): void {
+    if (typeof document !== 'undefined') {
+      const grpInp = document.querySelector('#grpAmount') as HTMLInputElement;
+      let grp = parseInt(grpInp.value);
+      if (isNaN(grp)) grp = 0;
+      const differance = grp - this.grp;
+      if (differance <= this.cash) {
+        this.cash -= differance;
+        this.grp += differance;
+        this.update();
+        return;
+      }
+      alert('Nincs elég pénzed ehhez a tranzakcióhoz!');
+    }
+  }
+  eurSave(): void {
+    if (typeof document !== 'undefined') {
+      const eurInp = document.querySelector('#eurAmount') as HTMLInputElement;
+      let eur = parseInt(eurInp.value);
+      if (isNaN(eur)) eur = 0;
+      const differance = eur - this.eur;
+      if (differance <= this.cash) {
+        this.cash -= differance;
+        this.eur += differance;
+        this.update();
+        return;
+      }
+      alert('Nincs elég pénzed ehhez a tranzakcióhoz!');
+    }
+  }
+  usdSave(): void {
+    if (typeof document !== 'undefined') {
+      const usdInp = document.querySelector('#usdAmount') as HTMLInputElement;
+      let usd = parseInt(usdInp.value);
+      if (isNaN(usd)) usd = 0;
+      const differance = usd - this.usd;
+      if (differance <= this.cash) {
+        this.cash -= differance;
+        this.usd += differance;
+        this.update();
+        return;
+      }
+      alert('Nincs elég pénzed ehhez a tranzakcióhoz!');
     }
   }
 }
