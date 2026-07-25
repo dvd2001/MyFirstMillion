@@ -28,7 +28,7 @@ export class GamePage implements OnInit {
   private online4: number = 0;
   private online5: number = 0;
   private bank: number = 0;
-  private grp: number = 0;
+  private gbp: number = 0;
   private eur: number = 0;
   private usd: number = 0;
   public showLevel1 = false;
@@ -41,10 +41,10 @@ export class GamePage implements OnInit {
   public mobile = false;
   constructor(public themeService: ThemeService, private router: Router, private reader: DataReadingService) {
     if (typeof window !== 'undefined') {
-      const start = window.sessionStorage.getItem('field');
+      const field = window.sessionStorage.getItem('field');
       const online = window.sessionStorage.getItem('maxOnline');
-      if (start) {
-        this.field = parseInt(start);
+      if (field) {
+        this.field = parseInt(field);
       }
       if (online) {
         this.maxOnline = parseInt(online);
@@ -60,7 +60,7 @@ export class GamePage implements OnInit {
     this.update();
   }
 
-  update(): void {
+  update(isRoll: boolean = false): void {
     if (typeof document !== 'undefined') {
       const money = document.querySelector('#money') as HTMLElement;
       const goldPrice = document.querySelector('#goldPrice') as HTMLElement;
@@ -93,38 +93,52 @@ export class GamePage implements OnInit {
       const online5Income = document.querySelector('#online5Income') as HTMLElement;
       const online5Sell = document.querySelector('#online5Sell') as HTMLElement;
       const online5Amount = document.querySelector('#online5Amount') as HTMLElement;
-      const start = this.fields[this.field];
+      const bankAmount = document.querySelector('#bankAmount') as HTMLInputElement;
+      const gbpAmount = document.querySelector('#gbpAmount') as HTMLInputElement;
+      const eurAmount = document.querySelector('#eurAmount') as HTMLInputElement;
+      const usdAmount = document.querySelector('#usdAmount') as HTMLInputElement;
+      const field = this.fields[this.field];
       money.innerText = `$${this.cash.toLocaleString('hu-HU')}`;
-      goldPrice.innerText = `$${(start.gold * 1000).toLocaleString('hu-HU')}`;
+      goldPrice.innerText = `$${(field.gold * 1000).toLocaleString('hu-HU')}`;
       goldAmount.innerText = `${this.gold} db`;
-      minePrice.innerText = `$${(start.mine * 1000).toLocaleString('hu-HU')}`;
+      minePrice.innerText = `$${(field.mine * 1000).toLocaleString('hu-HU')}`;
       mineAmount.innerText = `${this.mine} db`;
-      chocolatePrice.innerText = `$${(start.chocolate * 1000).toLocaleString('hu-HU')}`;
+      chocolatePrice.innerText = `$${(field.chocolate * 1000).toLocaleString('hu-HU')}`;
       chocolateAmount.innerText = `${this.chocolate} db`;
-      flatPrice.innerText = `$${(start.flatBuy * 1000).toLocaleString('hu-HU')}`;
-      flatDebt.innerText = `$${(start.flatDebt * 1000).toLocaleString('hu-HU')}`;
-      flatSell.innerText = `$${(start.flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
-      flatRent.innerText = `$${(start.flatRent * 1000).toLocaleString('hu-HU')}`;
-      pansionPrice.innerText = `$${(start.pansionBuy * 1000).toLocaleString('hu-HU')}`;
-      pansionDebt.innerText = `$${(start.pansionDebt * 1000).toLocaleString('hu-HU')}`;
-      pansionSell.innerText = `$${(start.pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
-      pansionIncome.innerText = `$${(start.pansionIncome * 1000).toLocaleString('hu-HU')}`;
-      onlinePrice.innerText = `$${(start.onlineBuy * 1000).toLocaleString('hu-HU')}`;
-      online1Income.innerText = `$${(start.onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
-      online1Sell.innerText = `$${(start.onlineSell1 * 1000).toLocaleString('hu-HU')}`;
+      flatPrice.innerText = `$${(field.flatBuy * 1000).toLocaleString('hu-HU')}`;
+      flatDebt.innerText = `$${(field.flatDebt * 1000).toLocaleString('hu-HU')}`;
+      flatSell.innerText = `$${(field.flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+      flatRent.innerText = `$${(field.flatRent * 1000).toLocaleString('hu-HU')}`;
+      pansionPrice.innerText = `$${(field.pansionBuy * 1000).toLocaleString('hu-HU')}`;
+      pansionDebt.innerText = `$${(field.pansionDebt * 1000).toLocaleString('hu-HU')}`;
+      pansionSell.innerText = `$${(field.pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+      pansionIncome.innerText = `$${(field.pansionIncome * 1000).toLocaleString('hu-HU')}`;
+      onlinePrice.innerText = `$${(field.onlineBuy * 1000).toLocaleString('hu-HU')}`;
+      online1Income.innerText = `$${(field.onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
+      online1Sell.innerText = `$${(field.onlineSell1 * 1000).toLocaleString('hu-HU')}`;
       online1Amount.innerText = `${this.online1} db`;
-      online2Income.innerText = `$${(start.onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
-      online2Sell.innerText = `$${(start.onlineSell2 * 1000).toLocaleString('hu-HU')}`;
+      online2Income.innerText = `$${(field.onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
+      online2Sell.innerText = `$${(field.onlineSell2 * 1000).toLocaleString('hu-HU')}`;
       online2Amount.innerText = `${this.online2} db`;
-      online3Income.innerText = `$${(start.onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
-      online3Sell.innerText = `$${(start.onlineSell3 * 1000).toLocaleString('hu-HU')}`;
+      online3Income.innerText = `$${(field.onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
+      online3Sell.innerText = `$${(field.onlineSell3 * 1000).toLocaleString('hu-HU')}`;
       online3Amount.innerText = `${this.online3} db`;
-      online4Income.innerText = `$${(start.onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
-      online4Sell.innerText = `$${(start.onlineSell4 * 1000).toLocaleString('hu-HU')}`;
+      online4Income.innerText = `$${(field.onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
+      online4Sell.innerText = `$${(field.onlineSell4 * 1000).toLocaleString('hu-HU')}`;
       online4Amount.innerText = `${this.online4} db`;
-      online5Income.innerText = `$${(start.onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
-      online5Sell.innerText = `$${(start.onlineSell5 * 1000).toLocaleString('hu-HU')}`;
+      online5Income.innerText = `$${(field.onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
+      online5Sell.innerText = `$${(field.onlineSell5 * 1000).toLocaleString('hu-HU')}`;
       online5Amount.innerText = `${this.online5} db`;
+      if (isRoll) {
+        this.bank = 0;
+        this.gbp = 0;
+        this.eur = 0;
+        this.usd = 0;
+        bankAmount.value = '0';
+        gbpAmount.value = '0';
+        eurAmount.value = '0';
+        usdAmount.value = '0';
+      }
     }
   }
 
@@ -298,6 +312,7 @@ export class GamePage implements OnInit {
         let income: number = amount * this.fields[this.field].onlineSell1 * 1000;
         this.cash += income;
         this.online1 -= amount;
+
         this.update();
       }
     } catch (error) {
@@ -386,12 +401,17 @@ export class GamePage implements OnInit {
   }
 
   roll(): void {
-    let next = prompt('Hanyas volt a dobás?');
+    let next = prompt('Hány mezőt lépsz? (dobás értéke)');
     try {
       if (next !== null) {
         let nextRoll: number = parseInt(next);
         if (isNaN(nextRoll) || nextRoll < 1 || nextRoll > 6) throw ParseError;
         this.field += nextRoll;
+        if (this.gbp > 0) this.cash += this.devisaRoll(this.gbp, 'GBP/USD');
+        if (this.eur > 0) this.cash += this.devisaRoll(this.eur, 'EUR/USD');
+        if (this.usd > 0) this.cash += this.devisaRoll(this.usd, 'USD/JPY');
+        this.cash += Math.round(this.bank / 1000 * 1.04) * 1000;
+        this.update(true);
       }
     } catch (error) {
       alert('Nincs ilyen szám a dobókockán, próbáld újra!');
@@ -413,15 +433,15 @@ export class GamePage implements OnInit {
       alert('Nincs elég pénzed ehhez a tranzakcióhoz!');
     }
   }
-  grpSave(): void {
+  gbpSave(): void {
     if (typeof document !== 'undefined') {
-      const grpInp = document.querySelector('#grpAmount') as HTMLInputElement;
-      let grp = parseInt(grpInp.value);
-      if (isNaN(grp)) grp = 0;
-      const differance = grp - this.grp;
+      const gbpInp = document.querySelector('#gbpAmount') as HTMLInputElement;
+      let gbp = parseInt(gbpInp.value);
+      if (isNaN(gbp)) gbp = 0;
+      const differance = gbp - this.gbp;
       if (differance <= this.cash) {
         this.cash -= differance;
-        this.grp += differance;
+        this.gbp += differance;
         this.update();
         return;
       }
@@ -456,6 +476,18 @@ export class GamePage implements OnInit {
         return;
       }
       alert('Nincs elég pénzed ehhez a tranzakcióhoz!');
+    }
+  }
+  devisaRoll(dev: number, text: string): number {
+    let next = prompt(`Mennyi volt a deviza dobás értéke! (${text})`);
+    switch (next) {
+      case '1': return Math.round(dev / 1000 * 0.5) * 1000;
+      case '2': return Math.round(dev / 1000 * 0.8) * 1000;
+      case '3': return dev;
+      case '4': return Math.round(dev / 1000 * 1.5) * 1000;
+      case '5': return Math.round(dev / 1000 * 1.8) * 1000;
+      case '6': return Math.round(dev / 1000 * 2) * 1000;
+      default: return 0;
     }
   }
 }

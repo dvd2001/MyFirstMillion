@@ -17,11 +17,11 @@
                 <p>Mentés</p>
             </button>
         </div>
-        <div id="grp" class="devisa bank cards">
-            <h2>GRP/USD</h2>
-            <label class="bankLbl" for="grpAmount">Mennyi pénzt fektetsz be ebbe a deviza tőzsdébe?</label>
-            <input class="bankInp" type="number" id="grpAmount" min="0" [defaultValue]="0">
-            <button class="save" (click)="grpSave()">
+        <div id="gbp" class="devisa bank cards">
+            <h2>GBP/USD</h2>
+            <label class="bankLbl" for="gbpAmount">Mennyi pénzt fektetsz be ebbe a deviza tőzsdébe?</label>
+            <input class="bankInp" type="number" id="gbpAmount" min="0" [defaultValue]="0">
+            <button class="save" (click)="gbpSave()">
                 <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/save.png':'assets/images/saveWhite.png'"
                     alt="Save" class="btnIcon">
                 <p>Mentés</p>
