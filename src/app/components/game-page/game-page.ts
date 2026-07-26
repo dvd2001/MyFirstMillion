@@ -149,6 +149,10 @@ export class GamePage implements OnInit {
   }
 
   goldInfo(): void {
+    if (typeof document !== 'undefined') {
+      const body = document.querySelector('body') as HTMLElement;
+      body.style.overflow = 'hidden';
+    }
     console.log('Gold Info');
   }
 
