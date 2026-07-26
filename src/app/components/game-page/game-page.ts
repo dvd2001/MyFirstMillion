@@ -4,9 +4,7 @@ import { DataReadingService } from '../../services/data-reading-service/data-rea
 import { Router } from '@angular/router';
 import { Field } from '../../models/Field';
 import { NgIf } from '@angular/common';
-import { isNull } from 'node:util';
 import { ParseError } from '@angular/compiler';
-import { channel } from 'node:diagnostics_channel';
 
 @Component({
   selector: 'app-game-page',
