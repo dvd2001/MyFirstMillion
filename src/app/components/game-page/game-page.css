@@ -5,7 +5,7 @@ div {
 }
 
 section {
-    scroll-margin-top: 40px;
+    scroll-margin-top: 60px;
     scroll-margin-bottom: 40px;
     background-color: var(--bg-form);
     justify-items: center;
