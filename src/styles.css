@@ -42,6 +42,7 @@ body {
     --bg-devisa: #ffd181;
     --bg-save-btn: #00eb00;
     --bg-save-btn-hover: #00eb00aa;
+    --bg-modal: #00000066;
 }
 
 [data-theme="dark"] {
@@ -80,4 +81,5 @@ body {
     --bg-devisa: #9e7837;
     --bg-save-btn: green;
     --bg-save-btn-hover: #008000aa;
+    --bg-modal: #00000066;
 }

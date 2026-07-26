@@ -315,7 +315,7 @@ input::-webkit-inner-spin-button {
 .modal {
     display: flex;
     position: fixed;
-    background-color: #00000015;
+    background-color: var(--bg-modal);
     justify-content: center;
     align-items: center;
     top: 0;
@@ -323,8 +323,7 @@ input::-webkit-inner-spin-button {
     width: 98%;
     height: 100%;
     padding: 25px;
-    margin-top: 58px;
-    margin-bottom: 60px;
+    margin: 0px;
 }
 
 .modalContainer {
