@@ -66,10 +66,16 @@ input::-webkit-inner-spin-button {
     background-color: var(--bg-devisa);
 }
 
+.bankIcon {
+    height: 100px;
+    margin-top: 10px;
+}
+
 .bankLbl {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 20px;
+    width: 80%;
 }
 
 .bankInp {
@@ -78,7 +84,7 @@ input::-webkit-inner-spin-button {
     margin-bottom: 10px;
     font-size: 24px;
     text-align: center;
-    width: 90%;
+    width: 80%;
     border-radius: 20px;
     border: none;
     padding: 5px;
@@ -395,6 +401,14 @@ input::-webkit-inner-spin-button {
     margin-bottom: 0px;
 }
 
+#onlineTitle {
+    font-size: 26px;
+}
+
+#onlinePrice {
+    font-size: 24px;
+}
+
 #backBtn {
     background-color: transparent;
     color: var(--button);
@@ -491,6 +505,14 @@ input::-webkit-inner-spin-button {
 
     #pansionList {
         width: 96%;
+    }
+
+    #onlineTitle {
+        font-size: 14px;
+    }
+
+    #onlinePrice {
+        font-size: 12px;
     }
 
     #backBtn {

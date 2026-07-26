@@ -8,6 +8,7 @@
     </div>
     <div class="container">
         <div id="bankCard" class="bank cards">
+            <img class="bankIcon" src="assets/images/bank.png" alt="Bank">
             <h2>Bank</h2>
             <label class="bankLbl" for="bankAmount">Mennyi pénzt teszel a bankba? (fix 4% kamat)</label>
             <input id="bankAmount" class="bankInp" type="number" min="0" [defaultValue]="0">
@@ -18,6 +19,7 @@
             </button>
         </div>
         <div id="gbp" class="devisa bank cards">
+            <img src="assets/images/devisa.png" alt="Devisa" class="bankIcon">
             <h2>GBP/USD</h2>
             <label class="bankLbl" for="gbpAmount">Mennyi pénzt fektetsz be ebbe a deviza tőzsdébe?</label>
             <input class="bankInp" type="number" id="gbpAmount" min="0" [defaultValue]="0">
@@ -28,6 +30,7 @@
             </button>
         </div>
         <div id="eur" class=" devisa bank cards">
+            <img src="assets/images/devisa.png" alt="Devisa" class="bankIcon">
             <h2>EUR/USD</h2>
             <label class="bankLbl" for="eurAmount">Mennyi pénzt fektetsz be ebbe a deviza tőzsdébe?</label>
             <input class="bankInp" type="number" id="eurAmount" min="0" [defaultValue]="0">
@@ -38,6 +41,7 @@
             </button>
         </div>
         <div id="jpy" class="devisa bank cards">
+            <img src="assets/images/devisa.png" alt="Devisa" class="bankIcon">
             <h2>USD/JYP</h2>
             <label class="bankLbl" for="usdAmount">Mennyi pénzt fektetsz be ebbe a deviza tőzsdébe?</label>
             <input class="bankInp" type="number" id="usdAmount" min="0" [defaultValue]="0">
@@ -227,7 +231,7 @@
             <div class="text onlineText">
                 <h2>Alapítás</h2>
                 <div class="detail">
-                    <p class="title">Alapítási ár:</p>
+                    <p id="onlineTitle" class="title">Alapítási ár:</p>
                     <p id="onlinePrice" class="price"></p>
                     <button *ngIf="!mobile" id="onlineBuyBtn" class="buy" (click)="onlineBuy()">
                         <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/buy.png':'assets/images/buyWhite.png'"

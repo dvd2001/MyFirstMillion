@@ -39,7 +39,7 @@ body {
     --bg-debt-btn: violet;
     --bg-debt-btn-hover: #ee82ee88;
     --bg-bank: lightgray;
-    --bg-devisa: yellow;
+    --bg-devisa: #ffd181;
     --bg-save-btn: #00eb00;
     --bg-save-btn-hover: #00eb00aa;
 }
@@ -77,7 +77,7 @@ body {
     --bg-debt-btn: purple;
     --bg-debt-btn-hover: #80008088;
     --bg-bank: gray;
-    --bg-devisa: orangered;
+    --bg-devisa: #9e7837;
     --bg-save-btn: green;
     --bg-save-btn-hover: #008000aa;
 }
