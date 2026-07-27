@@ -39,6 +39,15 @@ h2 {
     font-size: 28px;
 }
 
+h3 {
+    color: var(--form);
+    font-size: 28px;
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    margin: 0px;
+}
+
 label {
     color: var(--form);
     text-align: center;
@@ -335,11 +344,13 @@ input::-webkit-inner-spin-button {
 .modalContainer {
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--bg-gold);
+    justify-content: center;
+    background-color: var(--bg-modal-container);
     border-radius: 20px;
+    border: solid 5px var(--bg-gold);
     width: 40%;
     height: fit-content;
-    padding: 10px;
+    padding: 0px;
     overflow: auto;
 }
 
@@ -347,11 +358,80 @@ input::-webkit-inner-spin-button {
     display: flex;
     justify-content: center;
     position: sticky;
+    background-color: var(--bg-gold);
     top: 0;
     width: 100%;
     margin: 0px;
     padding: 0px;
     overflow: hidden;
+}
+
+.modalDetail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 2px var(--form);
+}
+
+.modalDetailContainer {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.dice {
+    width: 15%;
+}
+
+.gold {
+    width: 25%;
+}
+
+.modalPrice {
+    width: 60%;
+}
+
+.modalIcon {
+    height: 50px;
+}
+
+.bgGold {
+    background-color: var(--bg-gold);
+}
+
+.bottomModalDetail {
+    border: none;
+}
+
+.modalGoldPrice {
+    width: 85%;
+}
+
+.close {
+    color: var(--form);
+    background-color: var(--bg-modal-container);
+    border: none;
+    border-radius: 20px;
+    font-size: 32px;
+    padding: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.close:hover {
+    background-color: var(--close-btn-hover);
+    cursor: pointer;
 }
 
 #navbar {
@@ -493,6 +573,10 @@ input::-webkit-inner-spin-button {
         font-size: 20px;
     }
 
+    h3 {
+        font-size: 20px;
+    }
+
     .bankLbl {
         font-size: 16px;
     }
@@ -558,6 +642,15 @@ input::-webkit-inner-spin-button {
 
     .modalContainer {
         width: 85%;
+    }
+
+    .modalIcon {
+        height: 30px;
+    }
+
+    .close {
+        font-size: 20px;
+        padding: 10px;
     }
 
     #flatList {

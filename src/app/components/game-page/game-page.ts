@@ -156,6 +156,15 @@ export class GamePage implements OnInit {
       online5Income.innerText = `$ ${(field.onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
       online5Sell.innerText = `$ ${(field.onlineSell5 * 1000).toLocaleString('hu-HU')}`;
       online5Amount.innerText = `${this.online5} db`;
+      /*if (!field.goal) {
+        console.log(modalGold1);
+        modalGold1.innerText = `$ ${(this.fields[this.field + 1].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold2.innerText = `$ ${(this.fields[this.field + 2].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold3.innerText = `$ ${(this.fields[this.field + 3].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold4.innerText = `$ ${(this.fields[this.field + 4].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold5.innerText = `$ ${(this.fields[this.field + 5].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold6.innerText = `$ ${(this.fields[this.field + 6].gold * 1000).toLocaleString('hu-HU')}`;
+      }*/
     }
   }
 
@@ -168,11 +177,31 @@ export class GamePage implements OnInit {
   }
 
   goldInfo(): void {
+    this.showGoldModal = true;
     if (typeof document !== 'undefined') {
       const body = document.querySelector('body') as HTMLElement;
       body.style.overflow = 'hidden';
+
+      setTimeout(() => {
+        const modalGold1 = document.querySelector('#modalGoldPrice1') as HTMLElement | null;
+        const modalGold2 = document.querySelector('#modalGoldPrice2') as HTMLElement | null;
+        const modalGold3 = document.querySelector('#modalGoldPrice3') as HTMLElement | null;
+        const modalGold4 = document.querySelector('#modalGoldPrice4') as HTMLElement | null;
+        const modalGold5 = document.querySelector('#modalGoldPrice5') as HTMLElement | null;
+        const modalGold6 = document.querySelector('#modalGoldPrice6') as HTMLElement | null;
+
+        if (!modalGold1 || !modalGold2 || !modalGold3 || !modalGold4 || !modalGold5 || !modalGold6) {
+          return;
+        }
+
+        modalGold1.innerText = `$ ${(this.fields[this.field + 1].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold2.innerText = `$ ${(this.fields[this.field + 2].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold3.innerText = `$ ${(this.fields[this.field + 3].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold4.innerText = `$ ${(this.fields[this.field + 4].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold5.innerText = `$ ${(this.fields[this.field + 5].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold6.innerText = `$ ${(this.fields[this.field + 6].gold * 1000).toLocaleString('hu-HU')}`;
+      }, 0);
     }
-    console.log('Gold Info');
   }
 
   goldBuy(): void {
@@ -510,5 +539,12 @@ export class GamePage implements OnInit {
       case '6': return Math.round(dev / 1000 * 2) * 1000;
       default: return 0;
     }
+  }
+  closeGoldModal(): void {
+    if (typeof document !== 'undefined') {
+      const body = document.querySelector('body') as HTMLElement;
+      body.style.overflow = 'auto';
+    }
+    this.showGoldModal = false;
   }
 }

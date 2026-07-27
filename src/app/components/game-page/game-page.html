@@ -412,5 +412,65 @@
         <div class="modalHeader">
             <h2>Arany piac alakulása</h2>
         </div>
+        <div class="modalDetail">
+            <div class="modalDetailContainer dice">
+                <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/dice.png':'assets/images/diceWhite.png'"
+                    alt="Dice" class="modalIcon">
+            </div>
+            <div class="modalDetailContainer modalPrice modalGoldPrice">
+                <h3>Vételár</h3>
+            </div>
+        </div>
+        <div class="modalDetail bgGold">
+            <div class="modalDetailContainer dice">
+                <h3>1</h3>
+            </div>
+            <div class="modalDetailContainer modalPrice modalGoldPrice">
+                <h3 id="modalGoldPrice1"></h3>
+            </div>
+        </div>
+        <div class="modalDetail">
+            <div class="modalDetailContainer dice">
+                <h3>2</h3>
+            </div>
+            <div class="modalDetailContainer modalPrice modalGoldPrice">
+                <h3 id="modalGoldPrice2"></h3>
+            </div>
+        </div>
+        <div class="modalDetail bgGold">
+            <div class="modalDetailContainer dice">
+                <h3>3</h3>
+            </div>
+            <div class="modalDetailContainer modalPrice modalGoldPrice">
+                <h3 id="modalGoldPrice3"></h3>
+            </div>
+        </div>
+        <div class="modalDetail">
+            <div class="modalDetailContainer dice">
+                <h3>4</h3>
+            </div>
+            <div class="modalDetailContainer modalPrice modalGoldPrice">
+                <h3 id="modalGoldPrice4"></h3>
+            </div>
+        </div>
+        <div class="modalDetail bgGold">
+            <div class="modalDetailContainer dice">
+                <h3>5</h3>
+            </div>
+            <div class="modalDetailContainer modalPrice modalGoldPrice">
+                <h3 id="modalGoldPrice5"></h3>
+            </div>
+        </div>
+        <div class="modalDetail bottomModalDetail">
+            <div class="modalDetailContainer dice">
+                <h3>6</h3>
+            </div>
+            <div class="modalDetailContainer modalPrice modalGoldPrice">
+                <h3 id="modalGoldPrice6"></h3>
+            </div>
+        </div>
+        <div class="modalHeader">
+            <button class="close" (click)="closeGoldModal()">Bezárás</button>
+        </div>
     </div>
 </div>
