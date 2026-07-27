@@ -183,12 +183,12 @@ export class GamePage implements OnInit {
       body.style.overflow = 'hidden';
 
       setTimeout(() => {
-        const modalGold1 = document.querySelector('#modalGoldPrice1') as HTMLElement | null;
-        const modalGold2 = document.querySelector('#modalGoldPrice2') as HTMLElement | null;
-        const modalGold3 = document.querySelector('#modalGoldPrice3') as HTMLElement | null;
-        const modalGold4 = document.querySelector('#modalGoldPrice4') as HTMLElement | null;
-        const modalGold5 = document.querySelector('#modalGoldPrice5') as HTMLElement | null;
-        const modalGold6 = document.querySelector('#modalGoldPrice6') as HTMLElement | null;
+        const modalGold1 = document.querySelector('#modalGoldPrice1') as HTMLElement;
+        const modalGold2 = document.querySelector('#modalGoldPrice2') as HTMLElement;
+        const modalGold3 = document.querySelector('#modalGoldPrice3') as HTMLElement;
+        const modalGold4 = document.querySelector('#modalGoldPrice4') as HTMLElement;
+        const modalGold5 = document.querySelector('#modalGoldPrice5') as HTMLElement;
+        const modalGold6 = document.querySelector('#modalGoldPrice6') as HTMLElement;
 
         if (!modalGold1 || !modalGold2 || !modalGold3 || !modalGold4 || !modalGold5 || !modalGold6) {
           return;
