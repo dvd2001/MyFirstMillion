@@ -121,10 +121,10 @@ export class GamePage implements OnInit {
       gbpAmount.value = this.gbp.toString();
       eurAmount.value = this.eur.toString();
       usdAmount.value = this.usd.toString();
-      bankMoney.innerText = `$ ${this.bank.toLocaleString()}`;
-      gbpMoney.innerText = `$ ${this.gbp.toLocaleString()}`;
-      eurMoney.innerText = `$ ${this.eur.toLocaleString()}`;
-      usdMoney.innerText = `$ ${this.usd.toLocaleString()}`;
+      bankMoney.innerText = `$ ${this.bank.toLocaleString('hu-HU')}`;
+      gbpMoney.innerText = `$ ${this.gbp.toLocaleString('hu-HU')}`;
+      eurMoney.innerText = `$ ${this.eur.toLocaleString('hu-HU')}`;
+      usdMoney.innerText = `$ ${this.usd.toLocaleString('hu-HU')}`;
       money.innerText = `$ ${this.cash.toLocaleString('hu-HU')}`;
       goldPrice.innerText = `$ ${(field.gold * 1000).toLocaleString('hu-HU')}`;
       goldAmount.innerText = `${this.gold} db`;
