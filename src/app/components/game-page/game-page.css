@@ -112,6 +112,12 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
+.money {
+    color: var(--money);
+    font-size: 30px;
+    font-weight: bold;
+}
+
 .level {
     margin: 0px;
 }
@@ -493,6 +499,10 @@ input::-webkit-inner-spin-button {
 
     .bankInp {
         font-size: 18px;
+    }
+
+    .money {
+        font-size: 22px;
     }
 
     .container {

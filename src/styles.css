@@ -43,6 +43,7 @@ body {
     --bg-save-btn: #00eb00;
     --bg-save-btn-hover: #00eb00aa;
     --bg-modal: #00000066;
+    --money: green;
 }
 
 [data-theme="dark"] {
@@ -82,4 +83,5 @@ body {
     --bg-save-btn: green;
     --bg-save-btn-hover: #008000aa;
     --bg-modal: #00000066;
+    --money: #00ff00;
 }

@@ -10,6 +10,7 @@
         <div id="bankCard" class="bank cards">
             <img class="bankIcon" src="assets/images/bank.png" alt="Bank">
             <h2>Bank</h2>
+            <p id="bankMoney" class="money"></p>
             <label class="bankLbl" for="bankAmount">Mennyi pénzt teszel a bankba? (fix 4% kamat)</label>
             <input id="bankAmount" class="bankInp" type="number" min="0" [defaultValue]="0">
             <button class="save" (click)="bankSave()">
@@ -21,6 +22,7 @@
         <div id="gbp" class="devisa bank cards">
             <img src="assets/images/devisa.png" alt="Devisa" class="bankIcon">
             <h2>GBP/USD</h2>
+            <p id="gbpMoney" class="money"></p>
             <label class="bankLbl" for="gbpAmount">Mennyi pénzt fektetsz be ebbe a deviza tőzsdébe?</label>
             <input class="bankInp" type="number" id="gbpAmount" min="0" [defaultValue]="0">
             <button class="save" (click)="gbpSave()">
@@ -32,6 +34,7 @@
         <div id="eur" class=" devisa bank cards">
             <img src="assets/images/devisa.png" alt="Devisa" class="bankIcon">
             <h2>EUR/USD</h2>
+            <p id="eurMoney" class="money"></p>
             <label class="bankLbl" for="eurAmount">Mennyi pénzt fektetsz be ebbe a deviza tőzsdébe?</label>
             <input class="bankInp" type="number" id="eurAmount" min="0" [defaultValue]="0">
             <button class="save" (click)="eurSave()">
@@ -43,6 +46,7 @@
         <div id="jpy" class="devisa bank cards">
             <img src="assets/images/devisa.png" alt="Devisa" class="bankIcon">
             <h2>USD/JYP</h2>
+            <p id="usdMoney" class="money"></p>
             <label class="bankLbl" for="usdAmount">Mennyi pénzt fektetsz be ebbe a deviza tőzsdébe?</label>
             <input class="bankInp" type="number" id="usdAmount" min="0" [defaultValue]="0">
             <button class="save" (click)="usdSave()">
@@ -402,7 +406,7 @@
         <p id="money" class="income"></p>
     </div>
 </div>
-<div id="goldModal" class="modal">
+<div *ngIf="showGoldModal" id="goldModal" class="modal">
     <div class="modalContainer">
         <div class="modalHeader">
             <h2>Arany piac alakulása</h2>
