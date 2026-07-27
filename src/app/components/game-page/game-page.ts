@@ -156,15 +156,6 @@ export class GamePage implements OnInit {
       online5Income.innerText = `$ ${(field.onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
       online5Sell.innerText = `$ ${(field.onlineSell5 * 1000).toLocaleString('hu-HU')}`;
       online5Amount.innerText = `${this.online5} db`;
-      /*if (!field.goal) {
-        console.log(modalGold1);
-        modalGold1.innerText = `$ ${(this.fields[this.field + 1].gold * 1000).toLocaleString('hu-HU')}`;
-        modalGold2.innerText = `$ ${(this.fields[this.field + 2].gold * 1000).toLocaleString('hu-HU')}`;
-        modalGold3.innerText = `$ ${(this.fields[this.field + 3].gold * 1000).toLocaleString('hu-HU')}`;
-        modalGold4.innerText = `$ ${(this.fields[this.field + 4].gold * 1000).toLocaleString('hu-HU')}`;
-        modalGold5.innerText = `$ ${(this.fields[this.field + 5].gold * 1000).toLocaleString('hu-HU')}`;
-        modalGold6.innerText = `$ ${(this.fields[this.field + 6].gold * 1000).toLocaleString('hu-HU')}`;
-      }*/
     }
   }
 
@@ -238,7 +229,43 @@ export class GamePage implements OnInit {
   }
 
   mineInfo(): void {
-    console.log('Mine Info');
+    this.showMineModal = true;
+    if (typeof document !== 'undefined') {
+      const body = document.querySelector('body') as HTMLElement;
+      body.style.overflow = 'hidden';
+
+      setTimeout(() => {
+        const modalMine1 = document.querySelector('#modalMinePrice1') as HTMLElement;
+        const modalMine2 = document.querySelector('#modalMinePrice2') as HTMLElement;
+        const modalMine3 = document.querySelector('#modalMinePrice3') as HTMLElement;
+        const modalMine4 = document.querySelector('#modalMinePrice4') as HTMLElement;
+        const modalMine5 = document.querySelector('#modalMinePrice5') as HTMLElement;
+        const modalMine6 = document.querySelector('#modalMinePrice6') as HTMLElement;
+        const mineToGold1 = document.querySelector('#mineToGold1') as HTMLElement;
+        const mineToGold2 = document.querySelector('#mineToGold2') as HTMLElement;
+        const mineToGold3 = document.querySelector('#mineToGold3') as HTMLElement;
+        const mineToGold4 = document.querySelector('#mineToGold4') as HTMLElement;
+        const mineToGold5 = document.querySelector('#mineToGold5') as HTMLElement;
+        const mineToGold6 = document.querySelector('#mineToGold6') as HTMLElement;
+
+        if (!modalMine1 || !modalMine2 || !modalMine3 || !modalMine4 || !modalMine5 || !modalMine6 || !mineToGold1 || !mineToGold2 || !mineToGold3 || !mineToGold4 || !mineToGold5 || !mineToGold6) {
+          return;
+        }
+
+        modalMine1.innerText = `$ ${(this.fields[this.field + 1].mine * 1000).toLocaleString('hu-HU')}`;
+        modalMine2.innerText = `$ ${(this.fields[this.field + 2].mine * 1000).toLocaleString('hu-HU')}`;
+        modalMine3.innerText = `$ ${(this.fields[this.field + 3].mine * 1000).toLocaleString('hu-HU')}`;
+        modalMine4.innerText = `$ ${(this.fields[this.field + 4].mine * 1000).toLocaleString('hu-HU')}`;
+        modalMine5.innerText = `$ ${(this.fields[this.field + 5].mine * 1000).toLocaleString('hu-HU')}`;
+        modalMine6.innerText = `$ ${(this.fields[this.field + 6].mine * 1000).toLocaleString('hu-HU')}`;
+        mineToGold3.innerText = `${(this.fields[this.field + 3].mine / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
+        mineToGold2.innerText = `${(this.fields[this.field + 2].mine / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
+        mineToGold1.innerText = `${(this.fields[this.field + 1].mine / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
+        mineToGold4.innerText = `${(this.fields[this.field + 4].mine / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
+        mineToGold5.innerText = `${(this.fields[this.field + 5].mine / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
+        mineToGold6.innerText = `${(this.fields[this.field + 6].mine / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
+      }, 0);
+    }
   }
 
   mineBuy(): void {
@@ -546,5 +573,12 @@ export class GamePage implements OnInit {
       body.style.overflow = 'auto';
     }
     this.showGoldModal = false;
+  }
+  closeMineModal(): void {
+    if (typeof document !== 'undefined') {
+      const body = document.querySelector('body') as HTMLElement;
+      body.style.overflow = 'auto';
+    }
+    this.showMineModal = false;
   }
 }

@@ -408,8 +408,8 @@
     </div>
 </div>
 <div *ngIf="showGoldModal" id="goldModal" class="modal">
-    <div class="modalContainer">
-        <div class="modalHeader">
+    <div class="modalContainer borderGold">
+        <div class="modalHeader bgGold">
             <h2>Arany piac alakulása</h2>
         </div>
         <div class="modalDetail">
@@ -469,8 +469,96 @@
                 <h3 id="modalGoldPrice6"></h3>
             </div>
         </div>
-        <div class="modalHeader">
+        <div class="modalHeader bgGold">
             <button class="close" (click)="closeGoldModal()">Bezárás</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="showMineModal" id="mineModal" class="modal">
+    <div class="modalContainer borderMine">
+        <div class="modalHeader bgMine">
+            <h2>Bánya piac alakulása</h2>
+        </div>
+        <div class="modalDetail">
+            <div class="modalDetailContainer dice">
+                <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/dice.png':'assets/images/diceWhite.png'"
+                    alt="Dice" class="modalIcon">
+            </div>
+            <div class="modalDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3>Vételár</h3>
+            </div>
+        </div>
+        <div class="modalDetail bgMine">
+            <div class="modalDetailContainer dice">
+                <h3>1</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="mineToGold1"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalMinePrice1"></h3>
+            </div>
+        </div>
+        <div class="modalDetail">
+            <div class="modalDetailContainer dice">
+                <h3>2</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="mineToGold2"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalMinePrice2"></h3>
+            </div>
+        </div>
+        <div class="modalDetail bgMine">
+            <div class="modalDetailContainer dice">
+                <h3>3</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="mineToGold3"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalMinePrice3"></h3>
+            </div>
+        </div>
+        <div class="modalDetail">
+            <div class="modalDetailContainer dice">
+                <h3>4</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="mineToGold4"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalMinePrice4"></h3>
+            </div>
+        </div>
+        <div class="modalDetail bgMine">
+            <div class="modalDetailContainer dice">
+                <h3>5</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="mineToGold5"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalMinePrice5"></h3>
+            </div>
+        </div>
+        <div class="modalDetail bottomModalDetail">
+            <div class="modalDetailContainer dice">
+                <h3>6</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="mineToGold6"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalMinePrice6"></h3>
+            </div>
+        </div>
+        <div class="modalHeader bgMine">
+            <button class="close" (click)="closeMineModal()">Bezárás</button>
         </div>
     </div>
 </div>

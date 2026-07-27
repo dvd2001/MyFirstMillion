@@ -347,7 +347,7 @@ input::-webkit-inner-spin-button {
     justify-content: center;
     background-color: var(--bg-modal-container);
     border-radius: 20px;
-    border: solid 5px var(--bg-gold);
+    border: solid 5px;
     width: 40%;
     height: fit-content;
     padding: 0px;
@@ -358,7 +358,6 @@ input::-webkit-inner-spin-button {
     display: flex;
     justify-content: center;
     position: sticky;
-    background-color: var(--bg-gold);
     top: 0;
     width: 100%;
     margin: 0px;
@@ -406,6 +405,18 @@ input::-webkit-inner-spin-button {
 
 .bgGold {
     background-color: var(--bg-gold);
+}
+
+.borderGold {
+    border-color: var(--bg-gold);
+}
+
+.bgMine {
+    background-color: var(--bg-mine);
+}
+
+.borderMine {
+    border-color: var(--bg-mine);
 }
 
 .bottomModalDetail {
