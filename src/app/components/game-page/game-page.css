@@ -419,6 +419,14 @@ input::-webkit-inner-spin-button {
     border-color: var(--bg-mine);
 }
 
+.bgChocolate {
+    background-color: var(--bg-chocolate);
+}
+
+.borderChocolate {
+    border-color: var(--bg-chocolate);
+}
+
 .bottomModalDetail {
     border: none;
 }

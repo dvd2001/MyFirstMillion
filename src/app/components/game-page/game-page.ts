@@ -248,7 +248,8 @@ export class GamePage implements OnInit {
         const mineToGold5 = document.querySelector('#mineToGold5') as HTMLElement;
         const mineToGold6 = document.querySelector('#mineToGold6') as HTMLElement;
 
-        if (!modalMine1 || !modalMine2 || !modalMine3 || !modalMine4 || !modalMine5 || !modalMine6 || !mineToGold1 || !mineToGold2 || !mineToGold3 || !mineToGold4 || !mineToGold5 || !mineToGold6) {
+        if (!modalMine1 || !modalMine2 || !modalMine3 || !modalMine4 || !modalMine5 || !modalMine6 || !mineToGold1 ||
+          !mineToGold2 || !mineToGold3 || !mineToGold4 || !mineToGold5 || !mineToGold6) {
           return;
         }
 
@@ -302,7 +303,45 @@ export class GamePage implements OnInit {
   }
 
   chocolateInfo(): void {
-    console.log('Chocolate Info');
+    this.showChocolateModal = true;
+    if (typeof document !== 'undefined') {
+      const body = document.querySelector('body') as HTMLElement;
+      body.style.overflow = 'hidden';
+
+      setTimeout(() => {
+        const modalChocolate1 = document.querySelector('#modalChocolatePrice1') as HTMLElement;
+        const modalChocolate2 = document.querySelector('#modalChocolatePrice2') as HTMLElement;
+        const modalChocolate3 = document.querySelector('#modalChocolatePrice3') as HTMLElement;
+        const modalChocolate4 = document.querySelector('#modalChocolatePrice4') as HTMLElement;
+        const modalChocolate5 = document.querySelector('#modalChocolatePrice5') as HTMLElement;
+        const modalChocolate6 = document.querySelector('#modalChocolatePrice6') as HTMLElement;
+        const chocolateToGold1 = document.querySelector('#chocolateToGold1') as HTMLElement;
+        const chocolateToGold2 = document.querySelector('#chocolateToGold2') as HTMLElement;
+        const chocolateToGold3 = document.querySelector('#chocolateToGold3') as HTMLElement;
+        const chocolateToGold4 = document.querySelector('#chocolateToGold4') as HTMLElement;
+        const chocolateToGold5 = document.querySelector('#chocolateToGold5') as HTMLElement;
+        const chocolateToGold6 = document.querySelector('#chocolateToGold6') as HTMLElement;
+
+        if (!modalChocolate1 || !modalChocolate2 || !modalChocolate3 || !modalChocolate4 || !modalChocolate5 ||
+          !modalChocolate6 || !chocolateToGold1 || !chocolateToGold2 || !chocolateToGold3 || !chocolateToGold4 ||
+          !chocolateToGold5 || !chocolateToGold6) {
+          return;
+        }
+
+        modalChocolate1.innerText = `$ ${(this.fields[this.field + 1].chocolate * 1000).toLocaleString('hu-HU')}`;
+        modalChocolate2.innerText = `$ ${(this.fields[this.field + 2].chocolate * 1000).toLocaleString('hu-HU')}`;
+        modalChocolate3.innerText = `$ ${(this.fields[this.field + 3].chocolate * 1000).toLocaleString('hu-HU')}`;
+        modalChocolate4.innerText = `$ ${(this.fields[this.field + 4].chocolate * 1000).toLocaleString('hu-HU')}`;
+        modalChocolate5.innerText = `$ ${(this.fields[this.field + 5].chocolate * 1000).toLocaleString('hu-HU')}`;
+        modalChocolate6.innerText = `$ ${(this.fields[this.field + 6].chocolate * 1000).toLocaleString('hu-HU')}`;
+        chocolateToGold3.innerText = `${(this.fields[this.field + 3].chocolate / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
+        chocolateToGold2.innerText = `${(this.fields[this.field + 2].chocolate / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
+        chocolateToGold1.innerText = `${(this.fields[this.field + 1].chocolate / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
+        chocolateToGold4.innerText = `${(this.fields[this.field + 4].chocolate / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
+        chocolateToGold5.innerText = `${(this.fields[this.field + 5].chocolate / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
+        chocolateToGold6.innerText = `${(this.fields[this.field + 6].chocolate / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
+      }, 0);
+    }
   }
 
   chocolateBuy(): void {
@@ -580,5 +619,12 @@ export class GamePage implements OnInit {
       body.style.overflow = 'auto';
     }
     this.showMineModal = false;
+  }
+  closeChocolateModal(): void {
+    if (typeof document !== 'undefined') {
+      const body = document.querySelector('body') as HTMLElement;
+      body.style.overflow = 'auto';
+    }
+    this.showChocolateModal = false;
   }
 }

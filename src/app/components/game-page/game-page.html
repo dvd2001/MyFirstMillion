@@ -562,3 +562,91 @@
         </div>
     </div>
 </div>
+<div *ngIf="showChocolateModal" id="mineModal" class="modal">
+    <div class="modalContainer borderChocolate">
+        <div class="modalHeader bgChocolate">
+            <h2>Csoki piac alakulása</h2>
+        </div>
+        <div class="modalDetail">
+            <div class="modalDetailContainer dice">
+                <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/dice.png':'assets/images/diceWhite.png'"
+                    alt="Dice" class="modalIcon">
+            </div>
+            <div class="modalDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3>Vételár</h3>
+            </div>
+        </div>
+        <div class="modalDetail bgChocolate">
+            <div class="modalDetailContainer dice">
+                <h3>1</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="chocolateToGold1"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalChocolatePrice1"></h3>
+            </div>
+        </div>
+        <div class="modalDetail">
+            <div class="modalDetailContainer dice">
+                <h3>2</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="chocolateToGold2"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalChocolatePrice2"></h3>
+            </div>
+        </div>
+        <div class="modalDetail bgChocolate">
+            <div class="modalDetailContainer dice">
+                <h3>3</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="chocolateToGold3"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalChocolatePrice3"></h3>
+            </div>
+        </div>
+        <div class="modalDetail">
+            <div class="modalDetailContainer dice">
+                <h3>4</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="chocolateToGold4"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalChocolatePrice4"></h3>
+            </div>
+        </div>
+        <div class="modalDetail bgChocolate">
+            <div class="modalDetailContainer dice">
+                <h3>5</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="chocolateToGold5"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalChocolatePrice5"></h3>
+            </div>
+        </div>
+        <div class="modalDetail bottomModalDetail">
+            <div class="modalDetailContainer dice">
+                <h3>6</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="chocolateToGold6"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalChocolatePrice6"></h3>
+            </div>
+        </div>
+        <div class="modalHeader bgChocolate">
+            <button class="close" (click)="closeChocolateModal()">Bezárás</button>
+        </div>
+    </div>
+</div>
