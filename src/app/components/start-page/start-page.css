@@ -215,6 +215,10 @@ select {
         padding-right: 15px;
     }
 
+    .navbar {
+        width: 98.5%;
+    }
+
     .onlineLabel {
         margin-right: 19px;
     }
