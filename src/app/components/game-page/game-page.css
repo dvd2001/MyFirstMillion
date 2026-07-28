@@ -1,63 +1,54 @@
 div {
     width: fit-content;
     height: fit-content;
-    padding: 5px;
+    padding: 5px
 }
 
 section {
-    scroll-margin-top: 60;
-    scroll-margin-bottom: 40;
+    scroll-margin-top: 60px;
+    scroll-margin-bottom: 40px;
     background-color: var(--bg-form);
     justify-items: center;
     padding: 0;
-    border-radius: 20;
-    margin: 15px;
-    margin-top: 35px;
-    border: none;
+    border-radius: 20px;
+    margin: 15px 15px 35px;
+    border: none
 }
 
 p {
     color: var(--form);
     font-size: 18px;
-    margin: 2px;
+    margin: 2px
 }
 
-h1 {
+h1,
+h2,
+h3 {
     color: var(--form);
     height: fit-content;
     width: fit-content;
-    text-align: center;
+    text-align: center
 }
 
 h2 {
-    color: var(--form);
-    height: fit-content;
-    width: fit-content;
-    text-align: center;
-    margin: 0;
-    margin-top: 10;
-    margin-bottom: 10;
-    font-size: 28px;
+    margin: 0 0 10px;
+    font-size: 28px
 }
 
 h3 {
-    color: var(--form);
-    font-size: 28px;
-    height: fit-content;
-    width: fit-content;
-    text-align: center;
     margin: 0;
+    font-size: 28px
 }
 
 label {
     color: var(--form);
-    text-align: center;
+    text-align: center
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
-    margin: 0;
+    margin: 0
 }
 
 .bank {
@@ -68,40 +59,41 @@ input::-webkit-inner-spin-button {
     align-items: center;
     width: 20%;
     border-color: var(--border-form);
-    border-radius: 20;
-    margin: 10;
-    padding: 12px;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 12px
 }
 
 .devisa {
-    background-color: var(--bg-devisa);
+    background-color: var(--bg-devisa)
 }
 
 .bankIcon {
-    height: 100;
-    margin-top: 10;
+    height: 100px;
+    margin-top: 10px
 }
 
 .bankLbl {
-    margin-top: 10;
-    margin-bottom: 10;
-    font-size: 20;
-    width: 80%;
+    margin: 10px 0;
+    font-size: 20px;
+    width: 80%
 }
 
 .bankInp {
     background-color: var(--bg-input);
     color: var(--form);
-    margin-bottom: 10;
+    margin-bottom: 10px;
     font-size: 24px;
     text-align: center;
     width: 80%;
-    border-radius: 20;
+    border-radius: 20px;
     border: none;
-    padding: 5px;
+    padding: 5px
 }
 
-.save {
+.save,
+.buy,
+.sell {
     display: flex;
     background-color: var(--bg-save-btn);
     color: var(--form);
@@ -110,26 +102,49 @@ input::-webkit-inner-spin-button {
     align-items: center;
     border: none;
     border-radius: 25px;
-    font-size: 20;
-    padding: 15px;
-    padding-left: 20;
-    padding-right: 20;
-    margin-top: 10;
+    font-size: 20px;
+    padding: 15px 20px;
+    margin-top: 10px
+}
+
+.save:hover,
+.buy:hover,
+.sell:hover,
+.infoBtn:hover,
+.close:hover,
+#roll:hover,
+#backBtn:hover {
+    cursor: pointer
 }
 
 .save:hover {
-    background-color: var(--bg-save-btn-hover);
-    cursor: pointer;
+    background-color: var(--bg-save-btn-hover)
+}
+
+.buy {
+    background-color: var(--bg-buy-btn)
+}
+
+.buy:hover {
+    background-color: var(--bg-buy-btn-hover)
+}
+
+.sell {
+    background-color: var(--bg-sell-btn)
+}
+
+.sell:hover {
+    background-color: var(--bg-sell-btn-hover)
 }
 
 .money {
     color: var(--money);
-    font-size: 30;
-    font-weight: bold;
+    font-size: 30px;
+    font-weight: 700
 }
 
 .level {
-    margin: 0;
+    margin: 0
 }
 
 .container {
@@ -139,51 +154,43 @@ input::-webkit-inner-spin-button {
     justify-content: space-evenly;
     justify-self: center;
     padding: 15px;
-    width: 98%;
+    width: 98%
 }
 
-.stock {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 30%;
-    border-color: var(--border-form);
-    border-radius: 20;
-    margin: 10;
-    padding: 12px;
-}
-
-.accomodation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    border-color: var(--border-form);
-    border-radius: 20;
-    margin: 10;
-    padding: 12px;
-}
-
+.stock,
+.accomodation,
 .online {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: var(--bg-online);
-    width: 100%;
     border-color: var(--border-form);
-    border-radius: 20;
-    margin-top: 10;
-    padding: 12px;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 12px
+}
+
+.stock {
+    width: 30%
+}
+
+.accomodation,
+.online {
+    width: 100%
+}
+
+.online {
+    background-color: var(--bg-online);
+    margin-top: 10px
 }
 
 .listContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center
 }
 
 .acList {
-    width: 47%;
+    width: 47%
 }
 
 .onlineList {
@@ -192,16 +199,16 @@ input::-webkit-inner-spin-button {
 
 .lists {
     flex-direction: column;
-    align-items: center;
+    align-items: center
 }
 
 .icon {
-    height: 100;
-    align-self: center;
+    height: 100px;
+    align-self: center
 }
 
 .info {
-    height: 35px;
+    height: 35px
 }
 
 .infoBtn {
@@ -211,14 +218,12 @@ input::-webkit-inner-spin-button {
     width: fit-content;
     height: fit-content;
     border: none;
-    border-radius: 30;
-    padding: 7px;
-    padding-bottom: 3px;
+    border-radius: 30px;
+    padding: 7px 7px 3px
 }
 
 .infoBtn:hover {
-    background-color: var(--bg-back-hover);
-    cursor: pointer;
+    background-color: var(--bg-back-hover)
 }
 
 .text {
@@ -230,13 +235,13 @@ input::-webkit-inner-spin-button {
     padding: 0;
     margin: 0;
     width: 55%;
-    height: fit-content;
+    height: fit-content
 }
 
 .levelText {
     width: 85%;
     align-items: center;
-    padding-left: 10;
+    padding-left: 10px
 }
 
 .detail {
@@ -248,84 +253,42 @@ input::-webkit-inner-spin-button {
     margin: 0;
     padding: 0;
     height: fit-content;
-    width: 100%;
+    width: 100%
 }
 
 .title {
-    font-weight: bold;
-    font-size: 20;
+    font-weight: 700;
+    font-size: 20px
 }
 
 .onlineText {
-    width: 27%;
+    width: 27%
 }
 
 .price {
-    margin-top: 4px;
+    margin-top: 4px
 }
 
 .levelDetail {
-    width: 75%;
-}
-
-.buy {
-    display: flex;
-    background-color: var(--bg-buy-btn);
-    color: var(--form);
-    width: fit-content;
-    height: fit-content;
-    align-items: center;
-    border: none;
-    border-radius: 25px;
-    font-size: 20;
-    padding: 15px;
-    padding-left: 20;
-    padding-right: 20;
-    margin-top: 10;
-}
-
-.buy:hover {
-    background-color: var(--bg-buy-btn-hover);
-    cursor: pointer;
-}
-
-.sell {
-    display: flex;
-    background-color: var(--bg-sell-btn);
-    color: var(--form);
-    width: fit-content;
-    height: fit-content;
-    align-items: center;
-    border: none;
-    border-radius: 25px;
-    font-size: 20;
-    padding: 15px;
-    padding-left: 20;
-    padding-right: 20;
-    margin-top: 10;
-}
-
-.sell:hover {
-    background-color: var(--bg-sell-btn-hover);
-    cursor: pointer;
+    width: 75%
 }
 
 .btnIcon {
     height: 25px;
-    margin-right: 10;
+    margin-right: 10px
 }
 
 .detailBtn {
-    justify-content: center;
+    justify-content: center
 }
 
 .stockBuyBtn {
-    margin-right: 40;
+    margin-right: 40px
 }
 
 .income {
     font-size: 32px;
-    margin-bottom: 10;
+    margin-bottom: 10px
 }
 
 .modal {
@@ -339,7 +302,7 @@ input::-webkit-inner-spin-button {
     width: 98%;
     height: 100%;
     padding: 25px;
-    margin: 0;
+    margin: 0
 }
 
 .modalContainer {
@@ -347,35 +310,32 @@ input::-webkit-inner-spin-button {
     flex-wrap: wrap;
     justify-content: center;
     background-color: var(--bg-modal-container);
-    border-radius: 20;
+    border-radius: 20px;
     border: solid 5px;
     width: 40%;
     height: fit-content;
     max-height: 80vh;
     padding: 0;
-    overflow: auto;
+    overflow: auto
 }
 
-.modalHeader {
-    display: flex;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
+.modalHeader,
 .modalFooter {
     display: flex;
     justify-content: center;
     position: sticky;
-    bottom: 0;
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: hidden
+}
+
+.modalHeader {
+    top: 0
+}
+
+.modalFooter {
+    bottom: 0
 }
 
 .modalDetail {
@@ -386,15 +346,13 @@ input::-webkit-inner-spin-button {
     width: 100%;
     height: fit-content;
     margin: 0;
-    padding: 0;
-    padding-top: 10;
-    padding-bottom: 10;
-    border-bottom: solid 2px var(--form);
+    padding: 0 0 10px;
+    border-bottom: solid 2px var(--form)
 }
 
 .modalMoreDetail {
     justify-content: center;
-    border: none;
+    border: none
 }
 
 .modalDetailContainer {
@@ -403,91 +361,83 @@ input::-webkit-inner-spin-button {
     justify-content: center;
     align-items: center;
     padding: 0;
-    margin: 0;
+    margin: 0
 }
 
 .modalMoreDetailContainer {
     justify-content: space-between;
-    padding-left: 10;
-    padding-right: 10;
+    padding: 0 10px
 }
 
 .dice {
-    width: 15%;
+    width: 15%
 }
 
 .gold {
-    width: 25%;
+    width: 25%
 }
 
-.modalPrice {
-    width: 60%;
-}
-
+.modalPrice,
 .modalMorePrice {
-    width: 60%;
+    width: 60%
 }
 
 .modalIcon {
-    height: 50;
+    height: 50px
 }
 
 .bgGold {
-    background-color: var(--bg-gold);
+    background-color: var(--bg-gold)
 }
 
 .borderGold {
-    border-color: var(--bg-gold);
+    border-color: var(--bg-gold)
 }
 
 .bgMine {
-    background-color: var(--bg-mine);
+    background-color: var(--bg-mine)
 }
 
 .borderMine {
-    border-color: var(--bg-mine);
+    border-color: var(--bg-mine)
 }
 
 .bgChocolate {
-    background-color: var(--bg-chocolate);
+    background-color: var(--bg-chocolate)
 }
 
 .borderChocolate {
-    border-color: var(--bg-chocolate);
+    border-color: var(--bg-chocolate)
 }
 
 .bgOnline {
-    background-color: var(--bg-online);
+    background-color: var(--bg-online)
 }
 
 .borderOnline {
-    border-color: var(--bg-online);
+    border-color: var(--bg-online)
 }
 
 .bottomModalDetail {
-    border: none;
+    border: none
 }
 
 .modalGoldPrice {
-    width: 85%;
+    width: 85%
 }
 
 .close {
     color: var(--form);
     background-color: var(--bg-modal-container);
     border: none;
-    border-radius: 20;
+    border-radius: 20px;
     font-size: 32px;
-    padding: 7px;
-    padding-left: 20;
-    padding-right: 20;
-    margin-top: 10;
-    margin-bottom: 5px;
+    padding: 7px 20px;
+    margin: 10px 0 5px
 }
 
 .close:hover {
-    background-color: var(--close-btn-hover);
-    cursor: pointer;
+    background-color: var(--close-btn-hover)
 }
 
 #navbar {
@@ -500,8 +450,7 @@ input::-webkit-inner-spin-button {
     align-self: left;
     margin: 0;
     width: 99.7%;
-    padding: 0;
-    padding-bottom: 5px;
+    padding: 0 0 5px
 }
 
 #cash {
@@ -514,8 +463,7 @@ input::-webkit-inner-spin-button {
     align-self: left;
     margin: 0;
     width: 99.7%;
-    padding: 0;
-    padding-top: 5px;
+    padding: 5px 0 0
 }
 
 #roll {
@@ -523,73 +471,70 @@ input::-webkit-inner-spin-button {
     color: var(--button);
     font-size: 32px;
     border: none;
-    border-radius: 20;
-    padding-left: 20;
-    padding-right: 20;
-    margin-top: 5px;
+    border-radius: 20px;
+    padding: 0 20px;
+    margin-top: 5px
 }
 
 #roll:hover {
-    background-color: var(--bg-sp-button-hover);
-    cursor: pointer;
+    background-color: var(--bg-sp-button-hover)
 }
 
 #bankCard {
-    background-color: var(--bg-bank);
+    background-color: var(--bg-bank)
 }
 
 #gold {
-    background-color: var(--bg-gold);
+    background-color: var(--bg-gold)
 }
 
 #mine {
-    background-color: var(--bg-mine);
+    background-color: var(--bg-mine)
 }
 
 #chocolate {
-    background-color: var(--bg-chocolate);
+    background-color: var(--bg-chocolate)
 }
 
 #flat {
-    background-color: var(--bg-flat);
+    background-color: var(--bg-flat)
 }
 
 #flatList {
     margin-top: -17px;
     background-color: var(--bg-list-flat);
     width: 99.5%;
-    border-radius: 20;
-    padding-top: 10;
+    border-radius: 20px;
+    padding-top: 10px
 }
 
 #pansion {
-    background-color: var(--bg-pansion);
+    background-color: var(--bg-pansion)
 }
 
 #pansionList {
     margin-top: -17px;
     background-color: var(--bg-list-pansion);
     width: 99.5%;
-    border-radius: 20;
-    padding-top: 10;
+    border-radius: 20px;
+    padding-top: 10px
 }
 
 #onlineBasicTitle {
-    margin-bottom: 20;
+    margin-bottom: 20px
 }
 
 #basicOnline {
     width: 98%;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0
 }
 
 #onlineTitle {
-    font-size: 26px;
+    font-size: 26px
 }
 
 #onlinePrice {
-    font-size: 24px;
+    font-size: 24px
 }
 
 #backBtn {
@@ -599,50 +544,49 @@ input::-webkit-inner-spin-button {
     width: fit-content;
     height: fit-content;
     border: none;
-    border-radius: 30;
+    border-radius: 30px;
     padding: 7px;
-    margin-top: 5px;
+    margin-top: 5px
 }
 
 #backBtn:hover {
-    background-color: var(--bg-back-hover);
-    cursor: pointer;
+    background-color: var(--bg-back-hover)
 }
 
 #onlineBuyBtn {
-    margin: 0;
+    margin: 0
 }
 
 #wallet {
     display: flex;
     justify-content: space-between;
     width: 20%;
-    padding: 10;
+    padding: 10px
 }
 
-@media (max-width: 1200) {
+@media (max-width:1200px) {
     p {
-        font-size: 12px;
+        font-size: 12px
     }
 
     h2 {
-        font-size: 20;
+        font-size: 20px
     }
 
     h3 {
-        font-size: 20;
+        font-size: 20px
     }
 
     .bankLbl {
-        font-size: 16px;
+        font-size: 16px
     }
 
     .bankInp {
-        font-size: 18px;
+        font-size: 18px
     }
 
     .money {
-        font-size: 22px;
+        font-size: 22px
     }
 
     .container {
@@ -652,109 +596,105 @@ input::-webkit-inner-spin-button {
         align-content: center;
         padding: 15px;
         width: 90%;
-        margin: 10;
+        margin: 10px
     }
 
     .cards {
         width: 98%;
         border-color: var(--border-form);
-        border-radius: 20;
-        margin: 10
+        border-radius: 20px;
+        margin: 10px
     }
 
     .mobileList {
-        width: 100%;
+        width: 100%
     }
 
     .icon {
-        height: 50;
+        height: 50px
     }
 
     .info {
-        height: 20;
+        height: 20px
     }
 
     .title {
-        font-size: 14px;
+        font-size: 14px
     }
 
     .onlineText {
-        width: 55%;
+        width: 55%
     }
 
     .income {
-        font-size: 20;
+        font-size: 20px
     }
 
     .stockBuyBtn {
-        margin-right: 0;
+        margin-right: 0
     }
 
     .modal {
         width: 100%;
         height: 100%;
-        padding: 0;
+        padding: 0
     }
 
     .modalContainer {
-        width: 85%;
+        width: 85%
     }
 
     .modalMoreDetailContainer {
-        padding-left: 5px;
-        padding-right: 5px;
+        padding: 0 5px
     }
 
     .modalMorePrice {
-        width: 67%;
+        width: 67%
     }
 
     .modalText {
-        font-size: 16px;
+        font-size: 16px
     }
 
     .modalIcon {
-        height: 30;
+        height: 30px
     }
 
     .close {
-        font-size: 20;
-        padding: 10;
+        font-size: 20px;
+        padding: 10px
     }
 
-    #flatList {
-        width: 96%;
-    }
-
+    #flatList,
     #pansionList {
-        width: 96%;
+        width: 96%
     }
 
     #onlineTitle {
-        font-size: 14px;
+        font-size: 14px
     }
 
     #onlinePrice {
-        font-size: 12px;
+        font-size: 12px
     }
 
     #backBtn {
-        font-size: 20;
+        font-size: 20px;
         padding: 0;
-        margin-left: -8px;
+        margin-left: -8px
     }
 
     #roll {
-        font-size: 20;
-        padding: 10;
-        margin: 0;
+        font-size: 20px;
+        padding: 10px;
+        margin: 0
     }
 
     #cash {
-        justify-content: center;
+        justify-content: center
     }
 
     #wallet {
-        width: 60%;
+        width: 60%
     }
 }
