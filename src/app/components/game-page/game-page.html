@@ -281,7 +281,7 @@
                         </button>
                     </div>
                 </div>
-                <button class="infoBtn" (click)="level1Info()">
+                <button class="infoBtn" (click)="levelInfo(1)">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
                         alt="Information" class="info">
                 </button>
@@ -309,7 +309,7 @@
                         </button>
                     </div>
                 </div>
-                <button class="infoBtn" (click)="level2Info()">
+                <button class="infoBtn" (click)="levelInfo(2)">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
                         alt="Information" class="info">
                 </button>
@@ -337,7 +337,7 @@
                         </button>
                     </div>
                 </div>
-                <button class="infoBtn" (click)="level3Info()">
+                <button class="infoBtn" (click)="levelInfo(3)">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
                         alt="Information" class="info">
                 </button>
@@ -365,7 +365,7 @@
                         </button>
                     </div>
                 </div>
-                <button class="infoBtn" (click)="level4Info()">
+                <button class="infoBtn" (click)="levelInfo(4)">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
                         alt="Information" class="info">
                 </button>
@@ -393,7 +393,7 @@
                         </button>
                     </div>
                 </div>
-                <button class="infoBtn" (click)="level5Info()">
+                <button class="infoBtn" (click)="levelInfo(5)">
                     <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/info.png' : 'assets/images/infoWhite.png'"
                         alt="Information" class="info">
                 </button>
@@ -469,7 +469,7 @@
                 <h3 id="modalGoldPrice6"></h3>
             </div>
         </div>
-        <div class="modalHeader bgGold">
+        <div class="modalFooter bgGold">
             <button class="close" (click)="closeGoldModal()">Bezárás</button>
         </div>
     </div>
@@ -557,7 +557,7 @@
                 <h3 id="modalMinePrice6"></h3>
             </div>
         </div>
-        <div class="modalHeader bgMine">
+        <div class="modalFooter bgMine">
             <button class="close" (click)="closeMineModal()">Bezárás</button>
         </div>
     </div>
@@ -645,8 +645,244 @@
                 <h3 id="modalChocolatePrice6"></h3>
             </div>
         </div>
-        <div class="modalHeader bgChocolate">
+        <div class="modalFooter bgChocolate">
             <button class="close" (click)="closeChocolateModal()">Bezárás</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="showOnlineBasicModal" id="onlineBasicModal" class="modal">
+    <div class="modalContainer borderOnline">
+        <div class="modalHeader bgOnline">
+            <h1>Online üzlet alapításának alakulása</h1>
+        </div>
+        <div class="modalDetail">
+            <div class="modalDetailContainer dice">
+                <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/dice.png':'assets/images/diceWhite.png'"
+                    alt="Dice" class="modalIcon">
+            </div>
+            <div class="modalDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3>Vételár</h3>
+            </div>
+        </div>
+        <div class="modalDetail bgOnline">
+            <div class="modalDetailContainer dice">
+                <h3>1</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="onlineBasicToGold1"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalOnlineBasicPrice1"></h3>
+            </div>
+        </div>
+        <div class="modalDetail">
+            <div class="modalDetailContainer dice">
+                <h3>2</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="onlineBasicToGold2"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalOnlineBasicPrice2"></h3>
+            </div>
+        </div>
+        <div class="modalDetail bgOnline">
+            <div class="modalDetailContainer dice">
+                <h3>3</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="onlineBasicToGold3"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalOnlineBasicPrice3"></h3>
+            </div>
+        </div>
+        <div class="modalDetail">
+            <div class="modalDetailContainer dice">
+                <h3>4</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="onlineBasicToGold4"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalOnlineBasicPrice4"></h3>
+            </div>
+        </div>
+        <div class="modalDetail bgOnline">
+            <div class="modalDetailContainer dice">
+                <h3>5</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="onlineBasicToGold5"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalOnlineBasicPrice5"></h3>
+            </div>
+        </div>
+        <div class="modalDetail bottomModalDetail">
+            <div class="modalDetailContainer dice">
+                <h3>6</h3>
+            </div>
+            <div class="modalDetailContainer gold">
+                <h3 id="onlineBasicToGold6"></h3>
+            </div>
+            <div class="modalDetailContainer modalPrice">
+                <h3 id="modalOnlineBasicPrice6"></h3>
+            </div>
+        </div>
+        <div class="modalFooter bgOnline">
+            <button class="close" (click)="closeOnlineBasicModal()">Bezárás</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="showOnlineModal" id="onlineBasicModal" class="modal">
+    <div class="modalContainer borderOnline">
+        <div class="modalHeader bgOnline">
+            <h1 id="modalLevelTitle"></h1>
+        </div>
+        <div class="modalDetail modalMoreDetail">
+            <div class="modalDetailContainer">
+                <h2>1-es dobás esetén</h2>
+            </div>
+        </div>
+        <div class="modalDetail bgOnline">
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalIncomeLevel1Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+                <h3 class="modalText">Hozam:</h3>
+                <h3 id="modalIncomeLevel1Price" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalSellLevel1Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+                <h3 class="modalText">Eladási ár:</h3>
+                <h3 id="modalSellLevel1Price" class="modalText"></h3>
+            </div>
+        </div>
+        <div class="modalDetail modalMoreDetail">
+            <div class="modalDetailContainer">
+                <h2>2-es dobás esetén</h2>
+            </div>
+        </div>
+        <div class="modalDetail bgOnline">
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalIncomeLevel2Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+                <h3 class="modalText">Hozam:</h3>
+                <h3 id="modalIncomeLevel2Price" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalSellLevel2Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+                <h3 class="modalText">Eladási ár:</h3>
+                <h3 id="modalSellLevel2Price" class="modalText"></h3>
+            </div>
+        </div>
+        <div class="modalDetail modalMoreDetail">
+            <div class="modalDetailContainer">
+                <h2>3-es dobás esetén</h2>
+            </div>
+        </div>
+        <div class="modalDetail bgOnline">
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalIncomeLevel3Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+                <h3 class="modalText">Hozam:</h3>
+                <h3 id="modalIncomeLevel3Price" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalSellLevel3Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+                <h3 class="modalText">Eladási ár:</h3>
+                <h3 id="modalSellLevel3Price" class="modalText"></h3>
+            </div>
+        </div>
+        <div class="modalDetail modalMoreDetail">
+            <div class="modalDetailContainer">
+                <h2>4-es dobás esetén</h2>
+            </div>
+        </div>
+        <div class="modalDetail bgOnline">
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalIncomeLevel4Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+                <h3 class="modalText">Hozam:</h3>
+                <h3 id="modalIncomeLevel4Price" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalSellLevel4Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+                <h3 class="modalText">Eladási ár:</h3>
+                <h3 id="modalSellLevel4Price" class="modalText"></h3>
+            </div>
+        </div>
+        <div class="modalDetail modalMoreDetail">
+            <div class="modalDetailContainer">
+                <h2>5-es dobás esetén</h2>
+            </div>
+        </div>
+        <div class="modalDetail bgOnline">
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalIncomeLevel5Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+                <h3 class="modalText">Hozam:</h3>
+                <h3 id="modalIncomeLevel5Price" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalSellLevel5Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+                <h3 class="modalText">Eladási ár:</h3>
+                <h3 id="modalSellLevel5Price" class="modalText"></h3>
+            </div>
+        </div>
+        <div class="modalDetail modalMoreDetail">
+            <div class="modalDetailContainer">
+                <h2>6-es dobás esetén</h2>
+            </div>
+        </div>
+        <div class="modalDetail bgOnline bottomModalDetail">
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalIncomeLevel6Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+                <h3 class="modalText">Hozam:</h3>
+                <h3 id="modalIncomeLevel6Price" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalSellLevel6Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+                <h3 class="modalText">Eladási ár:</h3>
+                <h3 id="modalSellLevel6Price" class="modalText"></h3>
+            </div>
+        </div>
+        <div class="modalFooter bgOnline">
+            <button class="close" (click)="closeLevelModal()">Bezárás</button>
         </div>
     </div>
 </div>
