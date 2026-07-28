@@ -144,7 +144,8 @@ input::-webkit-inner-spin-button {
 }
 
 .level {
-    margin: 0
+    margin: 0;
+    padding: 0
 }
 
 .container {
@@ -165,7 +166,7 @@ input::-webkit-inner-spin-button {
     justify-content: space-between;
     border-color: var(--border-form);
     border-radius: 20px;
-    margin: 10px;
+    margin: 0;
     padding: 12px
 }
 
@@ -180,7 +181,7 @@ input::-webkit-inner-spin-button {
 
 .online {
     background-color: var(--bg-online);
-    margin-top: 10px
+    margin-top: 10px;
 }
 
 .listContainer {
