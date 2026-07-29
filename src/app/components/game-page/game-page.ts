@@ -374,7 +374,107 @@ export class GamePage implements OnInit {
   }
 
   flatInfo(): void {
-    console.log('Flat Info');
+    this.showFlatModal = true;
+    if (typeof document !== 'undefined') {
+      const body = document.querySelector('body') as HTMLElement;
+      body.style.overflow = 'hidden';
+
+      setTimeout(() => {
+        const debt1 = document.querySelector('#modalDebtFlat1') as HTMLElement;
+        const buyGold1 = document.querySelector('#modalBuyFlat1Gold') as HTMLElement;
+        const buy1 = document.querySelector('#modalBuyFlat1Price') as HTMLElement;
+        const rentGold1 = document.querySelector('#modalRentFlat1Gold') as HTMLElement;
+        const rent1 = document.querySelector('#modalRentFlat1Price') as HTMLElement;
+        const sellGold1 = document.querySelector('#modalSellFlat1Gold') as HTMLElement;
+        const sell1 = document.querySelector('#modalSellFlat1Price') as HTMLElement;
+        const debt2 = document.querySelector('#modalDebtFlat2') as HTMLElement;
+        const buyGold2 = document.querySelector('#modalBuyFlat2Gold') as HTMLElement;
+        const buy2 = document.querySelector('#modalBuyFlat2Price') as HTMLElement;
+        const rentGold2 = document.querySelector('#modalRentFlat2Gold') as HTMLElement;
+        const rent2 = document.querySelector('#modalRentFlat2Price') as HTMLElement;
+        const sellGold2 = document.querySelector('#modalSellFlat2Gold') as HTMLElement;
+        const sell2 = document.querySelector('#modalSellFlat2Price') as HTMLElement;
+        const debt3 = document.querySelector('#modalDebtFlat3') as HTMLElement;
+        const buyGold3 = document.querySelector('#modalBuyFlat3Gold') as HTMLElement;
+        const buy3 = document.querySelector('#modalBuyFlat3Price') as HTMLElement;
+        const rentGold3 = document.querySelector('#modalRentFlat3Gold') as HTMLElement;
+        const rent3 = document.querySelector('#modalRentFlat3Price') as HTMLElement;
+        const sellGold3 = document.querySelector('#modalSellFlat3Gold') as HTMLElement;
+        const sell3 = document.querySelector('#modalSellFlat3Price') as HTMLElement;
+        const debt4 = document.querySelector('#modalDebtFlat4') as HTMLElement;
+        const buyGold4 = document.querySelector('#modalBuyFlat4Gold') as HTMLElement;
+        const buy4 = document.querySelector('#modalBuyFlat4Price') as HTMLElement;
+        const rentGold4 = document.querySelector('#modalRentFlat4Gold') as HTMLElement;
+        const rent4 = document.querySelector('#modalRentFlat4Price') as HTMLElement;
+        const sellGold4 = document.querySelector('#modalSellFlat4Gold') as HTMLElement;
+        const sell4 = document.querySelector('#modalSellFlat4Price') as HTMLElement;
+        const debt5 = document.querySelector('#modalDebtFlat5') as HTMLElement;
+        const buyGold5 = document.querySelector('#modalBuyFlat5Gold') as HTMLElement;
+        const buy5 = document.querySelector('#modalBuyFlat5Price') as HTMLElement;
+        const rentGold5 = document.querySelector('#modalRentFlat5Gold') as HTMLElement;
+        const rent5 = document.querySelector('#modalRentFlat5Price') as HTMLElement;
+        const sellGold5 = document.querySelector('#modalSellFlat5Gold') as HTMLElement;
+        const sell5 = document.querySelector('#modalSellFlat5Price') as HTMLElement;
+        const debt6 = document.querySelector('#modalDebtFlat6') as HTMLElement;
+        const buyGold6 = document.querySelector('#modalBuyFlat6Gold') as HTMLElement;
+        const buy6 = document.querySelector('#modalBuyFlat6Price') as HTMLElement;
+        const rentGold6 = document.querySelector('#modalRentFlat6Gold') as HTMLElement;
+        const rent6 = document.querySelector('#modalRentFlat6Price') as HTMLElement;
+        const sellGold6 = document.querySelector('#modalSellFlat6Gold') as HTMLElement;
+        const sell6 = document.querySelector('#modalSellFlat6Price') as HTMLElement;
+
+        if (!buy1 || !buy2 || !buy3 || !buy4 || !buy5 || !buy6 || !buyGold1 || !buyGold2 || !buyGold3 || !buyGold4
+          || !buyGold5 || !buyGold6 || !rent1 || !rent2 || !rent3 || !rent4 || !rent5 || !rent6
+          || !rentGold1 || !rentGold2 || !rentGold3 || !rentGold4 || !rentGold5 || !rentGold6 || !sell1 || !sell2
+          || !sell3 || !sell4 || !sell5 || !sell6 || !sellGold1 || !sellGold2 || !sellGold3 || !sellGold4
+          || !sellGold5 || !sellGold6 || !debt1 || !debt2 || !debt3 || !debt4 || !debt5 || !debt6) {
+          return;
+        }
+
+        debt1.innerText = `$ ${(this.fields[this.field + 1].flatDebt * 1000).toLocaleString('hu-HU')}`;
+        debt2.innerText = `$ ${(this.fields[this.field + 2].flatDebt * 1000).toLocaleString('hu-HU')}`;
+        debt3.innerText = `$ ${(this.fields[this.field + 3].flatDebt * 1000).toLocaleString('hu-HU')}`;
+        debt4.innerText = `$ ${(this.fields[this.field + 4].flatDebt * 1000).toLocaleString('hu-HU')}`;
+        debt5.innerText = `$ ${(this.fields[this.field + 5].flatDebt * 1000).toLocaleString('hu-HU')}`;
+        debt6.innerText = `$ ${(this.fields[this.field + 6].flatDebt * 1000).toLocaleString('hu-HU')}`;
+        buy1.innerText = `$ ${(this.fields[this.field + 1].flatBuy * 1000).toLocaleString('hu-HU')}`;
+        buy2.innerText = `$ ${(this.fields[this.field + 2].flatBuy * 1000).toLocaleString('hu-HU')}`;
+        buy3.innerText = `$ ${(this.fields[this.field + 3].flatBuy * 1000).toLocaleString('hu-HU')}`;
+        buy4.innerText = `$ ${(this.fields[this.field + 4].flatBuy * 1000).toLocaleString('hu-HU')}`;
+        buy5.innerText = `$ ${(this.fields[this.field + 5].flatBuy * 1000).toLocaleString('hu-HU')}`;
+        buy6.innerText = `$ ${(this.fields[this.field + 6].flatBuy * 1000).toLocaleString('hu-HU')}`;
+        buyGold1.innerText = `${(this.fields[this.field + 1].flatBuy / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
+        buyGold2.innerText = `${(this.fields[this.field + 2].flatBuy / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
+        buyGold3.innerText = `${(this.fields[this.field + 3].flatBuy / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
+        buyGold4.innerText = `${(this.fields[this.field + 4].flatBuy / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
+        buyGold5.innerText = `${(this.fields[this.field + 5].flatBuy / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
+        buyGold6.innerText = `${(this.fields[this.field + 6].flatBuy / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
+        rent1.innerText = `$ ${(this.fields[this.field + 1].flatRent * 1000).toLocaleString('hu-HU')}`;
+        rent2.innerText = `$ ${(this.fields[this.field + 2].flatRent * 1000).toLocaleString('hu-HU')}`;
+        rent3.innerText = `$ ${(this.fields[this.field + 3].flatRent * 1000).toLocaleString('hu-HU')}`;
+        rent4.innerText = `$ ${(this.fields[this.field + 4].flatRent * 1000).toLocaleString('hu-HU')}`;
+        rent5.innerText = `$ ${(this.fields[this.field + 5].flatRent * 1000).toLocaleString('hu-HU')}`;
+        rent6.innerText = `$ ${(this.fields[this.field + 6].flatRent * 1000).toLocaleString('hu-HU')}`;
+        rentGold1.innerText = `${(this.fields[this.field + 1].flatRent / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
+        rentGold2.innerText = `${(this.fields[this.field + 2].flatRent / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
+        rentGold3.innerText = `${(this.fields[this.field + 3].flatRent / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
+        rentGold4.innerText = `${(this.fields[this.field + 4].flatRent / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
+        rentGold5.innerText = `${(this.fields[this.field + 5].flatRent / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
+        rentGold6.innerText = `${(this.fields[this.field + 6].flatRent / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
+        sell1.innerText = `$ ${(this.fields[this.field + 1].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell2.innerText = `$ ${(this.fields[this.field + 2].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell3.innerText = `$ ${(this.fields[this.field + 3].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell4.innerText = `$ ${(this.fields[this.field + 4].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell5.innerText = `$ ${(this.fields[this.field + 5].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell6.innerText = `$ ${(this.fields[this.field + 6].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sellGold1.innerText = `${(this.fields[this.field + 1].flatBuy * 0.95 / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
+        sellGold2.innerText = `${(this.fields[this.field + 2].flatBuy * 0.95 / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
+        sellGold3.innerText = `${(this.fields[this.field + 3].flatBuy * 0.95 / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
+        sellGold4.innerText = `${(this.fields[this.field + 4].flatBuy * 0.95 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
+        sellGold5.innerText = `${(this.fields[this.field + 5].flatBuy * 0.95 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
+        sellGold6.innerText = `${(this.fields[this.field + 6].flatBuy * 0.95 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
+      }, 0);
+    }
   }
 
   flatBuy(): void {
@@ -833,5 +933,12 @@ export class GamePage implements OnInit {
       body.style.overflow = 'auto';
     }
     this.showOnlineModal = false;
+  }
+  closeFlatModal(): void {
+    if (typeof document !== 'undefined') {
+      const body = document.querySelector('body') as HTMLElement;
+      body.style.overflow = 'auto';
+    }
+    this.showFlatModal = false;
   }
 }

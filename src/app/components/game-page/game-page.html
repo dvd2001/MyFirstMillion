@@ -738,7 +738,7 @@
         </div>
     </div>
 </div>
-<div *ngIf="showOnlineModal" id="onlineBasicModal" class="modal">
+<div *ngIf="showOnlineModal" id="onlineModal" class="modal">
     <div class="modalContainer borderOnline">
         <div class="modalHeader bgOnline">
             <h1 id="modalLevelTitle"></h1>
@@ -753,7 +753,7 @@
                 <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
                 <h3 id="modalIncomeLevel1Gold" class="modalText"></h3>
             </div>
-            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
                 <h3 class="modalText">Hozam:</h3>
                 <h3 id="modalIncomeLevel1Price" class="modalText"></h3>
             </div>
@@ -761,7 +761,7 @@
                 <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
                 <h3 id="modalSellLevel1Gold" class="modalText"></h3>
             </div>
-            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
                 <h3 class="modalText">Eladási ár:</h3>
                 <h3 id="modalSellLevel1Price" class="modalText"></h3>
             </div>
@@ -776,7 +776,7 @@
                 <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
                 <h3 id="modalIncomeLevel2Gold" class="modalText"></h3>
             </div>
-            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
                 <h3 class="modalText">Hozam:</h3>
                 <h3 id="modalIncomeLevel2Price" class="modalText"></h3>
             </div>
@@ -784,7 +784,7 @@
                 <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
                 <h3 id="modalSellLevel2Gold" class="modalText"></h3>
             </div>
-            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
                 <h3 class="modalText">Eladási ár:</h3>
                 <h3 id="modalSellLevel2Price" class="modalText"></h3>
             </div>
@@ -799,7 +799,7 @@
                 <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
                 <h3 id="modalIncomeLevel3Gold" class="modalText"></h3>
             </div>
-            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
                 <h3 class="modalText">Hozam:</h3>
                 <h3 id="modalIncomeLevel3Price" class="modalText"></h3>
             </div>
@@ -807,7 +807,7 @@
                 <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
                 <h3 id="modalSellLevel3Gold" class="modalText"></h3>
             </div>
-            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
                 <h3 class="modalText">Eladási ár:</h3>
                 <h3 id="modalSellLevel3Price" class="modalText"></h3>
             </div>
@@ -822,7 +822,7 @@
                 <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
                 <h3 id="modalIncomeLevel4Gold" class="modalText"></h3>
             </div>
-            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
                 <h3 class="modalText">Hozam:</h3>
                 <h3 id="modalIncomeLevel4Price" class="modalText"></h3>
             </div>
@@ -830,7 +830,7 @@
                 <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
                 <h3 id="modalSellLevel4Gold" class="modalText"></h3>
             </div>
-            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
                 <h3 class="modalText">Eladási ár:</h3>
                 <h3 id="modalSellLevel4Price" class="modalText"></h3>
             </div>
@@ -845,7 +845,7 @@
                 <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
                 <h3 id="modalIncomeLevel5Gold" class="modalText"></h3>
             </div>
-            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
                 <h3 class="modalText">Hozam:</h3>
                 <h3 id="modalIncomeLevel5Price" class="modalText"></h3>
             </div>
@@ -853,7 +853,7 @@
                 <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
                 <h3 id="modalSellLevel5Gold" class="modalText"></h3>
             </div>
-            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
                 <h3 class="modalText">Eladási ár:</h3>
                 <h3 id="modalSellLevel5Price" class="modalText"></h3>
             </div>
@@ -868,7 +868,7 @@
                 <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
                 <h3 id="modalIncomeLevel6Gold" class="modalText"></h3>
             </div>
-            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
                 <h3 class="modalText">Hozam:</h3>
                 <h3 id="modalIncomeLevel6Price" class="modalText"></h3>
             </div>
@@ -876,7 +876,7 @@
                 <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
                 <h3 id="modalSellLevel6Gold" class="modalText"></h3>
             </div>
-            <div class="modalDetailContainer modalMoreDetailContainer modalMorePrice">
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
                 <h3 class="modalText">Eladási ár:</h3>
                 <h3 id="modalSellLevel6Price" class="modalText"></h3>
             </div>
@@ -885,4 +885,224 @@
             <button class="close" (click)="closeLevelModal()">Bezárás</button>
         </div>
     </div>
+</div>
+<div *ngIf="showFlatModal" id="flatModal" class="modal">
+    <div class="modalContainer borderFlat">
+        <div class="modalHeader bgFlat">
+            <h1>Bérlakás piac alakulása</h1>
+        </div>
+        <div class="modalDetail modalMoreDetail">
+            <div class="modalDetailContainer">
+                <h2>1-es dobás esetén</h2>
+            </div>
+        </div>
+        <div class="modalDetail bgFlat">
+            <div class="modalDetailContainer maxDebt">
+                <h3 class="modalText">Max Hitel:</h3>
+                <h3 id="modalDebtFlat1" class="modalText leftMargin"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalBuyFlat1Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+                <h3 class="modalText">Vételár:</h3>
+                <h3 id="modalBuyFlat1Price" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalRentFlat1Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+                <h3 class="modalText">Bérleti díj:</h3>
+                <h3 id="modalRentFlat1Price" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalSellFlat1Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+                <h3 class="modalText">Eladási ár:</h3>
+                <h3 id="modalSellFlat1Price" class="modalText"></h3>
+            </div>
+        </div>
+        <div class="modalDetail modalMoreDetail">
+            <div class="modalDetailContainer">
+                <h2>2-es dobás esetén</h2>
+            </div>
+        </div>
+        <div class="modalDetail bgFlat">
+            <div class="modalDetailContainer maxDebt">
+                <h3 class="modalText">Max Hitel:</h3>
+                <h3 id="modalDebtFlat2" class="modalText leftMargin"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalBuyFlat2Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+                <h3 class="modalText">Vételár:</h3>
+                <h3 id="modalBuyFlat2Price" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalRentFlat2Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+                <h3 class="modalText">Bérleti díj:</h3>
+                <h3 id="modalRentFlat2Price" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalSellFlat2Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+                <h3 class="modalText">Eladási ár:</h3>
+                <h3 id="modalSellFlat2Price" class="modalText"></h3>
+            </div>
+        </div>
+        <div class="modalDetail modalMoreDetail">
+            <div class="modalDetailContainer">
+                <h2>3-es dobás esetén</h2>
+            </div>
+        </div>
+        <div class="modalDetail bgFlat">
+            <div class="modalDetailContainer maxDebt">
+                <h3 class="modalText">Max Hitel:</h3>
+                <h3 id="modalDebtFlat3" class="modalText leftMargin"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalBuyFlat3Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+                <h3 class="modalText">Vételár:</h3>
+                <h3 id="modalBuyFlat3Price" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalRentFlat3Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+                <h3 class="modalText">Bérleti díj:</h3>
+                <h3 id="modalRentFlat3Price" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer gold">
+                <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+                <h3 id="modalSellFlat3Gold" class="modalText"></h3>
+            </div>
+            <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+                <h3 class="modalText">Eladási ár:</h3>
+                <h3 id="modalSellFlat3Price" class="modalText"></h3>
+            </div>
+        </div>
+        <div class="modalDetail modalMoreDetail">
+            <div class="modalDetailContainer">
+                <h2>4-es dobás esetén</h2>
+            </div>
+        </div>
+        <div class="modalDetail bgFlat">
+            <<div class="modalDetailContainer maxDebt">
+                <h3 class="modalText">Max Hitel:</h3>
+                <h3 id="modalDebtFlat4" class="modalText leftMargin"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer gold">
+            <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+            <h3 id="modalBuyFlat4Gold" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+            <h3 class="modalText">Vételár:</h3>
+            <h3 id="modalBuyFlat4Price" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer gold">
+            <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+            <h3 id="modalRentFlat4Gold" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+            <h3 class="modalText">Bérleti díj:</h3>
+            <h3 id="modalRentFlat4Price" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer gold">
+            <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+            <h3 id="modalSellFlat4Gold" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+            <h3 class="modalText">Eladási ár:</h3>
+            <h3 id="modalSellFlat4Price" class="modalText"></h3>
+        </div>
+    </div>
+    <div class="modalDetail modalMoreDetail">
+        <div class="modalDetailContainer">
+            <h2>5-es dobás esetén</h2>
+        </div>
+    </div>
+    <div class="modalDetail bgFlat">
+        <div class="modalDetailContainer maxDebt">
+            <h3 class="modalText">Max Hitel:</h3>
+            <h3 id="modalDebtFlat5" class="modalText leftMargin"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer gold">
+            <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+            <h3 id="modalBuyFlat5Gold" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+            <h3 class="modalText">Vételár:</h3>
+            <h3 id="modalBuyFlat5Price" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer gold">
+            <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+            <h3 id="modalRentFlat5Gold" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+            <h3 class="modalText">Bérleti díj:</h3>
+            <h3 id="modalRentFlat5Price" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer gold">
+            <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+            <h3 id="modalSellFlat5Gold" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+            <h3 class="modalText">Eladási ár:</h3>
+            <h3 id="modalSellFlat5Price" class="modalText"></h3>
+        </div>
+    </div>
+    <div class="modalDetail modalMoreDetail">
+        <div class="modalDetailContainer">
+            <h2>6-es dobás esetén</h2>
+        </div>
+    </div>
+    <div class="modalDetail bgFlat bottomModalDetail">
+        <div class="modalDetailContainer maxDebt">
+            <h3 class="modalText">Max Hitel:</h3>
+            <h3 id="modalDebtFlat6" class="modalText leftMargin"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer gold">
+            <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+            <h3 id="modalBuyFlat6Gold" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+            <h3 class="modalText">Vételár:</h3>
+            <h3 id="modalBuyFlat6Price" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer gold">
+            <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+            <h3 id="modalRentFlat6Gold" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+            <h3 class="modalText">Bérleti díj:</h3>
+            <h3 id="modalRentFlat6Price" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer gold">
+            <img src="assets/images/goldbar.png" alt="Gold Bar" class="modalIcon">
+            <h3 id="modalSellFlat6Gold" class="modalText"></h3>
+        </div>
+        <div class="modalDetailContainer modalMoreDetailContainer modalPrice">
+            <h3 class="modalText">Eladási ár:</h3>
+            <h3 id="modalSellFlat6Price" class="modalText"></h3>
+        </div>
+    </div>
+    <div class="modalFooter bgFlat">
+        <button class="close" (click)="closeFlatModal()">Bezárás</button>
+    </div>
+</div>
 </div>
