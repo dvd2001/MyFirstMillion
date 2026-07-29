@@ -427,6 +427,14 @@ input::-webkit-inner-spin-button {
     border-color: var(--bg-flat)
 }
 
+.bgPansion {
+    background-color: var(--bg-pansion)
+}
+
+.borderPansion {
+    border-color: var(--bg-pansion)
+}
+
 .bgOnline {
     background-color: var(--bg-online)
 }

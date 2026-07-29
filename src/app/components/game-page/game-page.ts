@@ -482,7 +482,107 @@ export class GamePage implements OnInit {
   }
 
   pansionInfo(): void {
-    console.log('Pansion Info');
+    this.showPansionModal = true;
+    if (typeof document !== 'undefined') {
+      const body = document.querySelector('body') as HTMLElement;
+      body.style.overflow = 'hidden';
+
+      setTimeout(() => {
+        const debt1 = document.querySelector('#modalDebtPansion1') as HTMLElement;
+        const buyGold1 = document.querySelector('#modalBuyPansion1Gold') as HTMLElement;
+        const buy1 = document.querySelector('#modalBuyPansion1Price') as HTMLElement;
+        const incomeGold1 = document.querySelector('#modalIncomePansion1Gold') as HTMLElement;
+        const income1 = document.querySelector('#modalIncomePansion1Price') as HTMLElement;
+        const sellGold1 = document.querySelector('#modalSellPansion1Gold') as HTMLElement;
+        const sell1 = document.querySelector('#modalSellPansion1Price') as HTMLElement;
+        const debt2 = document.querySelector('#modalDebtPansion2') as HTMLElement;
+        const buyGold2 = document.querySelector('#modalBuyPansion2Gold') as HTMLElement;
+        const buy2 = document.querySelector('#modalBuyPansion2Price') as HTMLElement;
+        const incomeGold2 = document.querySelector('#modalIncomePansion2Gold') as HTMLElement;
+        const income2 = document.querySelector('#modalIncomePansion2Price') as HTMLElement;
+        const sellGold2 = document.querySelector('#modalSellPansion2Gold') as HTMLElement;
+        const sell2 = document.querySelector('#modalSellPansion2Price') as HTMLElement;
+        const debt3 = document.querySelector('#modalDebtPansion3') as HTMLElement;
+        const buyGold3 = document.querySelector('#modalBuyPansion3Gold') as HTMLElement;
+        const buy3 = document.querySelector('#modalBuyPansion3Price') as HTMLElement;
+        const incomeGold3 = document.querySelector('#modalIncomePansion3Gold') as HTMLElement;
+        const income3 = document.querySelector('#modalIncomePansion3Price') as HTMLElement;
+        const sellGold3 = document.querySelector('#modalSellPansion3Gold') as HTMLElement;
+        const sell3 = document.querySelector('#modalSellPansion3Price') as HTMLElement;
+        const debt4 = document.querySelector('#modalDebtPansion4') as HTMLElement;
+        const buyGold4 = document.querySelector('#modalBuyPansion4Gold') as HTMLElement;
+        const buy4 = document.querySelector('#modalBuyPansion4Price') as HTMLElement;
+        const incomeGold4 = document.querySelector('#modalIncomePansion4Gold') as HTMLElement;
+        const income4 = document.querySelector('#modalIncomePansion4Price') as HTMLElement;
+        const sellGold4 = document.querySelector('#modalSellPansion4Gold') as HTMLElement;
+        const sell4 = document.querySelector('#modalSellPansion4Price') as HTMLElement;
+        const debt5 = document.querySelector('#modalDebtPansion5') as HTMLElement;
+        const buyGold5 = document.querySelector('#modalBuyPansion5Gold') as HTMLElement;
+        const buy5 = document.querySelector('#modalBuyPansion5Price') as HTMLElement;
+        const incomeGold5 = document.querySelector('#modalIncomePansion5Gold') as HTMLElement;
+        const income5 = document.querySelector('#modalIncomePansion5Price') as HTMLElement;
+        const sellGold5 = document.querySelector('#modalSellPansion5Gold') as HTMLElement;
+        const sell5 = document.querySelector('#modalSellPansion5Price') as HTMLElement;
+        const debt6 = document.querySelector('#modalDebtPansion6') as HTMLElement;
+        const buyGold6 = document.querySelector('#modalBuyPansion6Gold') as HTMLElement;
+        const buy6 = document.querySelector('#modalBuyPansion6Price') as HTMLElement;
+        const incomeGold6 = document.querySelector('#modalIncomePansion6Gold') as HTMLElement;
+        const income6 = document.querySelector('#modalIncomePansion6Price') as HTMLElement;
+        const sellGold6 = document.querySelector('#modalSellPansion6Gold') as HTMLElement;
+        const sell6 = document.querySelector('#modalSellPansion6Price') as HTMLElement;
+
+        if (!buy1 || !buy2 || !buy3 || !buy4 || !buy5 || !buy6 || !buyGold1 || !buyGold2 || !buyGold3 || !buyGold4
+          || !buyGold5 || !buyGold6 || !income1 || !income2 || !income3 || !income4 || !income5 || !income6
+          || !incomeGold1 || !incomeGold2 || !incomeGold3 || !incomeGold4 || !incomeGold5 || !incomeGold6 || !sell1 || !sell2
+          || !sell3 || !sell4 || !sell5 || !sell6 || !sellGold1 || !sellGold2 || !sellGold3 || !sellGold4
+          || !sellGold5 || !sellGold6 || !debt1 || !debt2 || !debt3 || !debt4 || !debt5 || !debt6) {
+          return;
+        }
+
+        debt1.innerText = `$ ${(this.fields[this.field + 1].pansionDebt * 1000).toLocaleString('hu-HU')}`;
+        debt2.innerText = `$ ${(this.fields[this.field + 2].pansionDebt * 1000).toLocaleString('hu-HU')}`;
+        debt3.innerText = `$ ${(this.fields[this.field + 3].pansionDebt * 1000).toLocaleString('hu-HU')}`;
+        debt4.innerText = `$ ${(this.fields[this.field + 4].pansionDebt * 1000).toLocaleString('hu-HU')}`;
+        debt5.innerText = `$ ${(this.fields[this.field + 5].pansionDebt * 1000).toLocaleString('hu-HU')}`;
+        debt6.innerText = `$ ${(this.fields[this.field + 6].pansionDebt * 1000).toLocaleString('hu-HU')}`;
+        buy1.innerText = `$ ${(this.fields[this.field + 1].pansionBuy * 1000).toLocaleString('hu-HU')}`;
+        buy2.innerText = `$ ${(this.fields[this.field + 2].pansionBuy * 1000).toLocaleString('hu-HU')}`;
+        buy3.innerText = `$ ${(this.fields[this.field + 3].pansionBuy * 1000).toLocaleString('hu-HU')}`;
+        buy4.innerText = `$ ${(this.fields[this.field + 4].pansionBuy * 1000).toLocaleString('hu-HU')}`;
+        buy5.innerText = `$ ${(this.fields[this.field + 5].pansionBuy * 1000).toLocaleString('hu-HU')}`;
+        buy6.innerText = `$ ${(this.fields[this.field + 6].pansionBuy * 1000).toLocaleString('hu-HU')}`;
+        buyGold1.innerText = `${(this.fields[this.field + 1].pansionBuy / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
+        buyGold2.innerText = `${(this.fields[this.field + 2].pansionBuy / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
+        buyGold3.innerText = `${(this.fields[this.field + 3].pansionBuy / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
+        buyGold4.innerText = `${(this.fields[this.field + 4].pansionBuy / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
+        buyGold5.innerText = `${(this.fields[this.field + 5].pansionBuy / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
+        buyGold6.innerText = `${(this.fields[this.field + 6].pansionBuy / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
+        income1.innerText = `$ ${(this.fields[this.field + 1].pansionIncome * 1000).toLocaleString('hu-HU')}`;
+        income2.innerText = `$ ${(this.fields[this.field + 2].pansionIncome * 1000).toLocaleString('hu-HU')}`;
+        income3.innerText = `$ ${(this.fields[this.field + 3].pansionIncome * 1000).toLocaleString('hu-HU')}`;
+        income4.innerText = `$ ${(this.fields[this.field + 4].pansionIncome * 1000).toLocaleString('hu-HU')}`;
+        income5.innerText = `$ ${(this.fields[this.field + 5].pansionIncome * 1000).toLocaleString('hu-HU')}`;
+        income6.innerText = `$ ${(this.fields[this.field + 6].pansionIncome * 1000).toLocaleString('hu-HU')}`;
+        incomeGold1.innerText = `${(this.fields[this.field + 1].pansionIncome / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
+        incomeGold2.innerText = `${(this.fields[this.field + 2].pansionIncome / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
+        incomeGold3.innerText = `${(this.fields[this.field + 3].pansionIncome / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
+        incomeGold4.innerText = `${(this.fields[this.field + 4].pansionIncome / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
+        incomeGold5.innerText = `${(this.fields[this.field + 5].pansionIncome / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
+        incomeGold6.innerText = `${(this.fields[this.field + 6].pansionIncome / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
+        sell1.innerText = `$ ${(this.fields[this.field + 1].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell2.innerText = `$ ${(this.fields[this.field + 2].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell3.innerText = `$ ${(this.fields[this.field + 3].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell4.innerText = `$ ${(this.fields[this.field + 4].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell5.innerText = `$ ${(this.fields[this.field + 5].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell6.innerText = `$ ${(this.fields[this.field + 6].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sellGold1.innerText = `${(this.fields[this.field + 1].pansionBuy * 0.95 / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
+        sellGold2.innerText = `${(this.fields[this.field + 2].pansionBuy * 0.95 / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
+        sellGold3.innerText = `${(this.fields[this.field + 3].pansionBuy * 0.95 / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
+        sellGold4.innerText = `${(this.fields[this.field + 4].pansionBuy * 0.95 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
+        sellGold5.innerText = `${(this.fields[this.field + 5].pansionBuy * 0.95 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
+        sellGold6.innerText = `${(this.fields[this.field + 6].pansionBuy * 0.95 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
+      }, 0);
+    }
   }
 
   pansionBuy(): void {
@@ -940,5 +1040,12 @@ export class GamePage implements OnInit {
       body.style.overflow = 'auto';
     }
     this.showFlatModal = false;
+  }
+  closePansionModal(): void {
+    if (typeof document !== 'undefined') {
+      const body = document.querySelector('body') as HTMLElement;
+      body.style.overflow = 'auto';
+    }
+    this.showPansionModal = false;
   }
 }
