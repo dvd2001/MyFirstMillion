@@ -691,7 +691,11 @@ input::-webkit-inner-spin-button {
     }
 
     .gold {
-        width: 26%
+        width: 25%
+    }
+
+    .modalPrice {
+        width: 60%;
     }
 
     #flatList,
