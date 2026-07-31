@@ -690,6 +690,10 @@ input::-webkit-inner-spin-button {
         padding: 10px
     }
 
+    .gold {
+        width: 26%
+    }
+
     #flatList,
     #pansionList {
         width: 96%
