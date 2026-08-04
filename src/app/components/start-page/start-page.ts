@@ -60,12 +60,12 @@ export class StartPage {
     const maxOnline = document.querySelector('#online') as HTMLSelectElement | null;
 
     if (startField) {
-      window.sessionStorage.setItem('field', startField.value);
+      if (!window.sessionStorage.getItem('field')) window.sessionStorage.setItem('field', startField.value);
     }
 
     if (maxOnline) {
       const selectedValue = maxOnline.options[maxOnline.selectedIndex]?.value ?? Number.MAX_SAFE_INTEGER;
-      window.sessionStorage.setItem('maxOnline', selectedValue);
+      if (!window.sessionStorage.getItem('maxOnline')) window.sessionStorage.setItem('maxOnline', selectedValue);
     }
 
     this.router.navigate(['/game']);

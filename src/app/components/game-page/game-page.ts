@@ -6,6 +6,7 @@ import { Field } from '../../models/Field';
 import { NgIf } from '@angular/common';
 import { ParseError } from '@angular/compiler';
 import { Accomodation } from '../../models/Accomodation';
+import { GameData } from '../../models/GameData';
 
 @Component({
   selector: 'app-game-page',
@@ -17,23 +18,7 @@ export class GamePage implements OnInit {
   private fields: Field[] = [];
   private field: number = 0;
   private maxOnline: number = 0;
-  private cash: number = 1000000;
-  private gold: number = 0;
-  private mine: number = 0;
-  private chocolate: number = 0;
-  private online1: number = 0;
-  private online2: number = 0;
-  private online3: number = 0;
-  private online4: number = 0;
-  private online5: number = 0;
-  private bank: number = 0;
-  private gbp: number = 0;
-  private eur: number = 0;
-  private usd: number = 0;
-  private maxFlatId: number = 0;
-  private maxPansionId: number = 0;
-  private flats: Accomodation[] = [];
-  private pansions: Accomodation[] = [];
+  private gameData: GameData = new GameData();
   public showFlat = false;
   public showPansion = false;
   public mobile = false;
@@ -59,20 +44,33 @@ export class GamePage implements OnInit {
   ngOnInit(): void {
     if (typeof window !== 'undefined') {
       if (window.screen.width <= 1200) this.mobile = true;
+      const field = window.sessionStorage.getItem('field');
+      const gameData = window.sessionStorage.getItem('gameData');
+      if (field) {
+        this.field = parseInt(field);
+      }
+      if (gameData) {
+        this.gameData = JSON.parse(gameData);
+        console.log('Game data loaded from session storage:', this.gameData);
+      }
     }
     this.fields = this.reader.readingFields();
     this.update();
   }
 
   update(isRoll: boolean = false): void {
-    if (isRoll) {
-      this.bank = 0;
-      this.gbp = 0;
-      this.eur = 0;
-      this.usd = 0;
+    if (typeof window !== 'undefined') {
+      window.sessionStorage.setItem('field', this.field.toString());
+      window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
     }
-    if (this.flats.length > 0) this.showFlat = true;
-    if (this.pansions.length > 0) this.showPansion = true;
+    if (isRoll) {
+      this.gameData.bank = 0;
+      this.gameData.gbp = 0;
+      this.gameData.eur = 0;
+      this.gameData.usd = 0;
+    }
+    if (this.gameData.flats.length > 0) this.showFlat = true;
+    if (this.gameData.pansions.length > 0) this.showPansion = true;
     if (typeof document !== 'undefined') {
       const money = document.querySelector('#money') as HTMLElement;
       const goldPrice = document.querySelector('#goldPrice') as HTMLElement;
@@ -114,21 +112,21 @@ export class GamePage implements OnInit {
       const eurMoney = document.querySelector('#eurMoney') as HTMLElement;
       const usdMoney = document.querySelector('#usdMoney') as HTMLElement;
       const field = this.fields[this.field];
-      bankAmount.value = this.bank.toString();
-      gbpAmount.value = this.gbp.toString();
-      eurAmount.value = this.eur.toString();
-      usdAmount.value = this.usd.toString();
-      bankMoney.innerText = `$ ${this.bank.toLocaleString('hu-HU')}`;
-      gbpMoney.innerText = `$ ${this.gbp.toLocaleString('hu-HU')}`;
-      eurMoney.innerText = `$ ${this.eur.toLocaleString('hu-HU')}`;
-      usdMoney.innerText = `$ ${this.usd.toLocaleString('hu-HU')}`;
-      money.innerText = `$ ${this.cash.toLocaleString('hu-HU')}`;
+      bankAmount.value = this.gameData.bank.toString();
+      gbpAmount.value = this.gameData.gbp.toString();
+      eurAmount.value = this.gameData.eur.toString();
+      usdAmount.value = this.gameData.usd.toString();
+      bankMoney.innerText = `$ ${this.gameData.bank.toLocaleString('hu-HU')}`;
+      gbpMoney.innerText = `$ ${this.gameData.gbp.toLocaleString('hu-HU')}`;
+      eurMoney.innerText = `$ ${this.gameData.eur.toLocaleString('hu-HU')}`;
+      usdMoney.innerText = `$ ${this.gameData.usd.toLocaleString('hu-HU')}`;
+      money.innerText = `$ ${this.gameData.cash.toLocaleString('hu-HU')}`;
       goldPrice.innerText = `$ ${(field.gold * 1000).toLocaleString('hu-HU')}`;
-      goldAmount.innerText = `${this.gold} db`;
+      goldAmount.innerText = `${this.gameData.gold} db`;
       minePrice.innerText = `$ ${(field.mine * 1000).toLocaleString('hu-HU')}`;
-      mineAmount.innerText = `${this.mine} db`;
+      mineAmount.innerText = `${this.gameData.mine} db`;
       chocolatePrice.innerText = `$ ${(field.chocolate * 1000).toLocaleString('hu-HU')}`;
-      chocolateAmount.innerText = `${this.chocolate} db`;
+      chocolateAmount.innerText = `${this.gameData.chocolate} db`;
       flatPrice.innerText = `$ ${(field.flatBuy * 1000).toLocaleString('hu-HU')}`;
       flatDebt.innerText = `$ ${(field.flatDebt * 1000).toLocaleString('hu-HU')}`;
       flatSell.innerText = `$ ${(field.flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
@@ -140,19 +138,19 @@ export class GamePage implements OnInit {
       onlinePrice.innerText = `$ ${(field.onlineBuy * 1000).toLocaleString('hu-HU')}`;
       online1Income.innerText = `$ ${(field.onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
       online1Sell.innerText = `$ ${(field.onlineSell1 * 1000).toLocaleString('hu-HU')}`;
-      online1Amount.innerText = `${this.online1} db`;
+      online1Amount.innerText = `${this.gameData.online1} db`;
       online2Income.innerText = `$ ${(field.onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
       online2Sell.innerText = `$ ${(field.onlineSell2 * 1000).toLocaleString('hu-HU')}`;
-      online2Amount.innerText = `${this.online2} db`;
+      online2Amount.innerText = `${this.gameData.online2} db`;
       online3Income.innerText = `$ ${(field.onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
       online3Sell.innerText = `$ ${(field.onlineSell3 * 1000).toLocaleString('hu-HU')}`;
-      online3Amount.innerText = `${this.online3} db`;
+      online3Amount.innerText = `${this.gameData.online3} db`;
       online4Income.innerText = `$ ${(field.onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
       online4Sell.innerText = `$ ${(field.onlineSell4 * 1000).toLocaleString('hu-HU')}`;
-      online4Amount.innerText = `${this.online4} db`;
+      online4Amount.innerText = `${this.gameData.online4} db`;
       online5Income.innerText = `$ ${(field.onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
       online5Sell.innerText = `$ ${(field.onlineSell5 * 1000).toLocaleString('hu-HU')}`;
-      online5Amount.innerText = `${this.online5} db`;
+      online5Amount.innerText = `${this.gameData.online5} db`;
     }
   }
 
@@ -204,9 +202,9 @@ export class GamePage implements OnInit {
         let amount: number = parseInt(text);
         if (isNaN(amount)) throw ParseError;
         let cost: number = amount * this.fields[this.field].gold * 1000;
-        if (cost > this.cash) throw ParseError;
-        this.cash -= cost;
-        this.gold += amount;
+        if (cost > this.gameData.cash) throw ParseError;
+        this.gameData.cash -= cost;
+        this.gameData.gold += amount;
         this.update();
       }
     } catch (error) {
@@ -219,10 +217,10 @@ export class GamePage implements OnInit {
     try {
       if (text !== null) {
         let amount: number = parseInt(text);
-        if (isNaN(amount) || amount > this.gold) throw ParseError;
+        if (isNaN(amount) || amount > this.gameData.gold) throw ParseError;
         let income: number = amount * this.fields[this.field].gold * 1000;
-        this.cash += income;
-        this.gold -= amount;
+        this.gameData.cash += income;
+        this.gameData.gold -= amount;
         this.update();
       }
     } catch (error) {
@@ -278,9 +276,9 @@ export class GamePage implements OnInit {
         let amount: number = parseInt(text);
         if (isNaN(amount)) throw ParseError;
         let cost: number = amount * this.fields[this.field].mine * 1000;
-        if (cost > this.cash) throw ParseError;
-        this.cash -= cost;
-        this.mine += amount;
+        if (cost > this.gameData.cash) throw ParseError;
+        this.gameData.cash -= cost;
+        this.gameData.mine += amount;
         this.update();
       }
     } catch (error) {
@@ -293,10 +291,10 @@ export class GamePage implements OnInit {
     try {
       if (text !== null) {
         let amount: number = parseInt(text);
-        if (isNaN(amount) || amount > this.mine) throw ParseError;
+        if (isNaN(amount) || amount > this.gameData.mine) throw ParseError;
         let income: number = amount * this.fields[this.field].mine * 1000;
-        this.cash += income;
-        this.mine -= amount;
+        this.gameData.cash += income;
+        this.gameData.mine -= amount;
         this.update();
       }
     } catch (error) {
@@ -353,9 +351,9 @@ export class GamePage implements OnInit {
         let amount: number = parseInt(text);
         if (isNaN(amount)) throw ParseError;
         let cost: number = amount * this.fields[this.field].chocolate * 1000;
-        if (cost > this.cash) throw ParseError;
-        this.cash -= cost;
-        this.chocolate += amount;
+        if (cost > this.gameData.cash) throw ParseError;
+        this.gameData.cash -= cost;
+        this.gameData.chocolate += amount;
         this.update();
       }
     } catch (error) {
@@ -368,10 +366,10 @@ export class GamePage implements OnInit {
     try {
       if (text !== null) {
         let amount: number = parseInt(text);
-        if (isNaN(amount) || amount > this.chocolate) throw ParseError;
+        if (isNaN(amount) || amount > this.gameData.chocolate) throw ParseError;
         let income: number = amount * this.fields[this.field].chocolate * 1000;
-        this.cash += income;
-        this.chocolate -= amount;
+        this.gameData.cash += income;
+        this.gameData.chocolate -= amount;
         this.update();
       }
     } catch (error) {
@@ -485,14 +483,14 @@ export class GamePage implements OnInit {
 
   flatBuy(): void {
     const price: number = this.fields[this.field].flatBuy * 1000;
-    if (price <= this.cash) {
-      const flat: Accomodation = new Accomodation(++this.maxFlatId, price);
-      this.flats.push(flat);
-      this.cash -= price;
+    if (price <= this.gameData.cash) {
+      const flat: Accomodation = new Accomodation(++this.gameData.maxFlatId, price);
+      this.gameData.flats.push(flat);
+      this.gameData.cash -= price;
       this.update();
     }
     else alert('Nincs elég pénzed a vásárláshoz!');
-    console.log(this.flats);
+    console.log(this.gameData.flats);
     return;
   }
 
@@ -602,14 +600,14 @@ export class GamePage implements OnInit {
 
   pansionBuy(): void {
     const price: number = this.fields[this.field].pansionBuy * 1000;
-    if (price <= this.cash) {
-      const pansion: Accomodation = new Accomodation(++this.maxPansionId, price);
-      this.pansions.push(pansion);
-      this.cash -= price;
+    if (price <= this.gameData.cash) {
+      const pansion: Accomodation = new Accomodation(++this.gameData.maxPansionId, price);
+      this.gameData.pansions.push(pansion);
+      this.gameData.cash -= price;
       this.update();
     }
     else alert('Nincs elég pénzed a vásárláshoz!');
-    console.log(this.pansions);
+    console.log(this.gameData.pansions);
     return;
   }
 
@@ -659,12 +657,12 @@ export class GamePage implements OnInit {
     try {
       if (text !== null) {
         let amount: number = parseInt(text);
-        let owned: number = this.online1 + this.online2 + this.online3 + this.online4 + this.online5;
+        let owned: number = this.gameData.online1 + this.gameData.online2 + this.gameData.online3 + this.gameData.online4 + this.gameData.online5;
         if (isNaN(amount) || (amount + owned) > this.maxOnline) throw ParseError;
         let cost: number = amount * this.fields[this.field].onlineBuy * 1000;
-        if (cost > this.cash) throw ParseError;
-        this.cash -= cost;
-        this.online1 += amount;
+        if (cost > this.gameData.cash) throw ParseError;
+        this.gameData.cash -= cost;
+        this.gameData.online1 += amount;
         this.update();
       }
     } catch (error) {
@@ -857,10 +855,10 @@ export class GamePage implements OnInit {
     try {
       if (text !== null) {
         let amount: number = parseInt(text);
-        if (isNaN(amount) || amount > this.online1) throw ParseError;
+        if (isNaN(amount) || amount > this.gameData.online1) throw ParseError;
         let income: number = amount * this.fields[this.field].onlineSell1 * 1000;
-        this.cash += income;
-        this.online1 -= amount;
+        this.gameData.cash += income;
+        this.gameData.online1 -= amount;
 
         this.update();
       }
@@ -874,10 +872,10 @@ export class GamePage implements OnInit {
     try {
       if (text !== null) {
         let amount: number = parseInt(text);
-        if (isNaN(amount) || amount > this.online2) throw ParseError;
+        if (isNaN(amount) || amount > this.gameData.online2) throw ParseError;
         let income: number = amount * this.fields[this.field].onlineSell2 * 1000;
-        this.cash += income;
-        this.online2 -= amount;
+        this.gameData.cash += income;
+        this.gameData.online2 -= amount;
         this.update();
       }
     } catch (error) {
@@ -890,10 +888,10 @@ export class GamePage implements OnInit {
     try {
       if (text !== null) {
         let amount: number = parseInt(text);
-        if (isNaN(amount) || amount > this.online3) throw ParseError;
+        if (isNaN(amount) || amount > this.gameData.online3) throw ParseError;
         let income: number = amount * this.fields[this.field].onlineSell3 * 1000;
-        this.cash += income;
-        this.online3 -= amount;
+        this.gameData.cash += income;
+        this.gameData.online3 -= amount;
         this.update();
       }
     } catch (error) {
@@ -906,10 +904,10 @@ export class GamePage implements OnInit {
     try {
       if (text !== null) {
         let amount: number = parseInt(text);
-        if (isNaN(amount) || amount > this.online4) throw ParseError;
+        if (isNaN(amount) || amount > this.gameData.online4) throw ParseError;
         let income: number = amount * this.fields[this.field].onlineSell4 * 1000;
-        this.cash += income;
-        this.online4 -= amount;
+        this.gameData.cash += income;
+        this.gameData.online4 -= amount;
         this.update();
       }
     } catch (error) {
@@ -922,10 +920,10 @@ export class GamePage implements OnInit {
     try {
       if (text !== null) {
         let amount: number = parseInt(text);
-        if (isNaN(amount) || amount > this.online5) throw ParseError;
+        if (isNaN(amount) || amount > this.gameData.online5) throw ParseError;
         let income: number = amount * this.fields[this.field].onlineSell5 * 1000;
-        this.cash += income;
-        this.online5 -= amount;
+        this.gameData.cash += income;
+        this.gameData.online5 -= amount;
         this.update();
       }
     } catch (error) {
@@ -934,7 +932,7 @@ export class GamePage implements OnInit {
   }
 
   roll(): void {
-    if (this.cash < 0) {
+    if (this.gameData.cash < 0) {
       alert('Nem lehet tartozásod, adj el valamit, hogy legalább 0-ra hozd az egyenlegedet!');
       return;
     }
@@ -944,28 +942,28 @@ export class GamePage implements OnInit {
         let nextRoll: number = parseInt(next);
         if (isNaN(nextRoll) || nextRoll < 1 || nextRoll > 6) throw ParseError;
         this.field += nextRoll;
-        if (this.gbp > 0) this.cash += this.devisaRoll(this.gbp, 'GBP/USD');
-        if (this.eur > 0) this.cash += this.devisaRoll(this.eur, 'EUR/USD');
-        if (this.usd > 0) this.cash += this.devisaRoll(this.usd, 'USD/JPY');
-        this.cash += Math.round(this.bank / 1000 * 1.04) * 1000;
-        this.cash += this.fields[this.field].onlineIncome5 * 1000 * this.online5;
-        this.cash += this.fields[this.field].onlineIncome4 * 1000 * this.online4;
-        this.cash += this.fields[this.field].onlineIncome3 * 1000 * this.online3;
-        this.cash += this.fields[this.field].onlineIncome2 * 1000 * this.online2;
-        this.cash += this.fields[this.field].onlineIncome1 * 1000 * this.online1;
-        this.online5 += this.online4;
-        this.online4 = this.online3;
-        this.online3 = this.online2;
-        this.online2 = this.online1;
-        this.online1 = 0;
-        this.cash += this.fields[this.field].flatRent * 1000 * this.flats.length;
-        this.cash += this.fields[this.field].pansionIncome * 1000 * this.pansions.length;
-        for (const flat of this.flats) {
-          this.cash -= flat.repay();
+        if (this.gameData.gbp > 0) this.gameData.cash += this.devisaRoll(this.gameData.gbp, 'GBP/USD');
+        if (this.gameData.eur > 0) this.gameData.cash += this.devisaRoll(this.gameData.eur, 'EUR/USD');
+        if (this.gameData.usd > 0) this.gameData.cash += this.devisaRoll(this.gameData.usd, 'USD/JPY');
+        this.gameData.cash += Math.round(this.gameData.bank / 1000 * 1.04) * 1000;
+        this.gameData.cash += this.fields[this.field].onlineIncome5 * 1000 * this.gameData.online5;
+        this.gameData.cash += this.fields[this.field].onlineIncome4 * 1000 * this.gameData.online4;
+        this.gameData.cash += this.fields[this.field].onlineIncome3 * 1000 * this.gameData.online3;
+        this.gameData.cash += this.fields[this.field].onlineIncome2 * 1000 * this.gameData.online2;
+        this.gameData.cash += this.fields[this.field].onlineIncome1 * 1000 * this.gameData.online1;
+        this.gameData.online5 += this.gameData.online4;
+        this.gameData.online4 = this.gameData.online3;
+        this.gameData.online3 = this.gameData.online2;
+        this.gameData.online2 = this.gameData.online1;
+        this.gameData.online1 = 0;
+        this.gameData.cash += this.fields[this.field].flatRent * 1000 * this.gameData.flats.length;
+        this.gameData.cash += this.fields[this.field].pansionIncome * 1000 * this.gameData.pansions.length;
+        for (const flat of this.gameData.flats) {
+          this.gameData.cash -= flat.repay();
           flat.debtLevelUp();
         }
-        for (const pansion of this.pansions) {
-          this.cash -= pansion.repay();
+        for (const pansion of this.gameData.pansions) {
+          this.gameData.cash -= pansion.repay();
           pansion.debtLevelUp();
         }
         this.update(true);
@@ -982,13 +980,13 @@ export class GamePage implements OnInit {
       if (isNaN(bank)) bank = 0;
       if (bank % 1000 !== 0) {
         alert('A bankba helyezett összegnek 1000-rel oszthatónak kell lennie!');
-        bankInp.value = this.bank.toString();
+        bankInp.value = this.gameData.bank.toString();
         return;
       }
-      const differance = bank - this.bank;
-      if (differance <= this.cash) {
-        this.cash -= differance;
-        this.bank += differance;
+      const differance = bank - this.gameData.bank;
+      if (differance <= this.gameData.cash) {
+        this.gameData.cash -= differance;
+        this.gameData.bank += differance;
         this.update();
         return;
       }
@@ -1002,13 +1000,13 @@ export class GamePage implements OnInit {
       if (isNaN(gbp)) gbp = 0;
       if (gbp % 1000 !== 0) {
         alert('A GBP/USD mennyiségnek 1000-rel oszthatónak kell lennie!');
-        gbpInp.value = this.gbp.toString();
+        gbpInp.value = this.gameData.gbp.toString();
         return;
       }
-      const differance = gbp - this.gbp;
-      if (differance <= this.cash) {
-        this.cash -= differance;
-        this.gbp += differance;
+      const differance = gbp - this.gameData.gbp;
+      if (differance <= this.gameData.cash) {
+        this.gameData.cash -= differance;
+        this.gameData.gbp += differance;
         this.update();
         return;
       }
@@ -1022,13 +1020,13 @@ export class GamePage implements OnInit {
       if (isNaN(eur)) eur = 0;
       if (eur % 1000 !== 0) {
         alert('A EUR/USD mennyiségnek 1000-rel oszthatónak kell lennie!');
-        eurInp.value = this.eur.toString();
+        eurInp.value = this.gameData.eur.toString();
         return;
       }
-      const differance = eur - this.eur;
-      if (differance <= this.cash) {
-        this.cash -= differance;
-        this.eur += differance;
+      const differance = eur - this.gameData.eur;
+      if (differance <= this.gameData.cash) {
+        this.gameData.cash -= differance;
+        this.gameData.eur += differance;
         this.update();
         return;
       }
@@ -1042,13 +1040,13 @@ export class GamePage implements OnInit {
       if (isNaN(usd)) usd = 0;
       if (usd % 1000 !== 0) {
         alert('A USD/JPY mennyiségnek 1000-rel oszthatónak kell lennie!');
-        usdInp.value = this.usd.toString();
+        usdInp.value = this.gameData.usd.toString();
         return;
       }
-      const differance = usd - this.usd;
-      if (differance <= this.cash) {
-        this.cash -= differance;
-        this.usd += differance;
+      const differance = usd - this.gameData.usd;
+      if (differance <= this.gameData.cash) {
+        this.gameData.cash -= differance;
+        this.gameData.usd += differance;
         this.update();
         return;
       }
