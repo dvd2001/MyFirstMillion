@@ -12,8 +12,8 @@
             <h2>Bank</h2>
             <p id="bankMoney" class="money"></p>
             <label class="bankLbl" for="bankAmount">Mennyi pénzt teszel a bankba? (fix 4% kamat)</label>
-            <input id="bankAmount" class="bankInp" type="number" min="0" [defaultValue]="0"
-                (keydown.enter)="bankSave()">
+            <input id="bankAmount" class="bankInp" type="number" min="0" [defaultValue]="0" (keydown.enter)="bankSave()"
+                (wheel)="$event.preventDefault()">
             <button class="save" (click)="bankSave()">
                 <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/save.png':'assets/images/saveWhite.png'"
                     alt="Save" class="btnIcon">
@@ -25,7 +25,8 @@
             <h2>GBP/USD</h2>
             <p id="gbpMoney" class="money"></p>
             <label class="bankLbl" for="gbpAmount">Mennyi pénzt fektetsz be ebbe a deviza tőzsdébe?</label>
-            <input class="bankInp" type="number" id="gbpAmount" min="0" [defaultValue]="0" (keydown.enter)="gbpSave()">
+            <input class="bankInp" type="number" id="gbpAmount" min="0" [defaultValue]="0" (keydown.enter)="gbpSave()"
+                (wheel)="$event.preventDefault()">
             <button class="save" (click)="gbpSave()">
                 <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/save.png':'assets/images/saveWhite.png'"
                     alt="Save" class="btnIcon">
@@ -37,7 +38,8 @@
             <h2>EUR/USD</h2>
             <p id="eurMoney" class="money"></p>
             <label class="bankLbl" for="eurAmount">Mennyi pénzt fektetsz be ebbe a deviza tőzsdébe?</label>
-            <input class="bankInp" type="number" id="eurAmount" min="0" [defaultValue]="0" (keydown.enter)="eurSave()">
+            <input class="bankInp" type="number" id="eurAmount" min="0" [defaultValue]="0" (keydown.enter)="eurSave()"
+                (wheel)="$event.preventDefault()">
             <button class="save" (click)="eurSave()">
                 <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/save.png':'assets/images/saveWhite.png'"
                     alt="Save" class="btnIcon">
@@ -49,7 +51,8 @@
             <h2>USD/JYP</h2>
             <p id="usdMoney" class="money"></p>
             <label class="bankLbl" for="usdAmount">Mennyi pénzt fektetsz be ebbe a deviza tőzsdébe?</label>
-            <input class="bankInp" type="number" id="usdAmount" min="0" [defaultValue]="0" (keydown.enter)="usdSave()">
+            <input class="bankInp" type="number" id="usdAmount" min="0" [defaultValue]="0" (keydown.enter)="usdSave()"
+                (wheel)="$event.preventDefault()">
             <button class="save" (click)="usdSave()">
                 <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/save.png':'assets/images/saveWhite.png'"
                     alt="Save" class="btnIcon">
