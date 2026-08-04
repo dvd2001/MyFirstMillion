@@ -52,12 +52,19 @@ export class GamePage implements OnInit {
       if (gameData) {
         this.gameData = JSON.parse(gameData);
         this.showGoldModal = this.gameData.showGoldModal;
+        if (this.showGoldModal) this.goldInfo();
         this.showMineModal = this.gameData.showMineModal;
+        if (this.showMineModal) this.mineInfo();
         this.showChocolateModal = this.gameData.showChocolateModal;
+        if (this.showChocolateModal) this.chocolateInfo();
         this.showFlatModal = this.gameData.showFlatModal;
+        if (this.showFlatModal) this.flatInfo();
         this.showPansionModal = this.gameData.showPansionModal;
+        if (this.showPansionModal) this.pansionInfo();
         this.showOnlineBasicModal = this.gameData.showOnlineBasicModal;
+        if (this.showOnlineBasicModal) this.onlineInfo();
         this.showOnlineModal = this.gameData.showOnlineModal;
+        if (this.showOnlineModal && this.gameData.levelInfo > 0) this.levelInfo(this.gameData.levelInfo);
       }
     }
     this.fields = this.reader.readingFields();
@@ -175,6 +182,8 @@ export class GamePage implements OnInit {
 
   goldInfo(): void {
     this.showGoldModal = true;
+    this.gameData.showGoldModal = true;
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
     if (typeof document !== 'undefined') {
       const body = document.querySelector('body') as HTMLElement;
       body.style.overflow = 'hidden';
@@ -236,6 +245,8 @@ export class GamePage implements OnInit {
 
   mineInfo(): void {
     this.showMineModal = true;
+    this.gameData.showMineModal = true;
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
     if (typeof document !== 'undefined') {
       const body = document.querySelector('body') as HTMLElement;
       body.style.overflow = 'hidden';
@@ -310,6 +321,8 @@ export class GamePage implements OnInit {
 
   chocolateInfo(): void {
     this.showChocolateModal = true;
+    this.gameData.showChocolateModal = true;
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
     if (typeof document !== 'undefined') {
       const body = document.querySelector('body') as HTMLElement;
       body.style.overflow = 'hidden';
@@ -385,6 +398,8 @@ export class GamePage implements OnInit {
 
   flatInfo(): void {
     this.showFlatModal = true;
+    this.gameData.showFlatModal = true;
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
     if (typeof document !== 'undefined') {
       const body = document.querySelector('body') as HTMLElement;
       body.style.overflow = 'hidden';
@@ -502,6 +517,8 @@ export class GamePage implements OnInit {
 
   pansionInfo(): void {
     this.showPansionModal = true;
+    this.gameData.showPansionModal = true;
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
     if (typeof document !== 'undefined') {
       const body = document.querySelector('body') as HTMLElement;
       body.style.overflow = 'hidden';
@@ -619,6 +636,8 @@ export class GamePage implements OnInit {
 
   onlineInfo(): void {
     this.showOnlineBasicModal = true;
+    this.gameData.showOnlineBasicModal = true;
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
     if (typeof document !== 'undefined') {
       const body = document.querySelector('body') as HTMLElement;
       body.style.overflow = 'hidden';
@@ -678,6 +697,9 @@ export class GamePage implements OnInit {
 
   levelInfo(level: number): void {
     this.showOnlineModal = true;
+    this.gameData.showOnlineModal = true;
+    this.gameData.levelInfo = level;
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
     if (typeof document !== 'undefined') {
       const body = document.querySelector('body') as HTMLElement;
       body.style.overflow = 'hidden';
@@ -1077,6 +1099,8 @@ export class GamePage implements OnInit {
       body.style.overflow = 'auto';
     }
     this.showGoldModal = false;
+    this.gameData.showGoldModal = false;
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
   }
   closeMineModal(): void {
     if (typeof document !== 'undefined') {
@@ -1084,6 +1108,8 @@ export class GamePage implements OnInit {
       body.style.overflow = 'auto';
     }
     this.showMineModal = false;
+    this.gameData.showMineModal = false;
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
   }
   closeChocolateModal(): void {
     if (typeof document !== 'undefined') {
@@ -1091,6 +1117,8 @@ export class GamePage implements OnInit {
       body.style.overflow = 'auto';
     }
     this.showChocolateModal = false;
+    this.gameData.showChocolateModal = false;
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
   }
   closeOnlineBasicModal(): void {
     if (typeof document !== 'undefined') {
@@ -1098,6 +1126,8 @@ export class GamePage implements OnInit {
       body.style.overflow = 'auto';
     }
     this.showOnlineBasicModal = false;
+    this.gameData.showOnlineBasicModal = false;
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
   }
   closeLevelModal(): void {
     if (typeof document !== 'undefined') {
@@ -1105,6 +1135,9 @@ export class GamePage implements OnInit {
       body.style.overflow = 'auto';
     }
     this.showOnlineModal = false;
+    this.gameData.showOnlineModal = false;
+    this.gameData.levelInfo = 0;
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
   }
   closeFlatModal(): void {
     if (typeof document !== 'undefined') {
@@ -1112,6 +1145,8 @@ export class GamePage implements OnInit {
       body.style.overflow = 'auto';
     }
     this.showFlatModal = false;
+    this.gameData.showFlatModal = false;
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
   }
   closePansionModal(): void {
     if (typeof document !== 'undefined') {
@@ -1119,6 +1154,8 @@ export class GamePage implements OnInit {
       body.style.overflow = 'auto';
     }
     this.showPansionModal = false;
+    this.gameData.showPansionModal = false;
+    if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
   }
 
   @HostListener('window:popstate')

@@ -25,4 +25,5 @@ export class GameData {
     showPansionModal: boolean = false;
     showOnlineBasicModal: boolean = false;
     showOnlineModal: boolean = false;
+    levelInfo: number = 0;
 }
