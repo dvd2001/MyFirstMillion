@@ -51,7 +51,13 @@ export class GamePage implements OnInit {
       }
       if (gameData) {
         this.gameData = JSON.parse(gameData);
-        console.log('Game data loaded from session storage:', this.gameData);
+        this.showGoldModal = this.gameData.showGoldModal;
+        this.showMineModal = this.gameData.showMineModal;
+        this.showChocolateModal = this.gameData.showChocolateModal;
+        this.showFlatModal = this.gameData.showFlatModal;
+        this.showPansionModal = this.gameData.showPansionModal;
+        this.showOnlineBasicModal = this.gameData.showOnlineBasicModal;
+        this.showOnlineModal = this.gameData.showOnlineModal;
       }
     }
     this.fields = this.reader.readingFields();
