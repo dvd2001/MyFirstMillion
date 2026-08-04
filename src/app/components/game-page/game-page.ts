@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Field } from '../../models/Field';
 import { NgIf } from '@angular/common';
 import { ParseError } from '@angular/compiler';
+import { Accomodation } from '../../models/Accomodation';
 
 @Component({
   selector: 'app-game-page',
@@ -29,6 +30,10 @@ export class GamePage implements OnInit {
   private gbp: number = 0;
   private eur: number = 0;
   private usd: number = 0;
+  private maxFlatId: number = 0;
+  private maxPansionId: number = 0;
+  private flats: Accomodation[] = [];
+  private pansions: Accomodation[] = [];
   public showFlat = false;
   public showPansion = false;
   public mobile = false;
@@ -50,7 +55,6 @@ export class GamePage implements OnInit {
         this.maxOnline = parseInt(online);
       }
     }
-
   }
   ngOnInit(): void {
     if (typeof window !== 'undefined') {
@@ -67,6 +71,8 @@ export class GamePage implements OnInit {
       this.eur = 0;
       this.usd = 0;
     }
+    if (this.flats.length > 0) this.showFlat = true;
+    if (this.pansions.length > 0) this.showPansion = true;
     if (typeof document !== 'undefined') {
       const money = document.querySelector('#money') as HTMLElement;
       const goldPrice = document.querySelector('#goldPrice') as HTMLElement;
@@ -478,7 +484,16 @@ export class GamePage implements OnInit {
   }
 
   flatBuy(): void {
-
+    const price: number = this.fields[this.field].flatBuy * 1000;
+    if (price <= this.cash) {
+      const flat: Accomodation = new Accomodation(++this.maxFlatId, price);
+      this.flats.push(flat);
+      this.cash -= price;
+      this.update();
+    }
+    else alert('Nincs elég pénzed a vásárláshoz!');
+    console.log(this.flats);
+    return;
   }
 
   pansionInfo(): void {
@@ -586,7 +601,16 @@ export class GamePage implements OnInit {
   }
 
   pansionBuy(): void {
-
+    const price: number = this.fields[this.field].pansionBuy * 1000;
+    if (price <= this.cash) {
+      const pansion: Accomodation = new Accomodation(++this.maxPansionId, price);
+      this.pansions.push(pansion);
+      this.cash -= price;
+      this.update();
+    }
+    else alert('Nincs elég pénzed a vásárláshoz!');
+    console.log(this.pansions);
+    return;
   }
 
   onlineInfo(): void {
@@ -934,6 +958,16 @@ export class GamePage implements OnInit {
         this.online3 = this.online2;
         this.online2 = this.online1;
         this.online1 = 0;
+        this.cash += this.fields[this.field].flatRent * 1000 * this.flats.length;
+        this.cash += this.fields[this.field].pansionIncome * 1000 * this.pansions.length;
+        for (const flat of this.flats) {
+          this.cash -= flat.repay();
+          flat.debtLevelUp();
+        }
+        for (const pansion of this.pansions) {
+          this.cash -= pansion.repay();
+          pansion.debtLevelUp();
+        }
         this.update(true);
       }
     } catch (error) {
