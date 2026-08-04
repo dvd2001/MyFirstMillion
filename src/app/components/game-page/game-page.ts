@@ -29,11 +29,6 @@ export class GamePage implements OnInit {
   private gbp: number = 0;
   private eur: number = 0;
   private usd: number = 0;
-  public showLevel1 = false;
-  public showLevel2 = false;
-  public showLevel3 = false;
-  public showLevel4 = false;
-  public showLevel5 = false;
   public showFlat = false;
   public showPansion = false;
   public mobile = false;
