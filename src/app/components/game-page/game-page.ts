@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ThemeService } from '../../services/theme-service/theme-service';
 import { DataReadingService } from '../../services/data-reading-service/data-reading-service';
 import { Router } from '@angular/router';
@@ -156,11 +156,16 @@ export class GamePage implements OnInit {
   }
 
   onBack(): void {
-    this.router.navigate(['']);
     if (typeof window !== 'undefined') {
-      window.sessionStorage.removeItem('field');
-      window.sessionStorage.removeItem('maxOnline');
+      if (confirm('Vissza a kezdőlapra a játékadatok törlésével!' + '(Ha vissza szeretnél térni ehhez a játékmenethez, ' +
+        'akkor nyomd meg a Mégse gombot és a kezdőlapról bármikor visszatérhetsz, ' +
+        'viszont figyelj arra, hogy ne zárd be a böngészőt, se ezt az ablakot benne, ' +
+        'valamint telefon ne húzd ki a böngészőt a nemrég használt alkalmazások közül, ' +
+        'különben elveszítheted a játékadataidat!)')) {
+        window.sessionStorage.clear();
+      }
     }
+    this.router.navigate(['']);
   }
 
   goldInfo(): void {
@@ -910,6 +915,10 @@ export class GamePage implements OnInit {
   }
 
   roll(): void {
+    if (this.cash < 0) {
+      alert('Nem lehet tartozásod, adj el valamit, hogy legalább 0-ra hozd az egyenlegedet!');
+      return;
+    }
     let next = prompt('Hány mezőt lépsz? (dobás értéke)');
     try {
       if (next !== null) {
@@ -920,6 +929,16 @@ export class GamePage implements OnInit {
         if (this.eur > 0) this.cash += this.devisaRoll(this.eur, 'EUR/USD');
         if (this.usd > 0) this.cash += this.devisaRoll(this.usd, 'USD/JPY');
         this.cash += Math.round(this.bank / 1000 * 1.04) * 1000;
+        this.cash += this.fields[this.field].onlineIncome5 * 1000 * this.online5;
+        this.cash += this.fields[this.field].onlineIncome4 * 1000 * this.online4;
+        this.cash += this.fields[this.field].onlineIncome3 * 1000 * this.online3;
+        this.cash += this.fields[this.field].onlineIncome2 * 1000 * this.online2;
+        this.cash += this.fields[this.field].onlineIncome1 * 1000 * this.online1;
+        this.online5 += this.online4;
+        this.online4 = this.online3;
+        this.online3 = this.online2;
+        this.online2 = this.online1;
+        this.online1 = 0;
         this.update(true);
       }
     } catch (error) {
@@ -932,6 +951,11 @@ export class GamePage implements OnInit {
       const bankInp = document.querySelector('#bankAmount') as HTMLInputElement;
       let bank = parseInt(bankInp.value);
       if (isNaN(bank)) bank = 0;
+      if (bank % 1000 !== 0) {
+        alert('A bankba helyezett összegnek 1000-rel oszthatónak kell lennie!');
+        bankInp.value = this.bank.toString();
+        return;
+      }
       const differance = bank - this.bank;
       if (differance <= this.cash) {
         this.cash -= differance;
@@ -947,6 +971,11 @@ export class GamePage implements OnInit {
       const gbpInp = document.querySelector('#gbpAmount') as HTMLInputElement;
       let gbp = parseInt(gbpInp.value);
       if (isNaN(gbp)) gbp = 0;
+      if (gbp % 1000 !== 0) {
+        alert('A GBP/USD mennyiségnek 1000-rel oszthatónak kell lennie!');
+        gbpInp.value = this.gbp.toString();
+        return;
+      }
       const differance = gbp - this.gbp;
       if (differance <= this.cash) {
         this.cash -= differance;
@@ -962,6 +991,11 @@ export class GamePage implements OnInit {
       const eurInp = document.querySelector('#eurAmount') as HTMLInputElement;
       let eur = parseInt(eurInp.value);
       if (isNaN(eur)) eur = 0;
+      if (eur % 1000 !== 0) {
+        alert('A EUR/USD mennyiségnek 1000-rel oszthatónak kell lennie!');
+        eurInp.value = this.eur.toString();
+        return;
+      }
       const differance = eur - this.eur;
       if (differance <= this.cash) {
         this.cash -= differance;
@@ -977,6 +1011,11 @@ export class GamePage implements OnInit {
       const usdInp = document.querySelector('#usdAmount') as HTMLInputElement;
       let usd = parseInt(usdInp.value);
       if (isNaN(usd)) usd = 0;
+      if (usd % 1000 !== 0) {
+        alert('A USD/JPY mennyiségnek 1000-rel oszthatónak kell lennie!');
+        usdInp.value = this.usd.toString();
+        return;
+      }
       const differance = usd - this.usd;
       if (differance <= this.cash) {
         this.cash -= differance;
@@ -1047,5 +1086,10 @@ export class GamePage implements OnInit {
       body.style.overflow = 'auto';
     }
     this.showPansionModal = false;
+  }
+
+  @HostListener('window:popstate')
+  onPopState(): void {
+    this.onBack();
   }
 }
