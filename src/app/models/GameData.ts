@@ -18,8 +18,6 @@ export class GameData {
     maxPansionId: number = 0;
     flats: Accomodation[] = [];
     pansions: Accomodation[] = [];
-    showFlat: boolean = false;
-    showPansion: boolean = false;
     showGoldModal: boolean = false;
     showMineModal: boolean = false;
     showChocolateModal: boolean = false;
