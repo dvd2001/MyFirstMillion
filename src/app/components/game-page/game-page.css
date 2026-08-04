@@ -526,7 +526,7 @@ input::-webkit-inner-spin-button {
 }
 
 #flatList {
-    margin-top: -17px;
+    margin-top: -7px;
     background-color: var(--bg-list-flat);
     width: 99.5%;
     border-radius: 20px;
@@ -538,7 +538,7 @@ input::-webkit-inner-spin-button {
 }
 
 #pansionList {
-    margin-top: -17px;
+    margin-top: -7px;
     background-color: var(--bg-list-pansion);
     width: 99.5%;
     border-radius: 20px;
