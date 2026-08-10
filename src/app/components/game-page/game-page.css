@@ -476,7 +476,7 @@ input::-webkit-inner-spin-button {
     justify-self: center;
     width: 95%;
     padding: 5px;
-    margin: 6px;
+    margin: 10px;
 }
 
 .flatCard {
