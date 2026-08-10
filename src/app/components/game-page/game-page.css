@@ -467,18 +467,19 @@ input::-webkit-inner-spin-button {
     background-color: var(--close-btn-hover)
 }
 
-.flatcard {
+.accomodationCard {
     display: flex;
     align-items: center;
     border-radius: 10px;
     height: fit-content;
     justify-content: space-between;
-    width: 93%;
+    justify-self: center;
+    width: 95%;
     padding: 5px;
     margin: 6px;
 }
 
-.flatcard {
+.flatCard {
     background-color: var(--bg-flat-list)
 }
 
@@ -488,7 +489,7 @@ input::-webkit-inner-spin-button {
     height: fit-content;
 }
 
-.flatText {
+.accomodationText {
     width: 40%;
 }
 
@@ -501,7 +502,7 @@ input::-webkit-inner-spin-button {
     height: fit-content;
 }
 
-.flatcardBtn {
+.accomodationCardBtn {
     display: flex;
     align-items: center;
     color: var(--form);
@@ -670,7 +671,7 @@ input::-webkit-inner-spin-button {
     }
 
     .container,
-    .flatcard {
+    .accomodationCard {
         display: flex;
         flex-direction: column;
         align-self: center;
@@ -755,7 +756,7 @@ input::-webkit-inner-spin-button {
         width: 25%
     }
 
-    .flatcard {
+    .accomodationCard {
         flex-direction: row;
         flex-wrap: wrap;
         width: 90%;
@@ -766,8 +767,8 @@ input::-webkit-inner-spin-button {
         height: fit-content;
     }
 
-    .flatText {
-        width: 70%;
+    .accomodationText {
+        width: 65%;
         margin: 10px
     }
 
@@ -778,7 +779,7 @@ input::-webkit-inner-spin-button {
         width: 100%;
     }
 
-    .flatcardBtn {
+    .accomodationCardBtn {
         font-size: 12px;
     }
 
