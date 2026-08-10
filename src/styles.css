@@ -47,6 +47,9 @@ body {
     --close-btn-hover: #ffffffdd;
     --money: green;
     --bg-flat-list: #4a8aeb;
+    --bg-pansion-sell-btn: orange;
+    --bg-pansion-sell-btn-hover: #ffa500aa;
+    --bg-pansion-list: #f84e4e;
 }
 
 [data-theme="dark"] {
@@ -90,4 +93,7 @@ body {
     --close-btn-hover: #808080dd;
     --money: #00ff00;
     --bg-flat-list: #2424db;
+    --bg-pansion-sell-btn: #9e6700;
+    --bg-pansion-sell-btn-hover: #9e6700aa;
+    --bg-pansion-list: #ad0000;
 }

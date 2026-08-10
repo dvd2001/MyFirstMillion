@@ -483,6 +483,10 @@ input::-webkit-inner-spin-button {
     background-color: var(--bg-flat-list)
 }
 
+.pansionCard {
+    background-color: var(--bg-pansion-list);
+}
+
 .listIcon {
     display: flex;
     width: 15%;
@@ -515,6 +519,14 @@ input::-webkit-inner-spin-button {
 
 .debtBtn {
     background-color: var(--bg-debt-btn);
+}
+
+.sellBtn {
+    background-color: var(--bg-pansion-sell-btn);
+}
+
+.sellBtn:hover {
+    background-color: var(--bg-pansion-sell-btn-hover);
 }
 
 .debtBtn:hover {
