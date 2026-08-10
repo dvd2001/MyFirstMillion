@@ -19,8 +19,8 @@ export class GamePage implements OnInit {
   private field: number = 0;
   private maxOnline: number = 0;
   private gameData: GameData = new GameData();
-  public showFlat = false;
-  public showPansion = false;
+  public showFlat = true;
+  public showPansion = true;
   public mobile = false;
   public showGoldModal = false;
   public showMineModal = false;
@@ -85,6 +85,16 @@ export class GamePage implements OnInit {
     if (this.gameData.flats.length > 0) this.showFlat = true;
     if (this.gameData.pansions.length > 0) this.showPansion = true;
     if (typeof document !== 'undefined') {
+      if (this.showFlatModal) {
+        setTimeout(() => {
+          const flatModal = document.querySelector('#flatModal') as HTMLElement;
+          if (!flatModal) return;
+          for (let i = 0; i < this.gameData.flats.length; i++) {
+            const flat = this.gameData.flats[i];
+            const flatElement = '';
+          }
+        }, 0);
+      }
       const money = document.querySelector('#money') as HTMLElement;
       const goldPrice = document.querySelector('#goldPrice') as HTMLElement;
       const goldAmount = document.querySelector('#goldAmount') as HTMLElement;
@@ -514,6 +524,8 @@ export class GamePage implements OnInit {
     console.log(this.gameData.flats);
     return;
   }
+
+  flatSell(): void { }
 
   pansionInfo(): void {
     this.showPansionModal = true;
@@ -1157,6 +1169,10 @@ export class GamePage implements OnInit {
     this.gameData.showPansionModal = false;
     if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
   }
+
+  repayFullDebt(): void { }
+
+  getLoan(): void { }
 
   @HostListener('window:popstate')
   onPopState(): void {

@@ -193,7 +193,40 @@
                         alt="Information" class="info">
                 </button>
             </div>
-            <div *ngIf="showFlat" id="flatList" class="lists"></div>
+            <div *ngIf="showFlat" id="flatList" class="lists">
+                <div class="flatcard">
+                    <div class="listIcon">
+                        <img src="assets/images/building.png" alt="flat" class="icon">
+                    </div>
+                    <div class="flatText">
+                        <div class="detail">
+                            <p class="title">Vételár:</p>
+                            <p class="price">$ 10 000 000</p>
+                        </div>
+                        <div class="detail">
+                            <p class="title">Hitel:</p>
+                            <p class="price">$ 5 000 000</p>
+                        </div>
+                    </div>
+                    <div class="listBtn">
+                        <button class="debtBtn flatcardBtn" (click)="repayFullDebt()">
+                            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/repay.png':'assets/images/repayWhite.png'"
+                                alt="debt" class="btnIcon">
+                            <p>Hitel visszafizetés</p>
+                        </button>
+                        <button class="debtBtn flatcardBtn" (click)="getLoan()">
+                            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/debt.png':'assets/images/debtWhite.png'"
+                                alt="debt" class="btnIcon">
+                            <p>Hitel felvétel</p>
+                        </button>
+                        <button class="sell flatcardBtn" (click)="flatSell()">
+                            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/sell.png':'assets/images/sellWhite.png'"
+                                alt="debt" class="btnIcon">
+                            <p>Eladás</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="listContainer acList mobileList">
             <div id="pansion" class="accomodation cards">

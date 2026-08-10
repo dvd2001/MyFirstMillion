@@ -36,8 +36,8 @@ body {
     --bg-buy-btn-hover: #ff69b4aa;
     --bg-sell-btn: red;
     --bg-sell-btn-hover: #ff0000aa;
-    --bg-debt-btn: violet;
-    --bg-debt-btn-hover: #ee82ee88;
+    --bg-debt-btn: #c551ff;
+    --bg-debt-btn-hover: #c551ffaa;
     --bg-bank: lightgray;
     --bg-devisa: #ffd181;
     --bg-save-btn: #00eb00;
@@ -46,6 +46,7 @@ body {
     --bg-modal-container: white;
     --close-btn-hover: #ffffffdd;
     --money: green;
+    --bg-flat-list: #4a8aeb;
 }
 
 [data-theme="dark"] {
@@ -79,7 +80,7 @@ body {
     --bg-sell-btn: darkred;
     --bg-sell-btn-hover: #8b0000aa;
     --bg-debt-btn: purple;
-    --bg-debt-btn-hover: #80008088;
+    --bg-debt-btn-hover: #800080aa;
     --bg-bank: gray;
     --bg-devisa: #9e7837;
     --bg-save-btn: green;
@@ -88,4 +89,5 @@ body {
     --bg-modal-container: grey;
     --close-btn-hover: #808080dd;
     --money: #00ff00;
+    --bg-flat-list: #2424db;
 }

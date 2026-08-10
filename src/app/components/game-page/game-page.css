@@ -148,7 +148,8 @@ input::-webkit-inner-spin-button {
     padding: 0
 }
 
-.container {
+.container,
+.flatcard {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -227,7 +228,8 @@ input::-webkit-inner-spin-button {
     background-color: var(--bg-back-hover)
 }
 
-.text {
+.text,
+.flatText {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -465,6 +467,59 @@ input::-webkit-inner-spin-button {
     background-color: var(--close-btn-hover)
 }
 
+.flatcard {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    height: fit-content;
+    justify-content: space-between;
+    width: 93%;
+    padding: 5px;
+    margin: 6px;
+}
+
+.flatcard {
+    background-color: var(--bg-flat-list)
+}
+
+.listIcon {
+    display: flex;
+    width: 15%;
+    height: fit-content;
+}
+
+.flatText {
+    width: 40%;
+}
+
+.listBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    width: 30%;
+    height: fit-content;
+}
+
+.flatcardBtn {
+    display: flex;
+    align-items: center;
+    color: var(--form);
+    font-size: 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.debtBtn {
+    background-color: var(--bg-debt-btn);
+}
+
+.debtBtn:hover {
+    background-color: var(--bg-debt-btn-hover);
+}
+
 #navbar {
     display: flex;
     justify-content: space-between;
@@ -614,7 +669,8 @@ input::-webkit-inner-spin-button {
         font-size: 22px
     }
 
-    .container {
+    .container,
+    .flatcard {
         display: flex;
         flex-direction: column;
         align-self: center;
@@ -637,6 +693,11 @@ input::-webkit-inner-spin-button {
 
     .icon {
         height: 50px
+    }
+
+    .btnIcon {
+        height: 20px;
+        margin-right: 5px
     }
 
     .info {
@@ -694,13 +755,41 @@ input::-webkit-inner-spin-button {
         width: 25%
     }
 
+    .flatcard {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 90%;
+    }
+
+    .listIcon {
+        width: 15%;
+        height: fit-content;
+    }
+
+    .flatText {
+        width: 70%;
+        margin: 10px
+    }
+
+    .listBtn {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .flatcardBtn {
+        font-size: 12px;
+    }
+
     .modalPrice {
         width: 60%;
     }
 
     #flatList,
     #pansionList {
-        width: 96%
+        width: 96%;
+        margin-top: -17px;
     }
 
     #onlineTitle {
