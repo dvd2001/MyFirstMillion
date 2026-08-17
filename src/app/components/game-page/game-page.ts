@@ -7,6 +7,7 @@ import { NgIf } from '@angular/common';
 import { ParseError } from '@angular/compiler';
 import { Accomodation } from '../../models/Accomodation';
 import { GameData } from '../../models/GameData';
+import { isGeneratorFunction } from 'node:util/types';
 
 @Component({
   selector: 'app-game-page',
@@ -516,12 +517,13 @@ export class GamePage implements OnInit {
     try {
       const price: number = this.fields[this.field].flatBuy * 1000;
       if ((price - this.fields[this.field].flatDebt * 1000) <= this.gameData.cash) {
-        let text = prompt(`Mennyi hitelt szeretnél felvenni a vásárláshoz?` +
-          `(min: $ ${(price - this.gameData.cash) < 0 ? 0 : (price - this.gameData.cash)};` +
+        let text = prompt(`Mennyi hitelt szeretnél felvenni? A hitel összegének 100 000-rel oszthatónak kell lennie!` +
+          `(min: $ ${(price - this.gameData.cash) < 0 ? 0 : this.roundUp(price - this.gameData.cash)};` +
           ` max: $ ${this.fields[this.field].flatDebt * 1000})`, '0');
         if (text && text !== '') {
           let debt = parseInt(text);
-          if (debt < (price - this.gameData.cash) || (this.fields[this.field].flatDebt * 1000) < debt) throw ParseError;
+          if (debt < this.roundUp(price - this.gameData.cash) ||
+            (this.fields[this.field].flatDebt * 1000) < debt || debt % 100000 !== 0) throw ParseError;
           else {
             const flat: Accomodation = new Accomodation(++this.gameData.maxFlatId, price, debt);
             this.gameData.flats.push(flat);
@@ -538,7 +540,25 @@ export class GamePage implements OnInit {
     return;
   }
 
-  flatSell(): void { }
+  flatSell(id: number): void {
+    let idx = 0;
+    while (this.gameData.flats[idx].id !== id) idx++;
+    const flat = this.gameData.flats[idx];
+    if (flat.debt === 0) {
+      this.gameData.cash += this.fields[this.field].flatBuy * 0.95;
+    }
+    else {
+      const cash = this.gameData.cash + this.fields[this.field].flatBuy * 0.95;
+      let res = flat.totalRepay(cash);
+      if (res === 0) {
+        alert('Nem teljesíthető tranzakció! Nem tudod kifizatni az ingatlant terhelő hitelt.');
+        return;
+      }
+      this.gameData.cash += (this.fields[this.field].flatBuy * 0.95 - res);
+    }
+    this.gameData.flats.splice(idx, 1);
+    this.update();
+  }
 
   pansionInfo(): void {
     this.showPansionModal = true;
@@ -670,6 +690,26 @@ export class GamePage implements OnInit {
     }
     console.log(this.gameData.pansions);
     return;
+  }
+
+  pansionSell(id: number): void {
+    let idx = 0;
+    while (this.gameData.pansions[idx].id !== id) idx++;
+    const pansion = this.gameData.pansions[idx];
+    if (pansion.debt === 0) {
+      this.gameData.cash += this.fields[this.field].pansionBuy * 0.95;
+    }
+    else {
+      const cash = this.gameData.cash + this.fields[this.field].pansionBuy * 0.95;
+      let res = pansion.totalRepay(cash);
+      if (res === 0) {
+        alert('Nem teljesíthető tranzakció! Nem tudod kifizatni az ingatlant terhelő hitelt.');
+        return;
+      }
+      this.gameData.cash += (this.fields[this.field].pansionBuy * 0.95 - res);
+    }
+    this.gameData.pansions.splice(idx, 1);
+    this.update();
   }
 
   onlineInfo(): void {
@@ -1196,9 +1236,60 @@ export class GamePage implements OnInit {
     if (typeof window !== 'undefined') window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
   }
 
-  repayFullDebt(): void { }
+  repayFullDebt(isFlat: boolean, id: number): void {
+    let idx = 0;
+    let res;
+    if (isFlat) {
+      while (this.gameData.flats[idx].id !== id) idx++;
+      res = this.gameData.flats[idx].totalRepay(this.gameData.cash);
+    }
+    else {
+      while (this.gameData.pansions[idx].id !== id) idx++;
+      res = this.gameData.pansions[idx].totalRepay(this.gameData.cash);
+    }
+    if (res === 0) {
+      alert('Nem telejesíthető tranzakció! Nincs elég pénzed visszafizetni az összes hitel tartozásodat!');
+      return;
+    }
+    this.gameData.cash -= res;
+    this.update();
+  }
 
-  getLoan(): void { }
+  getLoan(isFlat: boolean, id: number): void {
+    try {
+      let idx = 0;
+      const field = this.fields[this.field];
+      if (isFlat) {
+        while (this.gameData.flats[idx].id !== id) idx++;
+        const text = prompt(`Mennyi hitelt szeretnél felvenni? A felvett összegnek 100 000-rel oszthatónak kell lennie! (min: $ 100 000; max: $ ${field.flatDebt})`);
+        if (text) {
+          const debt = parseInt(text);
+          if (debt > field.flatDebt || debt <= 0 || debt % 100000 !== 0) throw ParseError;
+          this.gameData.flats[idx].setDebt(debt);
+          this.gameData.cash += debt;
+          return;
+        }
+      }
+      else {
+        while (this.gameData.pansions[idx].id !== id) idx++;
+        const text = prompt(`Mennyi hitelt szeretnél felvenni? A felvett összegnek 100 000-rel oszthatónak kell lennie! (min: $ 100 000; max: $ ${field.pansionDebt})`);
+        if (text) {
+          const debt = parseInt(text);
+          if (debt > field.pansionDebt || debt <= 0 || debt % 100000 !== 0) throw ParseError;
+          this.gameData.pansions[idx].setDebt(debt);
+          this.gameData.cash += debt;
+          return;
+        }
+      }
+    } catch (error) {
+      alert('Nem teljesíthető tranzakció');
+      return;
+    }
+  }
+
+  roundUp(x: number): number {
+    return x % 100000 === 0 ? x : ((x + 100000) - x % 100000);
+  }
 
   @HostListener('window:popstate')
   onPopState(): void {

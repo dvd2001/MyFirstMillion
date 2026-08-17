@@ -209,17 +209,17 @@
                         </div>
                     </div>
                     <div class="listBtn">
-                        <button class="debtBtn accomodationCardBtn" (click)="repayFullDebt()">
+                        <button class="debtBtn accomodationCardBtn" (click)="repayFullDebt(true, 0)">
                             <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/repay.png':'assets/images/repayWhite.png'"
                                 alt="debt" class="btnIcon">
                             <p>Hitel visszafizetés</p>
                         </button>
-                        <button class="debtBtn accomodationCardBtn" (click)="getLoan()">
+                        <button class="debtBtn accomodationCardBtn" (click)="getLoan(true, 0)">
                             <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/debt.png':'assets/images/debtWhite.png'"
                                 alt="debt" class="btnIcon">
                             <p>Hitel felvétel</p>
                         </button>
-                        <button class="sell accomodationCardBtn" (click)="flatSell()">
+                        <button class="sell accomodationCardBtn" (click)="flatSell(0)">
                             <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/sell.png':'assets/images/sellWhite.png'"
                                 alt="debt" class="btnIcon">
                             <p>Eladás</p>
@@ -261,7 +261,7 @@
             <div *ngIf="showPansion" id="pansionList" class="lists">
                 <div class="accomodationCard pansionCard">
                     <div class="listIcon">
-                        <img src="assets/images/pansion.png" alt="flat" class="icon">
+                        <img src="assets/images/pansion.png" alt="pansion" class="icon">
                     </div>
                     <div class="accomodationText">
                         <div class="detail">
@@ -274,17 +274,17 @@
                         </div>
                     </div>
                     <div class="listBtn">
-                        <button class="debtBtn accomodationCardBtn" (click)="repayFullDebt()">
+                        <button class="debtBtn accomodationCardBtn" (click)="repayFullDebt(false, 0)">
                             <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/repay.png':'assets/images/repayWhite.png'"
                                 alt="debt" class="btnIcon">
                             <p>Hitel visszafizetés</p>
                         </button>
-                        <button class="debtBtn accomodationCardBtn" (click)="getLoan()">
+                        <button class="debtBtn accomodationCardBtn" (click)="getLoan(false, 0)">
                             <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/debt.png':'assets/images/debtWhite.png'"
                                 alt="debt" class="btnIcon">
                             <p>Hitel felvétel</p>
                         </button>
-                        <button class="sellBtn accomodationCardBtn" (click)="flatSell()">
+                        <button class="sellBtn accomodationCardBtn" (click)="pansionSell(0)">
                             <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/sell.png':'assets/images/sellWhite.png'"
                                 alt="debt" class="btnIcon">
                             <p>Eladás</p>
