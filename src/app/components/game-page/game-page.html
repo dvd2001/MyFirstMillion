@@ -194,32 +194,34 @@
                 </button>
             </div>
             <div *ngIf="showFlat" id="flatList" class="lists">
-                <div class="accomodationCard flatCard">
+                <div *ngFor="let flat of ownedFlats" class="accomodationCard flatCard">
                     <div class="listIcon">
                         <img src="assets/images/building.png" alt="flat" class="icon">
                     </div>
                     <div class="accomodationText">
                         <div class="detail">
                             <p class="title">Vételár:</p>
-                            <p class="price">$ 10 000 000</p>
+                            <p class="price">$ {{ flat.price.toLocaleString('hu-HU') }}</p>
                         </div>
                         <div class="detail">
                             <p class="title">Hitel:</p>
-                            <p class="price">$ 5 000 000</p>
+                            <p class="price">$ {{ flat.debt.toLocaleString('hu-HU') }}</p>
                         </div>
                     </div>
                     <div class="listBtn">
-                        <button class="debtBtn accomodationCardBtn" (click)="repayFullDebt(true, 0)">
-                            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/repay.png':'assets/images/repayWhite.png'"
-                                alt="debt" class="btnIcon">
-                            <p>Hitel visszafizetés</p>
-                        </button>
-                        <button class="debtBtn accomodationCardBtn" (click)="getLoan(true, 0)">
+                        <button *ngIf="flat.debt === 0" class="debtBtn accomodationCardBtn"
+                            (click)="getLoan(true, flat.id)">
                             <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/debt.png':'assets/images/debtWhite.png'"
                                 alt="debt" class="btnIcon">
                             <p>Hitel felvétel</p>
                         </button>
-                        <button class="sell accomodationCardBtn" (click)="flatSell(0)">
+                        <button *ngIf="flat.debt > 0" class="debtBtn accomodationCardBtn"
+                            (click)="repayFullDebt(true, flat.id)">
+                            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/repay.png':'assets/images/repayWhite.png'"
+                                alt="debt" class="btnIcon">
+                            <p>Hitel visszafizetés</p>
+                        </button>
+                        <button class="sell accomodationCardBtn" (click)="flatSell(flat.id)">
                             <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/sell.png':'assets/images/sellWhite.png'"
                                 alt="debt" class="btnIcon">
                             <p>Eladás</p>
@@ -259,32 +261,34 @@
                 </button>
             </div>
             <div *ngIf="showPansion" id="pansionList" class="lists">
-                <div class="accomodationCard pansionCard">
+                <div *ngFor="let pansion of ownedPansions" class="accomodationCard pansionCard">
                     <div class="listIcon">
                         <img src="assets/images/pansion.png" alt="pansion" class="icon">
                     </div>
                     <div class="accomodationText">
                         <div class="detail">
                             <p class="title">Vételár:</p>
-                            <p class="price">$ 10 000 000</p>
+                            <p class="price">$ {{ pansion.price.toLocaleString('hu-HU') }}</p>
                         </div>
                         <div class="detail">
                             <p class="title">Hitel:</p>
-                            <p class="price">$ 5 000 000</p>
+                            <p class="price">$ {{ pansion.debt.toLocaleString('hu-HU') }}</p>
                         </div>
                     </div>
                     <div class="listBtn">
-                        <button class="debtBtn accomodationCardBtn" (click)="repayFullDebt(false, 0)">
-                            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/repay.png':'assets/images/repayWhite.png'"
-                                alt="debt" class="btnIcon">
-                            <p>Hitel visszafizetés</p>
-                        </button>
-                        <button class="debtBtn accomodationCardBtn" (click)="getLoan(false, 0)">
+                        <button *ngIf="pansion.debt === 0" class="debtBtn accomodationCardBtn"
+                            (click)="getLoan(false, pansion.id)">
                             <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/debt.png':'assets/images/debtWhite.png'"
                                 alt="debt" class="btnIcon">
                             <p>Hitel felvétel</p>
                         </button>
-                        <button class="sellBtn accomodationCardBtn" (click)="pansionSell(0)">
+                        <button *ngIf="pansion.debt > 0" class="debtBtn accomodationCardBtn"
+                            (click)="repayFullDebt(false, pansion.id)">
+                            <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/repay.png':'assets/images/repayWhite.png'"
+                                alt="debt" class="btnIcon">
+                            <p>Hitel visszafizetés</p>
+                        </button>
+                        <button class="sellBtn accomodationCardBtn" (click)="pansionSell(pansion.id)">
                             <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/sell.png':'assets/images/sellWhite.png'"
                                 alt="debt" class="btnIcon">
                             <p>Eladás</p>
