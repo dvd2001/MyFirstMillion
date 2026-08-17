@@ -513,14 +513,27 @@ export class GamePage implements OnInit {
   }
 
   flatBuy(): void {
-    const price: number = this.fields[this.field].flatBuy * 1000;
-    if (price <= this.gameData.cash) {
-      const flat: Accomodation = new Accomodation(++this.gameData.maxFlatId, price);
-      this.gameData.flats.push(flat);
-      this.gameData.cash -= price;
-      this.update();
+    try {
+      const price: number = this.fields[this.field].flatBuy * 1000;
+      if ((price - this.fields[this.field].flatDebt * 1000) <= this.gameData.cash) {
+        let text = prompt(`Mennyi hitelt szeretnél felvenni a vásárláshoz?` +
+          `(min: $ ${(price - this.gameData.cash) < 0 ? 0 : (price - this.gameData.cash)};` +
+          ` max: $ ${this.fields[this.field].flatDebt * 1000})`, '0');
+        if (text && text !== '') {
+          let debt = parseInt(text);
+          if (debt < (price - this.gameData.cash) || (this.fields[this.field].flatDebt * 1000) < debt) throw ParseError;
+          else {
+            const flat: Accomodation = new Accomodation(++this.gameData.maxFlatId, price, debt);
+            this.gameData.flats.push(flat);
+            this.gameData.cash -= (price - debt);
+            this.update();
+          }
+        }
+      }
+      else throw ParseError;
+    } catch (error) {
+      alert('Nem teljesíthető tranzakció!');
     }
-    else alert('Nincs elég pénzed a vásárláshoz!');
     console.log(this.gameData.flats);
     return;
   }
@@ -634,14 +647,27 @@ export class GamePage implements OnInit {
   }
 
   pansionBuy(): void {
-    const price: number = this.fields[this.field].pansionBuy * 1000;
-    if (price <= this.gameData.cash) {
-      const pansion: Accomodation = new Accomodation(++this.gameData.maxPansionId, price);
-      this.gameData.pansions.push(pansion);
-      this.gameData.cash -= price;
-      this.update();
+    try {
+      const price: number = this.fields[this.field].pansionBuy * 1000;
+      if ((price - this.fields[this.field].pansionDebt * 1000) <= this.gameData.cash) {
+        let text = prompt(`Mennyi hitelt szeretnél felvenni a vásárláshoz?` +
+          `(min: $ ${(price - this.gameData.cash) < 0 ? 0 : (price - this.gameData.cash)};` +
+          ` max: $ ${this.fields[this.field].pansionDebt * 1000})`, '0');
+        if (text && text !== '') {
+          let debt = parseInt(text);
+          if (debt < (price - this.gameData.cash) || (this.fields[this.field].pansionDebt * 1000) < debt) throw ParseError;
+          else {
+            const pansion: Accomodation = new Accomodation(++this.gameData.maxPansionId, price, debt);
+            this.gameData.pansions.push(pansion);
+            this.gameData.cash -= (price - debt);
+            this.update();
+          }
+        }
+      }
+      else throw ParseError;
+    } catch (error) {
+      alert('Nem teljesíthető tranzakció!');
     }
-    else alert('Nincs elég pénzed a vásárláshoz!');
     console.log(this.gameData.pansions);
     return;
   }
