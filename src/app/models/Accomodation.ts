@@ -13,7 +13,10 @@ export class Accomodation {
 
     debtLevelUp(): void {
         if (this.debtLevel < 5 && this.debtLevel !== 0) this.debtLevel++;
-        else this.debtLevel = 0;
+        else {
+            this.debtLevel = 0;
+            this.debt = 0;
+        }
         return;
     }
 
