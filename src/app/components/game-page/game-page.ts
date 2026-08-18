@@ -70,10 +70,6 @@ export class GamePage implements OnInit {
         if (this.showOnlineModal && this.gameData.levelInfo > 0) this.levelInfo(this.gameData.levelInfo);
       }
     }
-else if(typeof document !== 'undefined'){
-const body = document.querySelector('body') as HTMLElement;
-      body.style.overflow = 'auto';
-}
     this.fields = this.reader.readingFields();
     this.update();
   }
@@ -184,6 +180,10 @@ const body = document.querySelector('body') as HTMLElement;
         'valamint telefon ne húzd ki a böngészőt a nemrég használt alkalmazások közül, ' +
         'különben elveszítheted a játékadataidat!)')) {
         window.sessionStorage.clear();
+if(typeof document !== 'undefined'){
+const body = document.querySelector('body') as HTMLElement;
+      body.style.overflow = 'auto';
+}
       }
     }
     this.router.navigate(['']);
