@@ -847,6 +847,10 @@ input::-webkit-inner-spin-button {
         width: 60%;
     }
 
+    .siteNav {
+        font-size: 20px;
+    }
+
     #flatList,
     #pansionList {
         width: 96%;
