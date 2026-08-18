@@ -70,6 +70,10 @@ export class GamePage implements OnInit {
         if (this.showOnlineModal && this.gameData.levelInfo > 0) this.levelInfo(this.gameData.levelInfo);
       }
     }
+else if(typeof document !== 'undefined'){
+const body = document.querySelector('body') as HTMLElement;
+      body.style.overflow = 'auto';
+}
     this.fields = this.reader.readingFields();
     this.update();
   }
