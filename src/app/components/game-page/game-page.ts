@@ -1071,6 +1071,7 @@ const body = document.querySelector('body') as HTMLElement;
           pansion.debtLevelUp();
         }
         this.update(true);
+if(typeof window !== 'undefined') window.scrollTo(0,0);
       }
     } catch (error) {
       alert('Nincs ilyen szám a dobókockán, próbáld újra!');
