@@ -1,6 +1,22 @@
 <div id="navbar">
     <button id="backBtn" (click)="onBack()">〈 Back</button>
     <button id="roll" (click)="roll()">Dobás</button>
+    <div class="navActions">
+        <button id="quickNav" (click)="quickNavModal()">
+            <img *ngIf="!showQuickNav"
+                [src]="themeService.getTheme()() === 'light' ? 'assets/images/menu.png':'assets/images/menuWhite.png'"
+                alt="quick navigation" class="modalIcon">
+            <img *ngIf="showQuickNav"
+                [src]="themeService.getTheme()() === 'light' ? 'assets/images/close.png':'assets/images/closeWhite.png'"
+                alt="quick navigation" class="modalIcon">
+        </button>
+        <div *ngIf="showQuickNav" id="quickNavModal">
+            <button class="siteNav" (click)="siteNavigate('bank')">Bank/Deviza</button>
+            <button class="siteNav" (click)="siteNavigate('stocks')">Részvények</button>
+            <button class="siteNav" (click)="siteNavigate('accomodations')">Bérlakás/Panzió</button>
+            <button class="siteNav" (click)="siteNavigate('online')">Online üzlet</button>
+        </div>
+    </div>
 </div>
 <section id="bank">
     <div class="title">
@@ -1398,4 +1414,3 @@
             <button class="close" (click)="closePansionModal()">Bezárás</button>
         </div>
     </div>
-</div>

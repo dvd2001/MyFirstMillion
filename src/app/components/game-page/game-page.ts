@@ -8,6 +8,7 @@ import { ParseError } from '@angular/compiler';
 import { Accomodation } from '../../models/Accomodation';
 import { GameData } from '../../models/GameData';
 import { isGeneratorFunction } from 'node:util/types';
+import { hidden } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-game-page',
@@ -32,6 +33,7 @@ export class GamePage implements OnInit {
   public showPansionModal = false;
   public showOnlineBasicModal = false;
   public showOnlineModal = false;
+  public showQuickNav = false;
   constructor(public themeService: ThemeService, private router: Router, private reader: DataReadingService) {
     if (typeof window !== 'undefined') {
       const field = window.sessionStorage.getItem('field');
@@ -180,10 +182,10 @@ export class GamePage implements OnInit {
         'valamint telefon ne húzd ki a böngészőt a nemrég használt alkalmazások közül, ' +
         'különben elveszítheted a játékadataidat!)')) {
         window.sessionStorage.clear();
-if(typeof document !== 'undefined'){
-const body = document.querySelector('body') as HTMLElement;
-      body.style.overflow = 'auto';
-}
+        if (typeof document !== 'undefined') {
+          const body = document.querySelector('body') as HTMLElement;
+          body.style.overflow = 'auto';
+        }
       }
     }
     this.router.navigate(['']);
@@ -1071,7 +1073,7 @@ const body = document.querySelector('body') as HTMLElement;
           pansion.debtLevelUp();
         }
         this.update(true);
-if(typeof window !== 'undefined') window.scrollTo(-5,-5);
+        if (typeof window !== 'undefined') window.scrollTo(-5, -5);
       }
     } catch (error) {
       alert('Nincs ilyen szám a dobókockán, próbáld újra!');
@@ -1285,6 +1287,18 @@ if(typeof window !== 'undefined') window.scrollTo(-5,-5);
       alert('Nem teljesíthető tranzakció');
       return;
     }
+  }
+
+  quickNavModal(): void {
+    this.showQuickNav = !this.showQuickNav;
+  }
+
+  siteNavigate(id: string): void {
+    this.quickNavModal();
+    this.router.navigate(['/game'], { fragment: id }).then(() => {
+      const element = document.querySelector(`#${id}`);
+      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   }
 
   roundUp(x: number): number {

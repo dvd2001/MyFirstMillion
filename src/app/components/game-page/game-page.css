@@ -112,8 +112,10 @@ input::-webkit-inner-spin-button {
 .sell:hover,
 .infoBtn:hover,
 .close:hover,
+.siteNav,
 #roll:hover,
-#backBtn:hover {
+#backBtn:hover,
+#quickNav:hover {
     cursor: pointer
 }
 
@@ -533,17 +535,37 @@ input::-webkit-inner-spin-button {
     background-color: var(--bg-debt-btn-hover);
 }
 
+.siteNav {
+    color: var(--form);
+    font-size: 32px;
+    border-radius: 20px;
+    width: 100%;
+    height: fit-content;
+    padding: 10px
+}
+
+.siteNav:hover {
+    background-color: var(--quick-nav-btn-hover)
+}
+
 #navbar {
     display: flex;
     justify-content: space-between;
     background-image: linear-gradient(to right, var(--bg-gradiant-primary), var(--bg-gradiant-secondary));
     position: sticky;
     top: 0;
-    overflow: hidden;
+    overflow: visible;
     align-self: left;
     margin: 0;
     width: 99.7%;
-    padding: 0 0 5px
+    padding: 0 0 5px;
+    z-index: 20;
+}
+
+.navActions {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
 }
 
 #cash {
@@ -571,6 +593,17 @@ input::-webkit-inner-spin-button {
 
 #roll:hover {
     background-color: var(--bg-sp-button-hover)
+}
+
+.siteNav,
+#quickNav {
+    background-color: transparent;
+    border: none;
+}
+
+#quickNav {
+    padding: 0;
+    margin: 0
 }
 
 #bankCard {
@@ -655,6 +688,21 @@ input::-webkit-inner-spin-button {
     justify-content: space-between;
     width: 20%;
     padding: 10px
+}
+
+#quickNavModal {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-quick-nav);
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    border: none;
+    border-radius: 25px;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px 20px;
+    z-index: 30;
 }
 
 @media (max-width:1200px) {
