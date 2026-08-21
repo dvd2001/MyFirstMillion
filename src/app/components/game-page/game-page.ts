@@ -7,8 +7,6 @@ import { NgFor, NgIf } from '@angular/common';
 import { ParseError } from '@angular/compiler';
 import { Accomodation } from '../../models/Accomodation';
 import { GameData } from '../../models/GameData';
-import { isGeneratorFunction } from 'node:util/types';
-import { hidden } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-game-page',
@@ -80,7 +78,12 @@ export class GamePage implements OnInit {
     if (typeof window !== 'undefined') {
       window.sessionStorage.setItem('field', this.field.toString());
       window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
+      if (this.fields[this.field].goal) {
+        window.sessionStorage.setItem('field', JSON.stringify(this.fields[this.field]));
+        this.router.navigate(['victory']);
+      }
     }
+
     if (isRoll) {
       this.gameData.bank = 0;
       this.gameData.gbp = 0;
