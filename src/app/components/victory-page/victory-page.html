@@ -1,1 +1,258 @@
-<p>victory-page works!</p>
+<div id="navbar">
+    <div id="back">
+        <button id="backBtn" (click)="onBackToMain()">〈 Kezdőlap</button>
+    </div>
+    <div id="title">
+        <img src="assets/images/firework.png" alt="" class="congratsImg">
+        <h1 id="congratsTitle">Gratulálok!</h1>
+        <img src="assets/images/firework.png" alt="" class="congratsImg">
+    </div>
+</div>
+<p id="congratsText">Tekintsd meg összesítve, hogy a játék által reprezentált "x" év alatt mit értél el $ 1 000 000
+    kezdő tőkéből!</p>
+<section id="stocks">
+    <div class="title">
+        <h1>Részvények</h1>
+    </div>
+    <div class="container">
+        <div id="gold" class="stock cards">
+            <img class="icon" src="assets/images/gold.png" alt="Gold Bars">
+            <div class="text">
+                <h2>Arany</h2>
+                <div class="detail">
+                    <p class="title">Ár:</p>
+                    <p id="goldPrice" class="price"></p>
+                </div>
+                <div class="detail">
+                    <p class="title">Mennyiség:</p>
+                    <p id="goldAmount" class="price"></p>
+                </div>
+            </div>
+        </div>
+        <div id="mine" class="stock cards">
+            <img src="assets/images/mine.png" alt="Mine" class="icon">
+            <div class="stockText">
+                <h2>Bánya</h2>
+                <div class="detail">
+                    <p class="title">Ár:</p>
+                    <p id="minePrice" class="price"></p>
+                </div>
+                <div class="detail">
+                    <p class="title">Mennyiség:</p>
+                    <p id="mineAmount" class="price"></p>
+                </div>
+            </div>
+        </div>
+        <div id="chocolate" class="stock cards">
+            <img src="assets/images/chocolate.png" alt="Chocolate" class="icon">
+            <div class="stockText">
+                <h2>Csoki</h2>
+                <div class="detail">
+                    <p class="title">Ár:</p>
+                    <p id="chocolatePrice" class="price"></p>
+                </div>
+                <div class="detail">
+                    <p class="title">Mennyiség:</p>
+                    <p id="chocolateAmount" class="price"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="accomodations">
+    <div class="title">
+        <h1>Bérlakás/Panzió</h1>
+    </div>
+    <div class="container">
+        <div class="listContainer acList mobileList">
+            <div id="flat" class="accomodation cards">
+                <img src="assets/images/building.png" alt="Building" class="icon">
+                <div class="acText">
+                    <h2>Bérlakás</h2>
+                    <div class="detail">
+                        <p class="title">Eladási ár:</p>
+                        <p id="flatSell" class="price"></p>
+                        <p class="title">Bérleti díj:</p>
+                        <p id="flatRent" class="price"></p>
+                    </div>
+                    <div class="detail">
+                        <p class="title">Mennyiség:</p>
+                        <p id="flatAmount" class="price"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="listContainer acList mobileList">
+            <div id="pansion" class="accomodation cards">
+                <img src="assets/images/pansion.png" alt="Guest house" class="icon">
+                <div class="acText">
+                    <h2>Panzió</h2>
+                    <div class="detail">
+                        <p class="title">Eladási ár:</p>
+                        <p id="pansionSell" class="price"></p>
+                        <p class="title">Hozam:</p>
+                        <p id="pansionIncome" class="price"></p>
+                    </div>
+                    <div class="detail">
+                        <p class="title">Mennyiség:</p>
+                        <p id="pansionAmount" class="price"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="online">
+    <div class="title">
+        <h1>Online Üzlet</h1>
+    </div>
+    <div id="onlineContainer" class="container lists">
+        <div id="level" class="container">
+            <div class="online onlineList cards" id="level1">
+                <div class="text levelText">
+                    <h2 class="level">1. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Hozam:</p>
+                        <p id="online1Income" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Eladási ár:</p>
+                        <p id="online1Sell" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Mennyiség:</p>
+                        <p id="online1Amount" class="price"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="online onlineList cards" id="level2">
+                <div class="text levelText">
+                    <h2 class="level">2. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Hozam:</p>
+                        <p id="online2Income" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Eladási ár:</p>
+                        <p id="online2Sell" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Mennyiség:</p>
+                        <p id="online2Amount" class="price"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="online onlineList cards" id="level3">
+                <div class="text levelText">
+                    <h2 class="level">3. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Hozam:</p>
+                        <p id="online3Income" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Eladási ár:</p>
+                        <p id="online3Sell" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Mennyiség:</p>
+                        <p id="online3Amount" class="price"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="online onlineList cards" id="level4">
+                <div class="text levelText">
+                    <h2 class="level">4. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Hozam:</p>
+                        <p id="online4Income" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Eladási ár:</p>
+                        <p id="online4Sell" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Mennyiség:</p>
+                        <p id="online4Amount" class="price"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="online onlineList cards" id="level5">
+                <div class="text levelText">
+                    <h2 class="level">5. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Hozam:</p>
+                        <p id="online5Income" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Eladási ár:</p>
+                        <p id="online5Sell" class="price"></p>
+                    </div>
+                    <div class="detail levelDetail">
+                        <p class="title">Mennyiség:</p>
+                        <p id="online5Amount" class="price"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="debt">
+    <div class="title">
+        <h1>Hitel</h1>
+    </div>
+    <div id="onlineContainer" class="container lists">
+        <div id="level" class="container">
+            <div class="debt onlineList cards" id="level1">
+                <div class="text levelText">
+                    <h2 class="level">1. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Teljes összeg:</p>
+                        <p id="debt1Total" class="price"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="debt onlineList cards" id="level2">
+                <div class="text levelText">
+                    <h2 class="level">2. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Teljes összeg:</p>
+                        <p id="debt2Total" class="price"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="debt onlineList cards" id="level3">
+                <div class="text levelText">
+                    <h2 class="level">3. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Teljes összeg:</p>
+                        <p id="debt3Total" class="price"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="debt onlineList cards" id="level4">
+                <div class="text levelText">
+                    <h2 class="level">4. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Teljes összeg:</p>
+                        <p id="debt4Total" class="price"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="debt onlineList cards" id="level5">
+                <div class="text levelText">
+                    <h2 class="level">5. szint</h2>
+                    <div class="detail levelDetail">
+                        <p class="title">Teljes összeg:</p>
+                        <p id="debt5Total" class="price"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="cash">
+    <div id="wallet">
+        <p class="title income">Befektetéseid értéke dollárban:</p>
+        <p id="money" class="income">$ 100 000 000</p>
+    </div>
+</div>

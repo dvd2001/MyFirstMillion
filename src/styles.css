@@ -52,6 +52,7 @@ body {
     --bg-pansion-list: #f84e4e;
     --bg-quick-nav: #ccf2ff;
     --quick-nav-btn-hover: #00000033;
+    --victory-title: gold;
 }
 
 [data-theme="dark"] {

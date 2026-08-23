@@ -150,8 +150,7 @@ input::-webkit-inner-spin-button {
     padding: 0
 }
 
-.container,
-.flatcard {
+.container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -230,8 +229,7 @@ input::-webkit-inner-spin-button {
     background-color: var(--bg-back-hover)
 }
 
-.text,
-.flatText {
+.text {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -794,10 +792,6 @@ input::-webkit-inner-spin-button {
 
     .modalMoreDetailContainer {
         padding: 0 5px
-    }
-
-    .modalMorePrice {
-        width: 67%
     }
 
     .modalText {

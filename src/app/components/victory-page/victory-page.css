@@ -1,0 +1,381 @@
+div {
+    width: fit-content;
+    height: fit-content;
+    padding: 5px
+}
+
+section {
+    scroll-margin-top: 60px;
+    scroll-margin-bottom: 40px;
+    background-color: var(--bg-form);
+    justify-items: center;
+    padding: 0;
+    border-radius: 20px;
+    margin: 15px 15px 35px;
+    border: none
+}
+
+h1,
+h2,
+h3 {
+    color: var(--form);
+    height: fit-content;
+    width: fit-content;
+    text-align: center
+}
+
+h2 {
+    margin: 10px 0;
+    font-size: 28px
+}
+
+h3 {
+    margin: 0;
+    font-size: 28px
+}
+
+p {
+    color: var(--form);
+    font-size: 18px;
+    margin: 2px
+}
+
+button:hover {
+    cursor: pointer
+}
+
+.congratsImg {
+    height: 70px;
+    margin: 0 25px
+}
+
+.stock,
+.accomodation,
+.online,
+.debt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-color: var(--border-form);
+    border-radius: 20px;
+    margin: 0;
+    padding: 12px
+}
+
+.stock {
+    width: 30%
+}
+
+.accomodation,
+.online,
+.debt {
+    width: 100%
+}
+
+.online {
+    background-color: var(--bg-online)
+}
+
+.debt {
+    background-color: var(--bg-debt-btn)
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-self: center;
+    padding: 15px;
+    width: 98%
+}
+
+.title {
+    font-weight: 700;
+    font-size: 20px
+}
+
+.icon {
+    height: 100px;
+    align-self: center
+}
+
+.price {
+    margin-top: 4px
+}
+
+.text,
+.stockText,
+.acText {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-self: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 70%;
+    height: fit-content
+}
+
+.stockText {
+    width: 77%
+}
+
+.acText {
+    width: 85%
+}
+
+.detail {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    width: 100%
+}
+
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.acList {
+    width: 47%
+}
+
+.lists {
+    flex-direction: column;
+    align-items: center
+}
+
+.onlineList {
+    width: 18%
+}
+
+.level {
+    margin: 0;
+    padding: 0
+}
+
+.levelText {
+    width: 85%;
+    align-items: center;
+    padding-left: 10px
+}
+
+.levelDetail {
+    width: 100%
+}
+
+.income {
+    color: var(--victory-title);
+    font-size: 32px;
+    margin-bottom: 10px
+}
+
+.money {
+    color: var(--money);
+    font-size: 30px;
+    font-weight: 700
+}
+
+#navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: linear-gradient(to right, var(--bg-gradiant-primary), var(--bg-gradiant-secondary));
+    position: sticky;
+    top: 0;
+    overflow: visible;
+    align-self: left;
+    margin: 0;
+    width: 99.7%;
+    padding: 0 0 5px
+}
+
+#back {
+    width: 10%
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%
+}
+
+#backBtn {
+    background-color: transparent;
+    color: var(--button);
+    font-size: 28px;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    border-radius: 30px;
+    padding: 7px;
+    margin-top: 5px
+}
+
+#backBtn:hover {
+    background-color: var(--bg-back-hover)
+}
+
+#congratsText {
+    width: 50%;
+    justify-self: center;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--victory-title)
+}
+
+#congratsTitle {
+    color: var(--victory-title);
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    font-size: 42px
+}
+
+#gold {
+    background-color: var(--bg-gold)
+}
+
+#mine {
+    background-color: var(--bg-mine)
+}
+
+#chocolate {
+    background-color: var(--bg-chocolate)
+}
+
+#flat {
+    background-color: var(--bg-flat)
+}
+
+#pansion {
+    background-color: var(--bg-pansion)
+}
+
+#basicOnline {
+    width: 98%;
+    margin: 0
+}
+
+#cash {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right, var(--bg-gradiant-primary), var(--bg-gradiant-secondary));
+    position: sticky;
+    bottom: 0;
+    overflow: hidden;
+    align-self: left;
+    margin: 0;
+    width: 99.7%;
+    padding: 5px 0 0
+}
+
+#wallet {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    padding: 10px
+}
+
+@media (max-width:1200px) {
+    h2 {
+        font-size: 20px
+    }
+
+    h3 {
+        font-size: 20px
+    }
+
+    p {
+        font-size: 12px
+    }
+
+    .congratsImg {
+        height: 40px;
+        margin: 0 10px
+    }
+
+    .cards {
+        width: 98%;
+        border-color: var(--border-form);
+        border-radius: 20px;
+        margin: 10px
+    }
+
+    .title {
+        font-size: 14px
+    }
+
+    .icon {
+        height: 50px
+    }
+
+    .container,
+    .accomodationCard {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        align-content: center;
+        padding: 15px;
+        width: 90%;
+        margin: 10px
+    }
+
+    .mobileList {
+        width: 100%
+    }
+
+    .income {
+        font-size: 20px
+    }
+
+    .money {
+        font-size: 22px
+    }
+
+    #back {
+        display: flex;
+        justify-content: center;
+        width: 100%
+    }
+
+    #title {
+        width: 100%
+    }
+
+    #backBtn {
+        font-size: 16px;
+        padding: 0;
+        margin-left: -8px
+    }
+
+    #congratsText {
+        width: 98%;
+        font-size: 18px
+    }
+
+    #congratsTitle {
+        font-size: 26px
+    }
+
+    #cash {
+        justify-content: center
+    }
+
+    #wallet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%
+    }
+}
