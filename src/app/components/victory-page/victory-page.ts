@@ -19,15 +19,15 @@ export class VictoryPage implements OnInit {
   private debt3: number = 0;
   private debt4: number = 0;
   private debt5: number = 0;
+  private years: number = 0;
 
   constructor(public themeService: ThemeService, private router: Router) {
     if (typeof window !== 'undefined') {
       const storedField = window.sessionStorage.getItem('field');
       const storedGameData = window.sessionStorage.getItem('gameData');
+      const storedRolls = window.sessionStorage.getItem('rolls');
 
-      if (storedField) {
-        this.field = Object.assign(new Field(), JSON.parse(storedField));
-      }
+      if (storedField) this.field = Object.assign(new Field(), JSON.parse(storedField));
       if (storedGameData) {
         const storedData = JSON.parse(storedGameData);
         this.gameData = Object.assign(new GameData(), storedData, {
@@ -37,6 +37,7 @@ export class VictoryPage implements OnInit {
             new Accomodation(pansion.id, pansion.price), pansion)),
         });
       }
+      if (storedRolls) this.years = parseInt(storedRolls);
     }
   }
 
@@ -81,7 +82,7 @@ export class VictoryPage implements OnInit {
       const debt5Total = document.querySelector('#debt5Total') as HTMLElement;
       const money = document.querySelector('#money') as HTMLElement;
       this.debtCount();
-      congrats.innerHTML = `Tekintsd meg összesítve, hogy a játék által reprezentált "x" év alatt mit értél el $ 1 000 000 kezdő tőkéből!`
+      congrats.innerHTML = `Tekintsd meg összesítve, hogy a játék által reprezentált ${this.years} év alatt mennyi pénzt sikerült csinálnod $ 1 000 000 kezdő tőkéből!`
       goldPrice.innerText = `$ ${(this.field.gold * 1000).toLocaleString('hu-HU')}`;
       goldAmount.innerText = `${this.gameData.gold.toLocaleString('hu-HU')}`;
       minePrice.innerText = `$ ${(this.field.mine * 1000).toLocaleString('hu-HU')}`;

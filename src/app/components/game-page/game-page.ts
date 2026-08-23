@@ -19,6 +19,7 @@ export class GamePage implements OnInit {
   private field: number = 0;
   private maxOnline: number = 0;
   private gameData: GameData = new GameData();
+  private rollAmount: number = 0;
   public ownedFlats: Accomodation[] = [];
   public ownedPansions: Accomodation[] = [];
   public showFlat = false;
@@ -49,9 +50,8 @@ export class GamePage implements OnInit {
       if (window.screen.width <= 1200) this.mobile = true;
       const field = window.sessionStorage.getItem('field');
       const gameData = window.sessionStorage.getItem('gameData');
-      if (field) {
-        this.field = parseInt(field);
-      }
+      const rollAmount = window.sessionStorage.getItem('rolls');
+      if (field) this.field = parseInt(field);
       if (gameData) {
         this.gameData = JSON.parse(gameData);
         this.showGoldModal = this.gameData.showGoldModal;
@@ -69,6 +69,7 @@ export class GamePage implements OnInit {
         this.showOnlineModal = this.gameData.showOnlineModal;
         if (this.showOnlineModal && this.gameData.levelInfo > 0) this.levelInfo(this.gameData.levelInfo);
       }
+      if (rollAmount) this.rollAmount = parseInt(rollAmount);
     }
     this.fields = this.reader.readingFields();
     this.update();
@@ -78,6 +79,7 @@ export class GamePage implements OnInit {
     if (typeof window !== 'undefined') {
       window.sessionStorage.setItem('field', this.field.toString());
       window.sessionStorage.setItem('gameData', JSON.stringify(this.gameData));
+      window.sessionStorage.setItem('rolls', this.rollAmount.toString());
       if (this.fields[this.field].goal) {
         window.sessionStorage.setItem('field', JSON.stringify(this.fields[this.field]));
         this.router.navigate(['victory']);
@@ -1075,6 +1077,7 @@ export class GamePage implements OnInit {
           this.gameData.cash -= pansion.repay();
           pansion.debtLevelUp();
         }
+        this.rollAmount++;
         this.update(true);
         if (typeof window !== 'undefined') window.scrollTo(-5, -5);
       }
