@@ -60,7 +60,7 @@ export class StartPage {
     const maxOnline = document.querySelector('#online') as HTMLSelectElement | null;
 
     if (startField) {
-      if (!window.sessionStorage.getItem('field')) window.sessionStorage.setItem('field', startField.value);
+      if (!window.sessionStorage.getItem('field')) window.sessionStorage.setItem('field', (parseInt(startField.value)-1).toString());
     }
 
     if (maxOnline) {
