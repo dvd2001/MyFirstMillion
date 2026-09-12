@@ -217,7 +217,7 @@ button:hover {
     background-color: transparent;
     color: var(--button);
     font-size: 28px;
-    width: fit-content;
+    width: max-content;
     height: fit-content;
     border: none;
     border-radius: 30px;
