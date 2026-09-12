@@ -247,7 +247,8 @@ input::-webkit-inner-spin-button {
     padding-left: 10px
 }
 
-.detail {
+.detail,
+.currentPrice {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -326,7 +327,8 @@ input::-webkit-inner-spin-button {
 .modalHeader,
 .modalFooter {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     position: sticky;
     width: 100%;
     margin: 0;
@@ -565,6 +567,14 @@ input::-webkit-inner-spin-button {
     position: relative;
     display: inline-flex;
     align-items: center;
+}
+
+.currentPrice {
+    font-size: 26px;
+    justify-content: space-between;
+    width: 45%;
+    margin: 0;
+    padding: 0 0 10px 0
 }
 
 #cash {
@@ -844,6 +854,10 @@ input::-webkit-inner-spin-button {
 
     .siteNav {
         font-size: 20px;
+    }
+
+    .currentPrice {
+        width: 75%;
     }
 
     #flatList,

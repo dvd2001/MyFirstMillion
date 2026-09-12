@@ -211,8 +211,9 @@ export class GamePage implements OnInit {
         const modalGold4 = document.querySelector('#modalGoldPrice4') as HTMLElement;
         const modalGold5 = document.querySelector('#modalGoldPrice5') as HTMLElement;
         const modalGold6 = document.querySelector('#modalGoldPrice6') as HTMLElement;
+        const currentGoldPrice = document.querySelector('#currentGoldPrice') as HTMLElement;
 
-        if (!modalGold1 || !modalGold2 || !modalGold3 || !modalGold4 || !modalGold5 || !modalGold6) {
+        if (!modalGold1 || !modalGold2 || !modalGold3 || !modalGold4 || !modalGold5 || !modalGold6 || !currentGoldPrice) {
           return;
         }
 
@@ -222,6 +223,7 @@ export class GamePage implements OnInit {
         modalGold4.innerText = `$ ${(this.fields[this.field + 4].gold * 1000).toLocaleString('hu-HU')}`;
         modalGold5.innerText = `$ ${(this.fields[this.field + 5].gold * 1000).toLocaleString('hu-HU')}`;
         modalGold6.innerText = `$ ${(this.fields[this.field + 6].gold * 1000).toLocaleString('hu-HU')}`;
+        currentGoldPrice.innerText = `$ ${(this.fields[this.field].gold * 1000).toLocaleString('hu-HU')}`;
       }, 0);
     }
   }
@@ -280,9 +282,10 @@ export class GamePage implements OnInit {
         const mineToGold4 = document.querySelector('#mineToGold4') as HTMLElement;
         const mineToGold5 = document.querySelector('#mineToGold5') as HTMLElement;
         const mineToGold6 = document.querySelector('#mineToGold6') as HTMLElement;
+        const currentMinePrice = document.querySelector('#currentMinePrice') as HTMLElement;
 
         if (!modalMine1 || !modalMine2 || !modalMine3 || !modalMine4 || !modalMine5 || !modalMine6 || !mineToGold1 ||
-          !mineToGold2 || !mineToGold3 || !mineToGold4 || !mineToGold5 || !mineToGold6) {
+          !mineToGold2 || !mineToGold3 || !mineToGold4 || !mineToGold5 || !mineToGold6 || !currentMinePrice) {
           return;
         }
 
@@ -298,6 +301,7 @@ export class GamePage implements OnInit {
         mineToGold4.innerText = `${(this.fields[this.field + 4].mine / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
         mineToGold5.innerText = `${(this.fields[this.field + 5].mine / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
         mineToGold6.innerText = `${(this.fields[this.field + 6].mine / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
+        currentMinePrice.innerText = `$ ${(this.fields[this.field].mine * 1000).toLocaleString('hu-HU')}`;
       }, 0);
     }
   }
@@ -356,10 +360,11 @@ export class GamePage implements OnInit {
         const chocolateToGold4 = document.querySelector('#chocolateToGold4') as HTMLElement;
         const chocolateToGold5 = document.querySelector('#chocolateToGold5') as HTMLElement;
         const chocolateToGold6 = document.querySelector('#chocolateToGold6') as HTMLElement;
+        const currentChocolatePrice = document.querySelector('#currentChocolatePrice') as HTMLElement;
 
         if (!modalChocolate1 || !modalChocolate2 || !modalChocolate3 || !modalChocolate4 || !modalChocolate5 ||
           !modalChocolate6 || !chocolateToGold1 || !chocolateToGold2 || !chocolateToGold3 || !chocolateToGold4 ||
-          !chocolateToGold5 || !chocolateToGold6) {
+          !chocolateToGold5 || !chocolateToGold6 || !currentChocolatePrice) {
           return;
         }
 
@@ -369,6 +374,7 @@ export class GamePage implements OnInit {
         modalChocolate4.innerText = `$ ${(this.fields[this.field + 4].chocolate * 1000).toLocaleString('hu-HU')}`;
         modalChocolate5.innerText = `$ ${(this.fields[this.field + 5].chocolate * 1000).toLocaleString('hu-HU')}`;
         modalChocolate6.innerText = `$ ${(this.fields[this.field + 6].chocolate * 1000).toLocaleString('hu-HU')}`;
+        currentChocolatePrice.innerText = `$ ${(this.fields[this.field].chocolate * 1000).toLocaleString('hu-HU')}`;
         chocolateToGold3.innerText = `${(this.fields[this.field + 3].chocolate / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
         chocolateToGold2.innerText = `${(this.fields[this.field + 2].chocolate / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
         chocolateToGold1.innerText = `${(this.fields[this.field + 1].chocolate / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
@@ -463,12 +469,13 @@ export class GamePage implements OnInit {
         const rent6 = document.querySelector('#modalRentFlat6Price') as HTMLElement;
         const sellGold6 = document.querySelector('#modalSellFlat6Gold') as HTMLElement;
         const sell6 = document.querySelector('#modalSellFlat6Price') as HTMLElement;
+        const currentFlatPrice = document.querySelector('#currentFlatPrice') as HTMLElement;
 
         if (!buy1 || !buy2 || !buy3 || !buy4 || !buy5 || !buy6 || !buyGold1 || !buyGold2 || !buyGold3 || !buyGold4
           || !buyGold5 || !buyGold6 || !rent1 || !rent2 || !rent3 || !rent4 || !rent5 || !rent6
           || !rentGold1 || !rentGold2 || !rentGold3 || !rentGold4 || !rentGold5 || !rentGold6 || !sell1 || !sell2
           || !sell3 || !sell4 || !sell5 || !sell6 || !sellGold1 || !sellGold2 || !sellGold3 || !sellGold4
-          || !sellGold5 || !sellGold6 || !debt1 || !debt2 || !debt3 || !debt4 || !debt5 || !debt6) {
+          || !sellGold5 || !sellGold6 || !debt1 || !debt2 || !debt3 || !debt4 || !debt5 || !debt6 || !currentFlatPrice) {
           return;
         }
 
@@ -514,6 +521,7 @@ export class GamePage implements OnInit {
         sellGold4.innerText = `${(this.fields[this.field + 4].flatBuy * 0.95 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
         sellGold5.innerText = `${(this.fields[this.field + 5].flatBuy * 0.95 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
         sellGold6.innerText = `${(this.fields[this.field + 6].flatBuy * 0.95 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
+        currentFlatPrice.innerText = `$ ${(this.fields[this.field].flatBuy * 1000).toLocaleString('hu-HU')}`;
       }, 0);
     }
   }
@@ -616,12 +624,13 @@ export class GamePage implements OnInit {
         const income6 = document.querySelector('#modalIncomePansion6Price') as HTMLElement;
         const sellGold6 = document.querySelector('#modalSellPansion6Gold') as HTMLElement;
         const sell6 = document.querySelector('#modalSellPansion6Price') as HTMLElement;
+        const currentPansionPrice = document.querySelector('#currentPansionPrice') as HTMLElement;
 
         if (!buy1 || !buy2 || !buy3 || !buy4 || !buy5 || !buy6 || !buyGold1 || !buyGold2 || !buyGold3 || !buyGold4
           || !buyGold5 || !buyGold6 || !income1 || !income2 || !income3 || !income4 || !income5 || !income6
           || !incomeGold1 || !incomeGold2 || !incomeGold3 || !incomeGold4 || !incomeGold5 || !incomeGold6 || !sell1 || !sell2
           || !sell3 || !sell4 || !sell5 || !sell6 || !sellGold1 || !sellGold2 || !sellGold3 || !sellGold4
-          || !sellGold5 || !sellGold6 || !debt1 || !debt2 || !debt3 || !debt4 || !debt5 || !debt6) {
+          || !sellGold5 || !sellGold6 || !debt1 || !debt2 || !debt3 || !debt4 || !debt5 || !debt6 || !currentPansionPrice) {
           return;
         }
 
@@ -667,6 +676,7 @@ export class GamePage implements OnInit {
         sellGold4.innerText = `${(this.fields[this.field + 4].pansionBuy * 0.95 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
         sellGold5.innerText = `${(this.fields[this.field + 5].pansionBuy * 0.95 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
         sellGold6.innerText = `${(this.fields[this.field + 6].pansionBuy * 0.95 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
+        currentPansionPrice.innerText = `$ ${(this.fields[this.field].pansionBuy * 1000).toLocaleString('hu-HU')}`;
       }, 0);
     }
   }
@@ -738,9 +748,10 @@ export class GamePage implements OnInit {
         const onlineToGold4 = document.querySelector('#onlineBasicToGold4') as HTMLElement;
         const onlineToGold5 = document.querySelector('#onlineBasicToGold5') as HTMLElement;
         const onlineToGold6 = document.querySelector('#onlineBasicToGold6') as HTMLElement;
+        const currentOnlinePrice = document.querySelector('#currentOnlineBasicPrice') as HTMLElement;
 
         if (!modalOnline1 || !modalOnline2 || !modalOnline3 || !modalOnline4 || !modalOnline5 || !modalOnline6 || !onlineToGold1 ||
-          !onlineToGold2 || !onlineToGold3 || !onlineToGold4 || !onlineToGold5 || !onlineToGold6) {
+          !onlineToGold2 || !onlineToGold3 || !onlineToGold4 || !onlineToGold5 || !onlineToGold6 || !currentOnlinePrice) {
           return;
         }
 
@@ -756,6 +767,7 @@ export class GamePage implements OnInit {
         onlineToGold4.innerText = `${(this.fields[this.field + 4].onlineBuy / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
         onlineToGold5.innerText = `${(this.fields[this.field + 5].onlineBuy / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
         onlineToGold6.innerText = `${(this.fields[this.field + 6].onlineBuy / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
+        currentOnlinePrice.innerText = `$ ${(this.fields[this.field].onlineBuy * 1000).toLocaleString('hu-HU')}`;
       }, 0);
     }
   }
