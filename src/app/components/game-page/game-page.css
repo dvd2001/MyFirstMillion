@@ -881,6 +881,10 @@ input::-webkit-inner-spin-button {
         width: 100%
     }
 
+    .onlineAmount {
+        font-size: 12px;
+    }
+
     #flatList,
     #pansionList {
         width: 96%;
