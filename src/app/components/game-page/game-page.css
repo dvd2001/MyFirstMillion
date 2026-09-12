@@ -237,20 +237,23 @@ input::-webkit-inner-spin-button {
     align-items: center;
     padding: 0;
     margin: 0;
-    width: 55%;
+    width: 45%;
     height: fit-content
 }
 
+.acText {
+    width: 65%
+}
+
 .levelText {
-    width: 85%;
+    width: 90%;
     align-items: center;
-    padding-left: 10px
+    padding-right: 10px;
 }
 
 .detail,
 .currentPrice {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -266,7 +269,7 @@ input::-webkit-inner-spin-button {
 }
 
 .onlineText {
-    width: 27%
+    width: 35%
 }
 
 .price {
@@ -274,7 +277,7 @@ input::-webkit-inner-spin-button {
 }
 
 .levelDetail {
-    width: 75%
+    width: 100%
 }
 
 .btnIcon {
@@ -287,7 +290,8 @@ input::-webkit-inner-spin-button {
 }
 
 .stockBuyBtn {
-    margin-right: 40px
+    margin-right: 15px;
+    margin-left: 40px
 }
 
 .income {

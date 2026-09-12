@@ -141,40 +141,40 @@ export class GamePage implements OnInit {
       gbpAmount.value = this.gameData.gbp.toString();
       eurAmount.value = this.gameData.eur.toString();
       usdAmount.value = this.gameData.usd.toString();
-      bankMoney.innerText = `$ ${this.gameData.bank.toLocaleString('hu-HU')}`;
-      gbpMoney.innerText = `$ ${this.gameData.gbp.toLocaleString('hu-HU')}`;
-      eurMoney.innerText = `$ ${this.gameData.eur.toLocaleString('hu-HU')}`;
-      usdMoney.innerText = `$ ${this.gameData.usd.toLocaleString('hu-HU')}`;
-      money.innerText = `$ ${this.gameData.cash.toLocaleString('hu-HU')}`;
-      goldPrice.innerText = `$ ${(field.gold * 1000).toLocaleString('hu-HU')}`;
+      bankMoney.innerText = `$${this.gameData.bank.toLocaleString('hu-HU')}`;
+      gbpMoney.innerText = `$${this.gameData.gbp.toLocaleString('hu-HU')}`;
+      eurMoney.innerText = `$${this.gameData.eur.toLocaleString('hu-HU')}`;
+      usdMoney.innerText = `$${this.gameData.usd.toLocaleString('hu-HU')}`;
+      money.innerText = `$${this.gameData.cash.toLocaleString('hu-HU')}`;
+      goldPrice.innerText = `$${(field.gold * 1000).toLocaleString('hu-HU')}`;
       goldAmount.innerText = `${this.gameData.gold} db`;
-      minePrice.innerText = `$ ${(field.mine * 1000).toLocaleString('hu-HU')}`;
+      minePrice.innerText = `$${(field.mine * 1000).toLocaleString('hu-HU')}`;
       mineAmount.innerText = `${this.gameData.mine} db`;
-      chocolatePrice.innerText = `$ ${(field.chocolate * 1000).toLocaleString('hu-HU')}`;
+      chocolatePrice.innerText = `$${(field.chocolate * 1000).toLocaleString('hu-HU')}`;
       chocolateAmount.innerText = `${this.gameData.chocolate} db`;
-      flatPrice.innerText = `$ ${(field.flatBuy * 1000).toLocaleString('hu-HU')}`;
-      flatDebt.innerText = `$ ${(field.flatDebt * 1000).toLocaleString('hu-HU')}`;
-      flatSell.innerText = `$ ${(field.flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
-      flatRent.innerText = `$ ${(field.flatRent * 1000).toLocaleString('hu-HU')}`;
-      pansionPrice.innerText = `$ ${(field.pansionBuy * 1000).toLocaleString('hu-HU')}`;
-      pansionDebt.innerText = `$ ${(field.pansionDebt * 1000).toLocaleString('hu-HU')}`;
-      pansionSell.innerText = `$ ${(field.pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
-      pansionIncome.innerText = `$ ${(field.pansionIncome * 1000).toLocaleString('hu-HU')}`;
-      onlinePrice.innerText = `$ ${(field.onlineBuy * 1000).toLocaleString('hu-HU')}`;
-      online1Income.innerText = `$ ${(field.onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
-      online1Sell.innerText = `$ ${(field.onlineSell1 * 1000).toLocaleString('hu-HU')}`;
+      flatPrice.innerText = `$${(field.flatBuy * 1000).toLocaleString('hu-HU')}`;
+      flatDebt.innerText = `$${(field.flatDebt * 1000).toLocaleString('hu-HU')}`;
+      flatSell.innerText = `$${(field.flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+      flatRent.innerText = `$${(field.flatRent * 1000).toLocaleString('hu-HU')}`;
+      pansionPrice.innerText = `$${(field.pansionBuy * 1000).toLocaleString('hu-HU')}`;
+      pansionDebt.innerText = `$${(field.pansionDebt * 1000).toLocaleString('hu-HU')}`;
+      pansionSell.innerText = `$${(field.pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+      pansionIncome.innerText = `$${(field.pansionIncome * 1000).toLocaleString('hu-HU')}`;
+      onlinePrice.innerText = `$${(field.onlineBuy * 1000).toLocaleString('hu-HU')}`;
+      online1Income.innerText = `$${(field.onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
+      online1Sell.innerText = `$${(field.onlineSell1 * 1000).toLocaleString('hu-HU')}`;
       online1Amount.innerText = `${this.gameData.online1} db`;
-      online2Income.innerText = `$ ${(field.onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
-      online2Sell.innerText = `$ ${(field.onlineSell2 * 1000).toLocaleString('hu-HU')}`;
+      online2Income.innerText = `$${(field.onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
+      online2Sell.innerText = `$${(field.onlineSell2 * 1000).toLocaleString('hu-HU')}`;
       online2Amount.innerText = `${this.gameData.online2} db`;
-      online3Income.innerText = `$ ${(field.onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
-      online3Sell.innerText = `$ ${(field.onlineSell3 * 1000).toLocaleString('hu-HU')}`;
+      online3Income.innerText = `$${(field.onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
+      online3Sell.innerText = `$${(field.onlineSell3 * 1000).toLocaleString('hu-HU')}`;
       online3Amount.innerText = `${this.gameData.online3} db`;
-      online4Income.innerText = `$ ${(field.onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
-      online4Sell.innerText = `$ ${(field.onlineSell4 * 1000).toLocaleString('hu-HU')}`;
+      online4Income.innerText = `$${(field.onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
+      online4Sell.innerText = `$${(field.onlineSell4 * 1000).toLocaleString('hu-HU')}`;
       online4Amount.innerText = `${this.gameData.online4} db`;
-      online5Income.innerText = `$ ${(field.onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
-      online5Sell.innerText = `$ ${(field.onlineSell5 * 1000).toLocaleString('hu-HU')}`;
+      online5Income.innerText = `$${(field.onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
+      online5Sell.innerText = `$${(field.onlineSell5 * 1000).toLocaleString('hu-HU')}`;
       online5Amount.innerText = `${this.gameData.online5} db`;
     }
   }
@@ -217,13 +217,13 @@ export class GamePage implements OnInit {
           return;
         }
 
-        modalGold1.innerText = `$ ${(this.fields[this.field + 1].gold * 1000).toLocaleString('hu-HU')}`;
-        modalGold2.innerText = `$ ${(this.fields[this.field + 2].gold * 1000).toLocaleString('hu-HU')}`;
-        modalGold3.innerText = `$ ${(this.fields[this.field + 3].gold * 1000).toLocaleString('hu-HU')}`;
-        modalGold4.innerText = `$ ${(this.fields[this.field + 4].gold * 1000).toLocaleString('hu-HU')}`;
-        modalGold5.innerText = `$ ${(this.fields[this.field + 5].gold * 1000).toLocaleString('hu-HU')}`;
-        modalGold6.innerText = `$ ${(this.fields[this.field + 6].gold * 1000).toLocaleString('hu-HU')}`;
-        currentGoldPrice.innerText = `$ ${(this.fields[this.field].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold1.innerText = `$${(this.fields[this.field + 1].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold2.innerText = `$${(this.fields[this.field + 2].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold3.innerText = `$${(this.fields[this.field + 3].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold4.innerText = `$${(this.fields[this.field + 4].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold5.innerText = `$${(this.fields[this.field + 5].gold * 1000).toLocaleString('hu-HU')}`;
+        modalGold6.innerText = `$${(this.fields[this.field + 6].gold * 1000).toLocaleString('hu-HU')}`;
+        currentGoldPrice.innerText = `$${(this.fields[this.field].gold * 1000).toLocaleString('hu-HU')}`;
       }, 0);
     }
   }
@@ -289,19 +289,19 @@ export class GamePage implements OnInit {
           return;
         }
 
-        modalMine1.innerText = `$ ${(this.fields[this.field + 1].mine * 1000).toLocaleString('hu-HU')}`;
-        modalMine2.innerText = `$ ${(this.fields[this.field + 2].mine * 1000).toLocaleString('hu-HU')}`;
-        modalMine3.innerText = `$ ${(this.fields[this.field + 3].mine * 1000).toLocaleString('hu-HU')}`;
-        modalMine4.innerText = `$ ${(this.fields[this.field + 4].mine * 1000).toLocaleString('hu-HU')}`;
-        modalMine5.innerText = `$ ${(this.fields[this.field + 5].mine * 1000).toLocaleString('hu-HU')}`;
-        modalMine6.innerText = `$ ${(this.fields[this.field + 6].mine * 1000).toLocaleString('hu-HU')}`;
+        modalMine1.innerText = `$${(this.fields[this.field + 1].mine * 1000).toLocaleString('hu-HU')}`;
+        modalMine2.innerText = `$${(this.fields[this.field + 2].mine * 1000).toLocaleString('hu-HU')}`;
+        modalMine3.innerText = `$${(this.fields[this.field + 3].mine * 1000).toLocaleString('hu-HU')}`;
+        modalMine4.innerText = `$${(this.fields[this.field + 4].mine * 1000).toLocaleString('hu-HU')}`;
+        modalMine5.innerText = `$${(this.fields[this.field + 5].mine * 1000).toLocaleString('hu-HU')}`;
+        modalMine6.innerText = `$${(this.fields[this.field + 6].mine * 1000).toLocaleString('hu-HU')}`;
         mineToGold3.innerText = `${(this.fields[this.field + 3].mine / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
         mineToGold2.innerText = `${(this.fields[this.field + 2].mine / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
         mineToGold1.innerText = `${(this.fields[this.field + 1].mine / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
         mineToGold4.innerText = `${(this.fields[this.field + 4].mine / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
         mineToGold5.innerText = `${(this.fields[this.field + 5].mine / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
         mineToGold6.innerText = `${(this.fields[this.field + 6].mine / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-        currentMinePrice.innerText = `$ ${(this.fields[this.field].mine * 1000).toLocaleString('hu-HU')}`;
+        currentMinePrice.innerText = `$${(this.fields[this.field].mine * 1000).toLocaleString('hu-HU')}`;
       }, 0);
     }
   }
@@ -368,13 +368,13 @@ export class GamePage implements OnInit {
           return;
         }
 
-        modalChocolate1.innerText = `$ ${(this.fields[this.field + 1].chocolate * 1000).toLocaleString('hu-HU')}`;
-        modalChocolate2.innerText = `$ ${(this.fields[this.field + 2].chocolate * 1000).toLocaleString('hu-HU')}`;
-        modalChocolate3.innerText = `$ ${(this.fields[this.field + 3].chocolate * 1000).toLocaleString('hu-HU')}`;
-        modalChocolate4.innerText = `$ ${(this.fields[this.field + 4].chocolate * 1000).toLocaleString('hu-HU')}`;
-        modalChocolate5.innerText = `$ ${(this.fields[this.field + 5].chocolate * 1000).toLocaleString('hu-HU')}`;
-        modalChocolate6.innerText = `$ ${(this.fields[this.field + 6].chocolate * 1000).toLocaleString('hu-HU')}`;
-        currentChocolatePrice.innerText = `$ ${(this.fields[this.field].chocolate * 1000).toLocaleString('hu-HU')}`;
+        modalChocolate1.innerText = `$${(this.fields[this.field + 1].chocolate * 1000).toLocaleString('hu-HU')}`;
+        modalChocolate2.innerText = `$${(this.fields[this.field + 2].chocolate * 1000).toLocaleString('hu-HU')}`;
+        modalChocolate3.innerText = `$${(this.fields[this.field + 3].chocolate * 1000).toLocaleString('hu-HU')}`;
+        modalChocolate4.innerText = `$${(this.fields[this.field + 4].chocolate * 1000).toLocaleString('hu-HU')}`;
+        modalChocolate5.innerText = `$${(this.fields[this.field + 5].chocolate * 1000).toLocaleString('hu-HU')}`;
+        modalChocolate6.innerText = `$${(this.fields[this.field + 6].chocolate * 1000).toLocaleString('hu-HU')}`;
+        currentChocolatePrice.innerText = `$${(this.fields[this.field].chocolate * 1000).toLocaleString('hu-HU')}`;
         chocolateToGold3.innerText = `${(this.fields[this.field + 3].chocolate / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
         chocolateToGold2.innerText = `${(this.fields[this.field + 2].chocolate / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
         chocolateToGold1.innerText = `${(this.fields[this.field + 1].chocolate / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
@@ -479,49 +479,49 @@ export class GamePage implements OnInit {
           return;
         }
 
-        debt1.innerText = `$ ${(this.fields[this.field + 1].flatDebt * 1000).toLocaleString('hu-HU')}`;
-        debt2.innerText = `$ ${(this.fields[this.field + 2].flatDebt * 1000).toLocaleString('hu-HU')}`;
-        debt3.innerText = `$ ${(this.fields[this.field + 3].flatDebt * 1000).toLocaleString('hu-HU')}`;
-        debt4.innerText = `$ ${(this.fields[this.field + 4].flatDebt * 1000).toLocaleString('hu-HU')}`;
-        debt5.innerText = `$ ${(this.fields[this.field + 5].flatDebt * 1000).toLocaleString('hu-HU')}`;
-        debt6.innerText = `$ ${(this.fields[this.field + 6].flatDebt * 1000).toLocaleString('hu-HU')}`;
-        buy1.innerText = `$ ${(this.fields[this.field + 1].flatBuy * 1000).toLocaleString('hu-HU')}`;
-        buy2.innerText = `$ ${(this.fields[this.field + 2].flatBuy * 1000).toLocaleString('hu-HU')}`;
-        buy3.innerText = `$ ${(this.fields[this.field + 3].flatBuy * 1000).toLocaleString('hu-HU')}`;
-        buy4.innerText = `$ ${(this.fields[this.field + 4].flatBuy * 1000).toLocaleString('hu-HU')}`;
-        buy5.innerText = `$ ${(this.fields[this.field + 5].flatBuy * 1000).toLocaleString('hu-HU')}`;
-        buy6.innerText = `$ ${(this.fields[this.field + 6].flatBuy * 1000).toLocaleString('hu-HU')}`;
+        debt1.innerText = `$${(this.fields[this.field + 1].flatDebt * 1000).toLocaleString('hu-HU')}`;
+        debt2.innerText = `$${(this.fields[this.field + 2].flatDebt * 1000).toLocaleString('hu-HU')}`;
+        debt3.innerText = `$${(this.fields[this.field + 3].flatDebt * 1000).toLocaleString('hu-HU')}`;
+        debt4.innerText = `$${(this.fields[this.field + 4].flatDebt * 1000).toLocaleString('hu-HU')}`;
+        debt5.innerText = `$${(this.fields[this.field + 5].flatDebt * 1000).toLocaleString('hu-HU')}`;
+        debt6.innerText = `$${(this.fields[this.field + 6].flatDebt * 1000).toLocaleString('hu-HU')}`;
+        buy1.innerText = `$${(this.fields[this.field + 1].flatBuy * 1000).toLocaleString('hu-HU')}`;
+        buy2.innerText = `$${(this.fields[this.field + 2].flatBuy * 1000).toLocaleString('hu-HU')}`;
+        buy3.innerText = `$${(this.fields[this.field + 3].flatBuy * 1000).toLocaleString('hu-HU')}`;
+        buy4.innerText = `$${(this.fields[this.field + 4].flatBuy * 1000).toLocaleString('hu-HU')}`;
+        buy5.innerText = `$${(this.fields[this.field + 5].flatBuy * 1000).toLocaleString('hu-HU')}`;
+        buy6.innerText = `$${(this.fields[this.field + 6].flatBuy * 1000).toLocaleString('hu-HU')}`;
         buyGold1.innerText = `${(this.fields[this.field + 1].flatBuy / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
         buyGold2.innerText = `${(this.fields[this.field + 2].flatBuy / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
         buyGold3.innerText = `${(this.fields[this.field + 3].flatBuy / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
         buyGold4.innerText = `${(this.fields[this.field + 4].flatBuy / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
         buyGold5.innerText = `${(this.fields[this.field + 5].flatBuy / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
         buyGold6.innerText = `${(this.fields[this.field + 6].flatBuy / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-        rent1.innerText = `$ ${(this.fields[this.field + 1].flatRent * 1000).toLocaleString('hu-HU')}`;
-        rent2.innerText = `$ ${(this.fields[this.field + 2].flatRent * 1000).toLocaleString('hu-HU')}`;
-        rent3.innerText = `$ ${(this.fields[this.field + 3].flatRent * 1000).toLocaleString('hu-HU')}`;
-        rent4.innerText = `$ ${(this.fields[this.field + 4].flatRent * 1000).toLocaleString('hu-HU')}`;
-        rent5.innerText = `$ ${(this.fields[this.field + 5].flatRent * 1000).toLocaleString('hu-HU')}`;
-        rent6.innerText = `$ ${(this.fields[this.field + 6].flatRent * 1000).toLocaleString('hu-HU')}`;
+        rent1.innerText = `$${(this.fields[this.field + 1].flatRent * 1000).toLocaleString('hu-HU')}`;
+        rent2.innerText = `$${(this.fields[this.field + 2].flatRent * 1000).toLocaleString('hu-HU')}`;
+        rent3.innerText = `$${(this.fields[this.field + 3].flatRent * 1000).toLocaleString('hu-HU')}`;
+        rent4.innerText = `$${(this.fields[this.field + 4].flatRent * 1000).toLocaleString('hu-HU')}`;
+        rent5.innerText = `$${(this.fields[this.field + 5].flatRent * 1000).toLocaleString('hu-HU')}`;
+        rent6.innerText = `$${(this.fields[this.field + 6].flatRent * 1000).toLocaleString('hu-HU')}`;
         rentGold1.innerText = `${(this.fields[this.field + 1].flatRent / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
         rentGold2.innerText = `${(this.fields[this.field + 2].flatRent / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
         rentGold3.innerText = `${(this.fields[this.field + 3].flatRent / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
         rentGold4.innerText = `${(this.fields[this.field + 4].flatRent / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
         rentGold5.innerText = `${(this.fields[this.field + 5].flatRent / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
         rentGold6.innerText = `${(this.fields[this.field + 6].flatRent / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-        sell1.innerText = `$ ${(this.fields[this.field + 1].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
-        sell2.innerText = `$ ${(this.fields[this.field + 2].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
-        sell3.innerText = `$ ${(this.fields[this.field + 3].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
-        sell4.innerText = `$ ${(this.fields[this.field + 4].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
-        sell5.innerText = `$ ${(this.fields[this.field + 5].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
-        sell6.innerText = `$ ${(this.fields[this.field + 6].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell1.innerText = `$${(this.fields[this.field + 1].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell2.innerText = `$${(this.fields[this.field + 2].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell3.innerText = `$${(this.fields[this.field + 3].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell4.innerText = `$${(this.fields[this.field + 4].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell5.innerText = `$${(this.fields[this.field + 5].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell6.innerText = `$${(this.fields[this.field + 6].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
         sellGold1.innerText = `${(this.fields[this.field + 1].flatBuy * 0.95 / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
         sellGold2.innerText = `${(this.fields[this.field + 2].flatBuy * 0.95 / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
         sellGold3.innerText = `${(this.fields[this.field + 3].flatBuy * 0.95 / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
         sellGold4.innerText = `${(this.fields[this.field + 4].flatBuy * 0.95 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
         sellGold5.innerText = `${(this.fields[this.field + 5].flatBuy * 0.95 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
         sellGold6.innerText = `${(this.fields[this.field + 6].flatBuy * 0.95 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-        currentFlatPrice.innerText = `$ ${(this.fields[this.field].flatBuy * 1000).toLocaleString('hu-HU')}`;
+        currentFlatPrice.innerText = `$${(this.fields[this.field].flatBuy * 1000).toLocaleString('hu-HU')}`;
       }, 0);
     }
   }
@@ -531,8 +531,8 @@ export class GamePage implements OnInit {
       const price: number = this.fields[this.field].flatBuy * 1000;
       if ((price - this.fields[this.field].flatDebt * 1000) <= this.gameData.cash) {
         let text = prompt(`Mennyi hitelt szeretnél felvenni? A hitel összegének 100 000-rel oszthatónak kell lennie!` +
-          `(min: $ ${(price - this.gameData.cash) < 0 ? 0 : this.roundUp(price - this.gameData.cash)};` +
-          ` max: $ ${(this.fields[this.field].flatDebt * 1000).toLocaleString('hu-HU')})`, '0');
+          `(min: $${(price - this.gameData.cash) < 0 ? 0 : this.roundUp(price - this.gameData.cash)};` +
+          ` max: $${(this.fields[this.field].flatDebt * 1000).toLocaleString('hu-HU')})`, '0');
         if (text && text !== '') {
           let debt = parseInt(text);
           if (debt < this.roundUp(price - this.gameData.cash) ||
@@ -634,49 +634,49 @@ export class GamePage implements OnInit {
           return;
         }
 
-        debt1.innerText = `$ ${(this.fields[this.field + 1].pansionDebt * 1000).toLocaleString('hu-HU')}`;
-        debt2.innerText = `$ ${(this.fields[this.field + 2].pansionDebt * 1000).toLocaleString('hu-HU')}`;
-        debt3.innerText = `$ ${(this.fields[this.field + 3].pansionDebt * 1000).toLocaleString('hu-HU')}`;
-        debt4.innerText = `$ ${(this.fields[this.field + 4].pansionDebt * 1000).toLocaleString('hu-HU')}`;
-        debt5.innerText = `$ ${(this.fields[this.field + 5].pansionDebt * 1000).toLocaleString('hu-HU')}`;
-        debt6.innerText = `$ ${(this.fields[this.field + 6].pansionDebt * 1000).toLocaleString('hu-HU')}`;
-        buy1.innerText = `$ ${(this.fields[this.field + 1].pansionBuy * 1000).toLocaleString('hu-HU')}`;
-        buy2.innerText = `$ ${(this.fields[this.field + 2].pansionBuy * 1000).toLocaleString('hu-HU')}`;
-        buy3.innerText = `$ ${(this.fields[this.field + 3].pansionBuy * 1000).toLocaleString('hu-HU')}`;
-        buy4.innerText = `$ ${(this.fields[this.field + 4].pansionBuy * 1000).toLocaleString('hu-HU')}`;
-        buy5.innerText = `$ ${(this.fields[this.field + 5].pansionBuy * 1000).toLocaleString('hu-HU')}`;
-        buy6.innerText = `$ ${(this.fields[this.field + 6].pansionBuy * 1000).toLocaleString('hu-HU')}`;
+        debt1.innerText = `$${(this.fields[this.field + 1].pansionDebt * 1000).toLocaleString('hu-HU')}`;
+        debt2.innerText = `$${(this.fields[this.field + 2].pansionDebt * 1000).toLocaleString('hu-HU')}`;
+        debt3.innerText = `$${(this.fields[this.field + 3].pansionDebt * 1000).toLocaleString('hu-HU')}`;
+        debt4.innerText = `$${(this.fields[this.field + 4].pansionDebt * 1000).toLocaleString('hu-HU')}`;
+        debt5.innerText = `$${(this.fields[this.field + 5].pansionDebt * 1000).toLocaleString('hu-HU')}`;
+        debt6.innerText = `$${(this.fields[this.field + 6].pansionDebt * 1000).toLocaleString('hu-HU')}`;
+        buy1.innerText = `$${(this.fields[this.field + 1].pansionBuy * 1000).toLocaleString('hu-HU')}`;
+        buy2.innerText = `$${(this.fields[this.field + 2].pansionBuy * 1000).toLocaleString('hu-HU')}`;
+        buy3.innerText = `$${(this.fields[this.field + 3].pansionBuy * 1000).toLocaleString('hu-HU')}`;
+        buy4.innerText = `$${(this.fields[this.field + 4].pansionBuy * 1000).toLocaleString('hu-HU')}`;
+        buy5.innerText = `$${(this.fields[this.field + 5].pansionBuy * 1000).toLocaleString('hu-HU')}`;
+        buy6.innerText = `$${(this.fields[this.field + 6].pansionBuy * 1000).toLocaleString('hu-HU')}`;
         buyGold1.innerText = `${(this.fields[this.field + 1].pansionBuy / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
         buyGold2.innerText = `${(this.fields[this.field + 2].pansionBuy / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
         buyGold3.innerText = `${(this.fields[this.field + 3].pansionBuy / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
         buyGold4.innerText = `${(this.fields[this.field + 4].pansionBuy / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
         buyGold5.innerText = `${(this.fields[this.field + 5].pansionBuy / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
         buyGold6.innerText = `${(this.fields[this.field + 6].pansionBuy / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-        income1.innerText = `$ ${(this.fields[this.field + 1].pansionIncome * 1000).toLocaleString('hu-HU')}`;
-        income2.innerText = `$ ${(this.fields[this.field + 2].pansionIncome * 1000).toLocaleString('hu-HU')}`;
-        income3.innerText = `$ ${(this.fields[this.field + 3].pansionIncome * 1000).toLocaleString('hu-HU')}`;
-        income4.innerText = `$ ${(this.fields[this.field + 4].pansionIncome * 1000).toLocaleString('hu-HU')}`;
-        income5.innerText = `$ ${(this.fields[this.field + 5].pansionIncome * 1000).toLocaleString('hu-HU')}`;
-        income6.innerText = `$ ${(this.fields[this.field + 6].pansionIncome * 1000).toLocaleString('hu-HU')}`;
+        income1.innerText = `$${(this.fields[this.field + 1].pansionIncome * 1000).toLocaleString('hu-HU')}`;
+        income2.innerText = `$${(this.fields[this.field + 2].pansionIncome * 1000).toLocaleString('hu-HU')}`;
+        income3.innerText = `$${(this.fields[this.field + 3].pansionIncome * 1000).toLocaleString('hu-HU')}`;
+        income4.innerText = `$${(this.fields[this.field + 4].pansionIncome * 1000).toLocaleString('hu-HU')}`;
+        income5.innerText = `$${(this.fields[this.field + 5].pansionIncome * 1000).toLocaleString('hu-HU')}`;
+        income6.innerText = `$${(this.fields[this.field + 6].pansionIncome * 1000).toLocaleString('hu-HU')}`;
         incomeGold1.innerText = `${(this.fields[this.field + 1].pansionIncome / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
         incomeGold2.innerText = `${(this.fields[this.field + 2].pansionIncome / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
         incomeGold3.innerText = `${(this.fields[this.field + 3].pansionIncome / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
         incomeGold4.innerText = `${(this.fields[this.field + 4].pansionIncome / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
         incomeGold5.innerText = `${(this.fields[this.field + 5].pansionIncome / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
         incomeGold6.innerText = `${(this.fields[this.field + 6].pansionIncome / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-        sell1.innerText = `$ ${(this.fields[this.field + 1].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
-        sell2.innerText = `$ ${(this.fields[this.field + 2].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
-        sell3.innerText = `$ ${(this.fields[this.field + 3].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
-        sell4.innerText = `$ ${(this.fields[this.field + 4].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
-        sell5.innerText = `$ ${(this.fields[this.field + 5].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
-        sell6.innerText = `$ ${(this.fields[this.field + 6].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell1.innerText = `$${(this.fields[this.field + 1].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell2.innerText = `$${(this.fields[this.field + 2].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell3.innerText = `$${(this.fields[this.field + 3].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell4.innerText = `$${(this.fields[this.field + 4].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell5.innerText = `$${(this.fields[this.field + 5].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
+        sell6.innerText = `$${(this.fields[this.field + 6].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}`;
         sellGold1.innerText = `${(this.fields[this.field + 1].pansionBuy * 0.95 / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
         sellGold2.innerText = `${(this.fields[this.field + 2].pansionBuy * 0.95 / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
         sellGold3.innerText = `${(this.fields[this.field + 3].pansionBuy * 0.95 / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
         sellGold4.innerText = `${(this.fields[this.field + 4].pansionBuy * 0.95 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
         sellGold5.innerText = `${(this.fields[this.field + 5].pansionBuy * 0.95 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
         sellGold6.innerText = `${(this.fields[this.field + 6].pansionBuy * 0.95 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-        currentPansionPrice.innerText = `$ ${(this.fields[this.field].pansionBuy * 1000).toLocaleString('hu-HU')}`;
+        currentPansionPrice.innerText = `$${(this.fields[this.field].pansionBuy * 1000).toLocaleString('hu-HU')}`;
       }, 0);
     }
   }
@@ -686,8 +686,8 @@ export class GamePage implements OnInit {
       const price: number = this.fields[this.field].pansionBuy * 1000;
       if ((price - this.fields[this.field].pansionDebt * 1000) <= this.gameData.cash) {
         let text = prompt(`Mennyi hitelt szeretnél felvenni a vásárláshoz? A hitel összegének 100 000-rel oszthatónak kell lennie` +
-          `(min: $ ${(price - this.gameData.cash) < 0 ? 0 : this.roundUp(price - this.gameData.cash).toLocaleString('hu-HU')};` +
-          ` max: $ ${(this.fields[this.field].pansionDebt * 1000).toLocaleString('hu-HU')})`, '0');
+          `(min: $${(price - this.gameData.cash) < 0 ? 0 : this.roundUp(price - this.gameData.cash).toLocaleString('hu-HU')};` +
+          ` max: $${(this.fields[this.field].pansionDebt * 1000).toLocaleString('hu-HU')})`, '0');
         if (text && text !== '') {
           let debt = parseInt(text);
           if (debt < (price - this.gameData.cash) || (this.fields[this.field].pansionDebt * 1000) < debt) throw ParseError;
@@ -755,19 +755,19 @@ export class GamePage implements OnInit {
           return;
         }
 
-        modalOnline1.innerText = `$ ${(this.fields[this.field + 1].onlineBuy * 1000).toLocaleString('hu-HU')}`;
-        modalOnline2.innerText = `$ ${(this.fields[this.field + 2].onlineBuy * 1000).toLocaleString('hu-HU')}`;
-        modalOnline3.innerText = `$ ${(this.fields[this.field + 3].onlineBuy * 1000).toLocaleString('hu-HU')}`;
-        modalOnline4.innerText = `$ ${(this.fields[this.field + 4].onlineBuy * 1000).toLocaleString('hu-HU')}`;
-        modalOnline5.innerText = `$ ${(this.fields[this.field + 5].onlineBuy * 1000).toLocaleString('hu-HU')}`;
-        modalOnline6.innerText = `$ ${(this.fields[this.field + 6].onlineBuy * 1000).toLocaleString('hu-HU')}`;
+        modalOnline1.innerText = `$${(this.fields[this.field + 1].onlineBuy * 1000).toLocaleString('hu-HU')}`;
+        modalOnline2.innerText = `$${(this.fields[this.field + 2].onlineBuy * 1000).toLocaleString('hu-HU')}`;
+        modalOnline3.innerText = `$${(this.fields[this.field + 3].onlineBuy * 1000).toLocaleString('hu-HU')}`;
+        modalOnline4.innerText = `$${(this.fields[this.field + 4].onlineBuy * 1000).toLocaleString('hu-HU')}`;
+        modalOnline5.innerText = `$${(this.fields[this.field + 5].onlineBuy * 1000).toLocaleString('hu-HU')}`;
+        modalOnline6.innerText = `$${(this.fields[this.field + 6].onlineBuy * 1000).toLocaleString('hu-HU')}`;
         onlineToGold1.innerText = `${(this.fields[this.field + 1].onlineBuy / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
         onlineToGold2.innerText = `${(this.fields[this.field + 2].onlineBuy / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
         onlineToGold3.innerText = `${(this.fields[this.field + 3].onlineBuy / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
         onlineToGold4.innerText = `${(this.fields[this.field + 4].onlineBuy / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
         onlineToGold5.innerText = `${(this.fields[this.field + 5].onlineBuy / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
         onlineToGold6.innerText = `${(this.fields[this.field + 6].onlineBuy / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-        currentOnlinePrice.innerText = `$ ${(this.fields[this.field].onlineBuy * 1000).toLocaleString('hu-HU')}`;
+        currentOnlinePrice.innerText = `$${(this.fields[this.field].onlineBuy * 1000).toLocaleString('hu-HU')}`;
       }, 0);
     }
   }
@@ -840,24 +840,24 @@ export class GamePage implements OnInit {
             incomeGold4.innerText = `${(this.fields[this.field + 4].onlineIncome1 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
             incomeGold5.innerText = `${(this.fields[this.field + 5].onlineIncome1 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
             incomeGold6.innerText = `${(this.fields[this.field + 6].onlineIncome1 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-            income1.innerText = `$ ${(this.fields[this.field + 1].onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
-            income2.innerText = `$ ${(this.fields[this.field + 2].onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
-            income3.innerText = `$ ${(this.fields[this.field + 3].onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
-            income4.innerText = `$ ${(this.fields[this.field + 4].onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
-            income5.innerText = `$ ${(this.fields[this.field + 5].onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
-            income6.innerText = `$ ${(this.fields[this.field + 6].onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
+            income1.innerText = `$${(this.fields[this.field + 1].onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
+            income2.innerText = `$${(this.fields[this.field + 2].onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
+            income3.innerText = `$${(this.fields[this.field + 3].onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
+            income4.innerText = `$${(this.fields[this.field + 4].onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
+            income5.innerText = `$${(this.fields[this.field + 5].onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
+            income6.innerText = `$${(this.fields[this.field + 6].onlineIncome1 * 1000).toLocaleString('hu-HU')}`;
             sellGold1.innerText = `${(this.fields[this.field + 1].onlineSell1 / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
             sellGold2.innerText = `${(this.fields[this.field + 2].onlineSell1 / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
             sellGold3.innerText = `${(this.fields[this.field + 3].onlineSell1 / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
             sellGold4.innerText = `${(this.fields[this.field + 4].onlineSell1 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
             sellGold5.innerText = `${(this.fields[this.field + 5].onlineSell1 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
             sellGold6.innerText = `${(this.fields[this.field + 6].onlineSell1 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-            sell1.innerText = `$ ${(this.fields[this.field + 1].onlineSell1 * 1000).toLocaleString('hu-HU')}`;
-            sell2.innerText = `$ ${(this.fields[this.field + 2].onlineSell1 * 1000).toLocaleString('hu-HU')}`;
-            sell3.innerText = `$ ${(this.fields[this.field + 3].onlineSell1 * 1000).toLocaleString('hu-HU')}`;
-            sell4.innerText = `$ ${(this.fields[this.field + 4].onlineSell1 * 1000).toLocaleString('hu-HU')}`;
-            sell5.innerText = `$ ${(this.fields[this.field + 5].onlineSell1 * 1000).toLocaleString('hu-HU')}`;
-            sell6.innerText = `$ ${(this.fields[this.field + 6].onlineSell1 * 1000).toLocaleString('hu-HU')}`;
+            sell1.innerText = `$${(this.fields[this.field + 1].onlineSell1 * 1000).toLocaleString('hu-HU')}`;
+            sell2.innerText = `$${(this.fields[this.field + 2].onlineSell1 * 1000).toLocaleString('hu-HU')}`;
+            sell3.innerText = `$${(this.fields[this.field + 3].onlineSell1 * 1000).toLocaleString('hu-HU')}`;
+            sell4.innerText = `$${(this.fields[this.field + 4].onlineSell1 * 1000).toLocaleString('hu-HU')}`;
+            sell5.innerText = `$${(this.fields[this.field + 5].onlineSell1 * 1000).toLocaleString('hu-HU')}`;
+            sell6.innerText = `$${(this.fields[this.field + 6].onlineSell1 * 1000).toLocaleString('hu-HU')}`;
             break;
           }
           case 2: {
@@ -867,24 +867,24 @@ export class GamePage implements OnInit {
             incomeGold4.innerText = `${(this.fields[this.field + 4].onlineIncome2 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
             incomeGold5.innerText = `${(this.fields[this.field + 5].onlineIncome2 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
             incomeGold6.innerText = `${(this.fields[this.field + 6].onlineIncome2 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-            income1.innerText = `$ ${(this.fields[this.field + 1].onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
-            income2.innerText = `$ ${(this.fields[this.field + 2].onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
-            income3.innerText = `$ ${(this.fields[this.field + 3].onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
-            income4.innerText = `$ ${(this.fields[this.field + 4].onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
-            income5.innerText = `$ ${(this.fields[this.field + 5].onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
-            income6.innerText = `$ ${(this.fields[this.field + 6].onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
+            income1.innerText = `$${(this.fields[this.field + 1].onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
+            income2.innerText = `$${(this.fields[this.field + 2].onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
+            income3.innerText = `$${(this.fields[this.field + 3].onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
+            income4.innerText = `$${(this.fields[this.field + 4].onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
+            income5.innerText = `$${(this.fields[this.field + 5].onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
+            income6.innerText = `$${(this.fields[this.field + 6].onlineIncome2 * 1000).toLocaleString('hu-HU')}`;
             sellGold1.innerText = `${(this.fields[this.field + 1].onlineSell2 / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
             sellGold2.innerText = `${(this.fields[this.field + 2].onlineSell2 / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
             sellGold3.innerText = `${(this.fields[this.field + 3].onlineSell2 / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
             sellGold4.innerText = `${(this.fields[this.field + 4].onlineSell2 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
             sellGold5.innerText = `${(this.fields[this.field + 5].onlineSell2 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
             sellGold6.innerText = `${(this.fields[this.field + 6].onlineSell2 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-            sell1.innerText = `$ ${(this.fields[this.field + 1].onlineSell2 * 1000).toLocaleString('hu-HU')}`;
-            sell2.innerText = `$ ${(this.fields[this.field + 2].onlineSell2 * 1000).toLocaleString('hu-HU')}`;
-            sell3.innerText = `$ ${(this.fields[this.field + 3].onlineSell2 * 1000).toLocaleString('hu-HU')}`;
-            sell4.innerText = `$ ${(this.fields[this.field + 4].onlineSell2 * 1000).toLocaleString('hu-HU')}`;
-            sell5.innerText = `$ ${(this.fields[this.field + 5].onlineSell2 * 1000).toLocaleString('hu-HU')}`;
-            sell6.innerText = `$ ${(this.fields[this.field + 6].onlineSell2 * 1000).toLocaleString('hu-HU')}`;
+            sell1.innerText = `$${(this.fields[this.field + 1].onlineSell2 * 1000).toLocaleString('hu-HU')}`;
+            sell2.innerText = `$${(this.fields[this.field + 2].onlineSell2 * 1000).toLocaleString('hu-HU')}`;
+            sell3.innerText = `$${(this.fields[this.field + 3].onlineSell2 * 1000).toLocaleString('hu-HU')}`;
+            sell4.innerText = `$${(this.fields[this.field + 4].onlineSell2 * 1000).toLocaleString('hu-HU')}`;
+            sell5.innerText = `$${(this.fields[this.field + 5].onlineSell2 * 1000).toLocaleString('hu-HU')}`;
+            sell6.innerText = `$${(this.fields[this.field + 6].onlineSell2 * 1000).toLocaleString('hu-HU')}`;
             break;
           }
           case 3: {
@@ -894,24 +894,24 @@ export class GamePage implements OnInit {
             incomeGold4.innerText = `${(this.fields[this.field + 4].onlineIncome3 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
             incomeGold5.innerText = `${(this.fields[this.field + 5].onlineIncome3 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
             incomeGold6.innerText = `${(this.fields[this.field + 6].onlineIncome3 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-            income1.innerText = `$ ${(this.fields[this.field + 1].onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
-            income2.innerText = `$ ${(this.fields[this.field + 2].onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
-            income3.innerText = `$ ${(this.fields[this.field + 3].onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
-            income4.innerText = `$ ${(this.fields[this.field + 4].onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
-            income5.innerText = `$ ${(this.fields[this.field + 5].onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
-            income6.innerText = `$ ${(this.fields[this.field + 6].onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
+            income1.innerText = `$${(this.fields[this.field + 1].onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
+            income2.innerText = `$${(this.fields[this.field + 2].onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
+            income3.innerText = `$${(this.fields[this.field + 3].onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
+            income4.innerText = `$${(this.fields[this.field + 4].onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
+            income5.innerText = `$${(this.fields[this.field + 5].onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
+            income6.innerText = `$${(this.fields[this.field + 6].onlineIncome3 * 1000).toLocaleString('hu-HU')}`;
             sellGold1.innerText = `${(this.fields[this.field + 1].onlineSell3 / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
             sellGold2.innerText = `${(this.fields[this.field + 2].onlineSell3 / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
             sellGold3.innerText = `${(this.fields[this.field + 3].onlineSell3 / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
             sellGold4.innerText = `${(this.fields[this.field + 4].onlineSell3 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
             sellGold5.innerText = `${(this.fields[this.field + 5].onlineSell3 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
             sellGold6.innerText = `${(this.fields[this.field + 6].onlineSell3 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-            sell1.innerText = `$ ${(this.fields[this.field + 1].onlineSell3 * 1000).toLocaleString('hu-HU')}`;
-            sell2.innerText = `$ ${(this.fields[this.field + 2].onlineSell3 * 1000).toLocaleString('hu-HU')}`;
-            sell3.innerText = `$ ${(this.fields[this.field + 3].onlineSell3 * 1000).toLocaleString('hu-HU')}`;
-            sell4.innerText = `$ ${(this.fields[this.field + 4].onlineSell3 * 1000).toLocaleString('hu-HU')}`;
-            sell5.innerText = `$ ${(this.fields[this.field + 5].onlineSell3 * 1000).toLocaleString('hu-HU')}`;
-            sell6.innerText = `$ ${(this.fields[this.field + 6].onlineSell3 * 1000).toLocaleString('hu-HU')}`;
+            sell1.innerText = `$${(this.fields[this.field + 1].onlineSell3 * 1000).toLocaleString('hu-HU')}`;
+            sell2.innerText = `$${(this.fields[this.field + 2].onlineSell3 * 1000).toLocaleString('hu-HU')}`;
+            sell3.innerText = `$${(this.fields[this.field + 3].onlineSell3 * 1000).toLocaleString('hu-HU')}`;
+            sell4.innerText = `$${(this.fields[this.field + 4].onlineSell3 * 1000).toLocaleString('hu-HU')}`;
+            sell5.innerText = `$${(this.fields[this.field + 5].onlineSell3 * 1000).toLocaleString('hu-HU')}`;
+            sell6.innerText = `$${(this.fields[this.field + 6].onlineSell3 * 1000).toLocaleString('hu-HU')}`;
             break;
           }
           case 4: {
@@ -921,24 +921,24 @@ export class GamePage implements OnInit {
             incomeGold4.innerText = `${(this.fields[this.field + 4].onlineIncome4 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
             incomeGold5.innerText = `${(this.fields[this.field + 5].onlineIncome4 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
             incomeGold6.innerText = `${(this.fields[this.field + 6].onlineIncome4 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-            income1.innerText = `$ ${(this.fields[this.field + 1].onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
-            income2.innerText = `$ ${(this.fields[this.field + 2].onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
-            income3.innerText = `$ ${(this.fields[this.field + 3].onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
-            income4.innerText = `$ ${(this.fields[this.field + 4].onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
-            income5.innerText = `$ ${(this.fields[this.field + 5].onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
-            income6.innerText = `$ ${(this.fields[this.field + 6].onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
+            income1.innerText = `$${(this.fields[this.field + 1].onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
+            income2.innerText = `$${(this.fields[this.field + 2].onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
+            income3.innerText = `$${(this.fields[this.field + 3].onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
+            income4.innerText = `$${(this.fields[this.field + 4].onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
+            income5.innerText = `$${(this.fields[this.field + 5].onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
+            income6.innerText = `$${(this.fields[this.field + 6].onlineIncome4 * 1000).toLocaleString('hu-HU')}`;
             sellGold1.innerText = `${(this.fields[this.field + 1].onlineSell4 / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
             sellGold2.innerText = `${(this.fields[this.field + 2].onlineSell4 / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
             sellGold3.innerText = `${(this.fields[this.field + 3].onlineSell4 / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
             sellGold4.innerText = `${(this.fields[this.field + 4].onlineSell4 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
             sellGold5.innerText = `${(this.fields[this.field + 5].onlineSell4 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
             sellGold6.innerText = `${(this.fields[this.field + 6].onlineSell4 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-            sell1.innerText = `$ ${(this.fields[this.field + 1].onlineSell4 * 1000).toLocaleString('hu-HU')}`;
-            sell2.innerText = `$ ${(this.fields[this.field + 2].onlineSell4 * 1000).toLocaleString('hu-HU')}`;
-            sell3.innerText = `$ ${(this.fields[this.field + 3].onlineSell4 * 1000).toLocaleString('hu-HU')}`;
-            sell4.innerText = `$ ${(this.fields[this.field + 4].onlineSell4 * 1000).toLocaleString('hu-HU')}`;
-            sell5.innerText = `$ ${(this.fields[this.field + 5].onlineSell4 * 1000).toLocaleString('hu-HU')}`;
-            sell6.innerText = `$ ${(this.fields[this.field + 6].onlineSell4 * 1000).toLocaleString('hu-HU')}`;
+            sell1.innerText = `$${(this.fields[this.field + 1].onlineSell4 * 1000).toLocaleString('hu-HU')}`;
+            sell2.innerText = `$${(this.fields[this.field + 2].onlineSell4 * 1000).toLocaleString('hu-HU')}`;
+            sell3.innerText = `$${(this.fields[this.field + 3].onlineSell4 * 1000).toLocaleString('hu-HU')}`;
+            sell4.innerText = `$${(this.fields[this.field + 4].onlineSell4 * 1000).toLocaleString('hu-HU')}`;
+            sell5.innerText = `$${(this.fields[this.field + 5].onlineSell4 * 1000).toLocaleString('hu-HU')}`;
+            sell6.innerText = `$${(this.fields[this.field + 6].onlineSell4 * 1000).toLocaleString('hu-HU')}`;
             break;
           }
           case 5: {
@@ -948,24 +948,24 @@ export class GamePage implements OnInit {
             incomeGold4.innerText = `${(this.fields[this.field + 4].onlineIncome5 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
             incomeGold5.innerText = `${(this.fields[this.field + 5].onlineIncome5 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
             incomeGold6.innerText = `${(this.fields[this.field + 6].onlineIncome5 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-            income1.innerText = `$ ${(this.fields[this.field + 1].onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
-            income2.innerText = `$ ${(this.fields[this.field + 2].onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
-            income3.innerText = `$ ${(this.fields[this.field + 3].onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
-            income4.innerText = `$ ${(this.fields[this.field + 4].onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
-            income5.innerText = `$ ${(this.fields[this.field + 5].onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
-            income6.innerText = `$ ${(this.fields[this.field + 6].onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
+            income1.innerText = `$${(this.fields[this.field + 1].onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
+            income2.innerText = `$${(this.fields[this.field + 2].onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
+            income3.innerText = `$${(this.fields[this.field + 3].onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
+            income4.innerText = `$${(this.fields[this.field + 4].onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
+            income5.innerText = `$${(this.fields[this.field + 5].onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
+            income6.innerText = `$${(this.fields[this.field + 6].onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
             sellGold1.innerText = `${(this.fields[this.field + 1].onlineSell5 / this.fields[this.field + 1].gold).toLocaleString('hu-HU')}`;
             sellGold2.innerText = `${(this.fields[this.field + 2].onlineSell5 / this.fields[this.field + 2].gold).toLocaleString('hu-HU')}`;
             sellGold3.innerText = `${(this.fields[this.field + 3].onlineSell5 / this.fields[this.field + 3].gold).toLocaleString('hu-HU')}`;
             sellGold4.innerText = `${(this.fields[this.field + 4].onlineSell5 / this.fields[this.field + 4].gold).toLocaleString('hu-HU')}`;
             sellGold5.innerText = `${(this.fields[this.field + 5].onlineSell5 / this.fields[this.field + 5].gold).toLocaleString('hu-HU')}`;
             sellGold6.innerText = `${(this.fields[this.field + 6].onlineSell5 / this.fields[this.field + 6].gold).toLocaleString('hu-HU')}`;
-            sell1.innerText = `$ ${(this.fields[this.field + 1].onlineSell5 * 1000).toLocaleString('hu-HU')}`;
-            sell2.innerText = `$ ${(this.fields[this.field + 2].onlineSell5 * 1000).toLocaleString('hu-HU')}`;
-            sell3.innerText = `$ ${(this.fields[this.field + 3].onlineSell5 * 1000).toLocaleString('hu-HU')}`;
-            sell4.innerText = `$ ${(this.fields[this.field + 4].onlineSell5 * 1000).toLocaleString('hu-HU')}`;
-            sell5.innerText = `$ ${(this.fields[this.field + 5].onlineSell5 * 1000).toLocaleString('hu-HU')}`;
-            sell6.innerText = `$ ${(this.fields[this.field + 6].onlineSell5 * 1000).toLocaleString('hu-HU')}`;
+            sell1.innerText = `$${(this.fields[this.field + 1].onlineSell5 * 1000).toLocaleString('hu-HU')}`;
+            sell2.innerText = `$${(this.fields[this.field + 2].onlineSell5 * 1000).toLocaleString('hu-HU')}`;
+            sell3.innerText = `$${(this.fields[this.field + 3].onlineSell5 * 1000).toLocaleString('hu-HU')}`;
+            sell4.innerText = `$${(this.fields[this.field + 4].onlineSell5 * 1000).toLocaleString('hu-HU')}`;
+            sell5.innerText = `$${(this.fields[this.field + 5].onlineSell5 * 1000).toLocaleString('hu-HU')}`;
+            sell6.innerText = `$${(this.fields[this.field + 6].onlineSell5 * 1000).toLocaleString('hu-HU')}`;
             break;
           }
         }
@@ -1281,7 +1281,7 @@ export class GamePage implements OnInit {
       const field = this.fields[this.field];
       if (isFlat) {
         while (this.gameData.flats[idx].id !== id) idx++;
-        const text = prompt(`Mennyi hitelt szeretnél felvenni? A felvett összegnek 100 000-rel oszthatónak kell lennie! (min: $ 100 000; max: $ ${(field.flatDebt * 1000).toLocaleString('hu-HU')})`);
+        const text = prompt(`Mennyi hitelt szeretnél felvenni? A felvett összegnek 100 000-rel oszthatónak kell lennie! (min: $100 000; max: $${(field.flatDebt * 1000).toLocaleString('hu-HU')})`);
         if (text) {
           const debt = parseInt(text);
           if (debt > (field.flatDebt * 1000) || debt <= 0 || debt % 100000 !== 0) throw ParseError;
@@ -1292,7 +1292,7 @@ export class GamePage implements OnInit {
       }
       else {
         while (this.gameData.pansions[idx].id !== id) idx++;
-        const text = prompt(`Mennyi hitelt szeretnél felvenni? A felvett összegnek 100 000-rel oszthatónak kell lennie! (min: $ 100 000; max: $ ${(field.pansionDebt * 1000).toLocaleString('hu-HU')})`);
+        const text = prompt(`Mennyi hitelt szeretnél felvenni? A felvett összegnek 100 000-rel oszthatónak kell lennie! (min: $100 000; max: $${(field.pansionDebt * 1000).toLocaleString('hu-HU')})`);
         if (text) {
           const debt = parseInt(text);
           if (debt > (field.pansionDebt * 1000) || debt <= 0 || debt % 100000 !== 0) throw ParseError;
