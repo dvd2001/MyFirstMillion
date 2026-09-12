@@ -258,6 +258,7 @@ export class GamePage implements OnInit {
         let amount: number = parseInt(text);
         if (isNaN(amount) || amount > this.gameData.gold) throw ParseError;
         let income: number = amount * this.fields[this.field].gold * 1000;
+        if (!confirm(`Biztosan el akarod adni a(z) ${amount} uncia aranyat $${income.toLocaleString('hu-HU')}-ért?`)) return;
         this.gameData.cash += income;
         this.gameData.gold -= amount;
         this.update();
@@ -336,6 +337,7 @@ export class GamePage implements OnInit {
         let amount: number = parseInt(text);
         if (isNaN(amount) || amount > this.gameData.mine) throw ParseError;
         let income: number = amount * this.fields[this.field].mine * 1000;
+        if (!confirm(`Biztosan el akarod adni a(z) ${amount} darab bánya részvényt $${income.toLocaleString('hu-HU')}-ért?`)) return;
         this.gameData.cash += income;
         this.gameData.mine -= amount;
         this.update();
@@ -415,6 +417,7 @@ export class GamePage implements OnInit {
         let amount: number = parseInt(text);
         if (isNaN(amount) || amount > this.gameData.chocolate) throw ParseError;
         let income: number = amount * this.fields[this.field].chocolate * 1000;
+        if (!confirm(`Biztosan el akarod adni a(z) ${amount} darab csoki részvényt $${income.toLocaleString('hu-HU')}-ért?`)) return;
         this.gameData.cash += income;
         this.gameData.chocolate -= amount;
         this.update();
@@ -564,6 +567,7 @@ export class GamePage implements OnInit {
     while (this.gameData.flats[idx].id !== id) idx++;
     const flat = this.gameData.flats[idx];
     if (flat.debt === 0) {
+      if (!confirm(`Biztosan el akarod adni az ingatlant $${(this.fields[this.field].flatBuy * 1000 * 0.95).toLocaleString('hu-HU')}-ért?`)) return;
       this.gameData.cash += (this.fields[this.field].flatBuy * 1000 * 0.95);
     }
     else {
@@ -573,6 +577,8 @@ export class GamePage implements OnInit {
         alert('Nem teljesíthető tranzakció! Nem tudod kifizatni az ingatlant terhelő hitelt.');
         return;
       }
+      if (!confirm(`Biztosan el akarod adni az ingatlant? A hitel visszafizetéséhez $${res.toLocaleString('hu-HU')}-ra van szükség, ` +
+        `ami a bevételből kerül levonásra. A fennmaradó összeg $${(this.fields[this.field].flatBuy * 1000 * 0.95 - res).toLocaleString('hu-HU')}.`)) return;
       this.gameData.cash += (this.fields[this.field].flatBuy * 1000 * 0.95 - res);
     }
     this.gameData.flats.splice(idx, 1);
@@ -718,6 +724,7 @@ export class GamePage implements OnInit {
     while (this.gameData.pansions[idx].id !== id) idx++;
     const pansion = this.gameData.pansions[idx];
     if (pansion.debt === 0) {
+      if (!confirm(`Biztosan el akarod adni az ingatlant $${(this.fields[this.field].pansionBuy * 1000 * 0.95).toLocaleString('hu-HU')}-ért?`)) return;
       this.gameData.cash += this.fields[this.field].pansionBuy * 1000 * 0.95;
     }
     else {
@@ -727,6 +734,8 @@ export class GamePage implements OnInit {
         alert('Nem teljesíthető tranzakció! Nem tudod kifizatni az ingatlant terhelő hitelt.');
         return;
       }
+      if (!confirm(`Biztosan el akarod adni az ingatlant? A hitel visszafizetéséhez $${res.toLocaleString('hu-HU')}-ra van szükség, ` +
+        `ami a bevételből kerül levonásra. A fennmaradó összeg $${(this.fields[this.field].pansionBuy * 1000 * 0.95 - res).toLocaleString('hu-HU')}.`)) return;
       this.gameData.cash += (this.fields[this.field].pansionBuy * 1000 * 0.95 - res);
     }
     this.gameData.pansions.splice(idx, 1);
@@ -986,6 +995,7 @@ export class GamePage implements OnInit {
         let amount: number = parseInt(text);
         if (isNaN(amount) || amount > this.gameData.online1) throw ParseError;
         let income: number = amount * this.fields[this.field].onlineSell1 * 1000;
+        if (!confirm(`Biztosan el akarod adni a(z) ${amount} darab 1-es szintű üzletet $${income.toLocaleString('hu-HU')}-ért?`)) return;
         this.gameData.cash += income;
         this.gameData.online1 -= amount;
 
@@ -1003,6 +1013,7 @@ export class GamePage implements OnInit {
         let amount: number = parseInt(text);
         if (isNaN(amount) || amount > this.gameData.online2) throw ParseError;
         let income: number = amount * this.fields[this.field].onlineSell2 * 1000;
+        if (!confirm(`Biztosan el akarod adni a(z) ${amount} darab 2-es szintű üzletet $${income.toLocaleString('hu-HU')}-ért?`)) return;
         this.gameData.cash += income;
         this.gameData.online2 -= amount;
         this.update();
@@ -1019,6 +1030,7 @@ export class GamePage implements OnInit {
         let amount: number = parseInt(text);
         if (isNaN(amount) || amount > this.gameData.online3) throw ParseError;
         let income: number = amount * this.fields[this.field].onlineSell3 * 1000;
+        if (!confirm(`Biztosan el akarod adni a(z) ${amount} darab 3-as szintű üzletet $${income.toLocaleString('hu-HU')}-ért?`)) return;
         this.gameData.cash += income;
         this.gameData.online3 -= amount;
         this.update();
@@ -1035,6 +1047,7 @@ export class GamePage implements OnInit {
         let amount: number = parseInt(text);
         if (isNaN(amount) || amount > this.gameData.online4) throw ParseError;
         let income: number = amount * this.fields[this.field].onlineSell4 * 1000;
+        if (!confirm(`Biztosan el akarod adni a(z) ${amount} darab 4-es szintű üzletet $${income.toLocaleString('hu-HU')}-ért?`)) return;
         this.gameData.cash += income;
         this.gameData.online4 -= amount;
         this.update();
@@ -1051,6 +1064,7 @@ export class GamePage implements OnInit {
         let amount: number = parseInt(text);
         if (isNaN(amount) || amount > this.gameData.online5) throw ParseError;
         let income: number = amount * this.fields[this.field].onlineSell5 * 1000;
+        if (!confirm(`Biztosan el akarod adni a(z) ${amount} darab 5-ös szintű üzletet $${income.toLocaleString('hu-HU')}-ért?`)) return;
         this.gameData.cash += income;
         this.gameData.online5 -= amount;
         this.update();
