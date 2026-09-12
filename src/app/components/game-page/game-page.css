@@ -252,7 +252,8 @@ input::-webkit-inner-spin-button {
 }
 
 .detail,
-.currentPrice {
+.currentPrice,
+.acDetail {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -581,8 +582,12 @@ input::-webkit-inner-spin-button {
     padding: 0 0 10px 0
 }
 
+.acDetail {
+    flex-wrap: wrap;
+}
+
 .min {
-    width: 45%;
+    width: 55%;
 }
 
 #cash {
@@ -866,6 +871,10 @@ input::-webkit-inner-spin-button {
 
     .currentPrice {
         width: 75%;
+    }
+
+    .min {
+        width: 100%
     }
 
     #flatList,
