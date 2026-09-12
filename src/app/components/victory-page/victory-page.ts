@@ -156,22 +156,20 @@ export class VictoryPage implements OnInit {
 
   changeToMoney(): number {
     let money: number = this.gameData.cash;
+    this.gameData.online5 += this.gameData.online4;
+    this.gameData.online4 = this.gameData.online3;
+    this.gameData.online3 = this.gameData.online2;
+    this.gameData.online2 = this.gameData.online1;
+    this.gameData.online1 = 0;
     money += this.gameData.gold * this.field.gold * 1000;
     money += this.gameData.mine * this.field.mine * 1000;
     money += this.gameData.chocolate * this.field.chocolate * 1000;
-    money += this.gameData.flats.length * this.field.flatRent * 1000;
     money += this.gameData.flats.length * this.field.flatBuy * 1000;
-    money += this.gameData.pansions.length * this.field.pansionIncome * 1000;
     money += this.gameData.pansions.length * this.field.pansionBuy * 1000;
-    money += this.gameData.online1 * this.field.onlineIncome1 * 1000;
     money += this.gameData.online1 * this.field.onlineSell1 * 1000;
-    money += this.gameData.online2 * this.field.onlineIncome2 * 1000;
     money += this.gameData.online2 * this.field.onlineSell2 * 1000;
-    money += this.gameData.online3 * this.field.onlineIncome3 * 1000;
     money += this.gameData.online3 * this.field.onlineSell3 * 1000;
-    money += this.gameData.online4 * this.field.onlineIncome4 * 1000;
     money += this.gameData.online4 * this.field.onlineSell4 * 1000;
-    money += this.gameData.online5 * this.field.onlineIncome5 * 1000;
     money += this.gameData.online5 * this.field.onlineSell5 * 1000;
     for (let i = 0; i < this.gameData.flats.length; i++) money -= this.gameData.flats[i].totalRepay(money);
     for (let i = 0; i < this.gameData.pansions.length; i++) money -= this.gameData.pansions[i].totalRepay(money);
