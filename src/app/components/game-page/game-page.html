@@ -217,11 +217,15 @@
                     <div class="accomodationText">
                         <div class="detail">
                             <p class="title">Vételár:</p>
-                            <p class="price">$ {{ flat.price.toLocaleString('hu-HU') }}</p>
+                            <p class="price">${{ flat.price.toLocaleString('hu-HU') }}</p>
                         </div>
                         <div class="detail">
                             <p class="title">Hitel:</p>
-                            <p class="price">$ {{ flat.debt.toLocaleString('hu-HU') }}</p>
+                            <p class="price">${{ flat.debt.toLocaleString('hu-HU') }}</p>
+                        </div>
+                        <div class="detail">
+                            <p class="title">Végtörlesztés:</p>
+                            <p class="price">${{ flat.totalRepay(this.cash, true).toLocaleString('hu-HU') }}</p>
                         </div>
                     </div>
                     <div class="listBtn">
@@ -289,6 +293,10 @@
                         <div class="detail">
                             <p class="title">Hitel:</p>
                             <p class="price">$ {{ pansion.debt.toLocaleString('hu-HU') }}</p>
+                        </div>
+                        <div class="detail">
+                            <p class="title">Végtörlesztés:</p>
+                            <p class="price">$ {{ pansion.totalRepay(this.cash, true).toLocaleString('hu-HU') }}</p>
                         </div>
                     </div>
                     <div class="listBtn">

@@ -20,7 +20,7 @@ export class Accomodation {
         return;
     }
 
-    totalRepay(cash: number): number {
+    totalRepay(cash: number, isCalculate: boolean = false): number {
         let total = 0;
         switch (this.debtLevel - 1) {
             case 1: {
@@ -40,7 +40,7 @@ export class Accomodation {
                 break;
             }
         }
-        if (cash < total) total = 0;
+        if (!isCalculate && cash < total) total = 0;
         else if (total !== 0) {
             this.debt = 0;
             this.debtLevel = 0;

@@ -33,6 +33,7 @@ export class GamePage implements OnInit {
   public showOnlineBasicModal = false;
   public showOnlineModal = false;
   public showQuickNav = false;
+  public cash = 0;
   constructor(public themeService: ThemeService, private router: Router, private reader: DataReadingService) {
     if (typeof window !== 'undefined') {
       const field = window.sessionStorage.getItem('field');
@@ -96,6 +97,7 @@ export class GamePage implements OnInit {
     this.showPansion = this.gameData.pansions.length > 0;
     this.ownedFlats = [...this.gameData.flats];
     this.ownedPansions = [...this.gameData.pansions];
+    this.cash = this.gameData.cash;
     if (typeof document !== 'undefined') {
       const money = document.querySelector('#money') as HTMLElement;
       const goldPrice = document.querySelector('#goldPrice') as HTMLElement;
