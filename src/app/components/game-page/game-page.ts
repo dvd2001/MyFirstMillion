@@ -1287,6 +1287,7 @@ export class GamePage implements OnInit {
           if (debt > (field.flatDebt * 1000) || debt <= 0 || debt % 100000 !== 0) throw ParseError;
           this.gameData.flats[idx].setDebt(debt);
           this.gameData.cash += debt;
+          this.update();
           return;
         }
       }
@@ -1298,6 +1299,7 @@ export class GamePage implements OnInit {
           if (debt > (field.pansionDebt * 1000) || debt <= 0 || debt % 100000 !== 0) throw ParseError;
           this.gameData.pansions[idx].setDebt(debt);
           this.gameData.cash += debt;
+          this.update();
           return;
         }
       }
