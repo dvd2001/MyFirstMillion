@@ -685,7 +685,7 @@ input::-webkit-inner-spin-button {
 #wallet {
     display: flex;
     justify-content: space-between;
-    width: 20%;
+    width: 30%;
     padding: 10px
 }
 
