@@ -138,6 +138,8 @@ export class GamePage implements OnInit {
       const gbpMoney = document.querySelector('#gbpMoney') as HTMLElement;
       const eurMoney = document.querySelector('#eurMoney') as HTMLElement;
       const usdMoney = document.querySelector('#usdMoney') as HTMLElement;
+      const flatMinWealth = document.querySelector('#flatMinWealth') as HTMLElement;
+      const pansionMinWealth = document.querySelector('#pansionMinWealth') as HTMLElement;
       const field = this.fields[this.field];
       bankAmount.value = this.gameData.bank.toString();
       gbpAmount.value = this.gameData.gbp.toString();
@@ -178,6 +180,8 @@ export class GamePage implements OnInit {
       online5Income.innerText = `$${(field.onlineIncome5 * 1000).toLocaleString('hu-HU')}`;
       online5Sell.innerText = `$${(field.onlineSell5 * 1000).toLocaleString('hu-HU')}`;
       online5Amount.innerText = `${this.gameData.online5} db`;
+      flatMinWealth.innerText = `$${((field.flatBuy - field.flatDebt) * 1000).toLocaleString('hu-HU')}`;
+      pansionMinWealth.innerText = `$${((field.pansionBuy - field.pansionDebt) * 1000).toLocaleString('hu-HU')}`;
     }
   }
 

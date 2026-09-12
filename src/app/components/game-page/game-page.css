@@ -581,6 +581,10 @@ input::-webkit-inner-spin-button {
     padding: 0 0 10px 0
 }
 
+.min {
+    width: 45%;
+}
+
 #cash {
     display: flex;
     justify-content: center;

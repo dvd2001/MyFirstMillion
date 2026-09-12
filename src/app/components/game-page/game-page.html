@@ -196,6 +196,10 @@
                         <p class="title">Bérleti díj:</p>
                         <p id="flatRent" class="price"></p>
                     </div>
+                    <div class="detail min">
+                        <p class="title">Min önerő:</p>
+                        <p id="flatMinWealth" class="price"></p>
+                    </div>
                     <div class="detail detailBtn">
                         <button class="buy" (click)="flatBuy()">
                             <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/buy.png':'assets/images/buyWhite.png'"
@@ -266,6 +270,10 @@
                         <p id="pansionSell" class="price"></p>
                         <p class="title">Hozam:</p>
                         <p id="pansionIncome" class="price"></p>
+                    </div>
+                    <div class="detail min">
+                        <p class="title">Min önerő:</p>
+                        <p id="pansionMinWealth" class="price"></p>
                     </div>
                     <div class="detail detailBtn">
                         <button class="buy" (click)="pansionBuy()">
