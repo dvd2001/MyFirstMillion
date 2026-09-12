@@ -270,7 +270,7 @@ input::-webkit-inner-spin-button {
 }
 
 .onlineText {
-    width: 35%
+    width: 30%
 }
 
 .price {
@@ -588,6 +588,10 @@ input::-webkit-inner-spin-button {
 
 .min {
     width: 55%;
+}
+
+.onlineAmount {
+    font-size: 24px;
 }
 
 #cash {

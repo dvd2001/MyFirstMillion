@@ -20,6 +20,7 @@ export class GamePage implements OnInit {
   private maxOnline: number = 0;
   private gameData: GameData = new GameData();
   private rollAmount: number = 0;
+  private currentOnline = 0;
   public ownedFlats: Accomodation[] = [];
   public ownedPansions: Accomodation[] = [];
   public showFlat = false;
@@ -92,6 +93,7 @@ export class GamePage implements OnInit {
       this.gameData.gbp = 0;
       this.gameData.eur = 0;
       this.gameData.usd = 0;
+      this.currentOnline = 0;
     }
     this.showFlat = this.gameData.flats.length > 0;
     this.showPansion = this.gameData.pansions.length > 0;
@@ -140,6 +142,7 @@ export class GamePage implements OnInit {
       const usdMoney = document.querySelector('#usdMoney') as HTMLElement;
       const flatMinWealth = document.querySelector('#flatMinWealth') as HTMLElement;
       const pansionMinWealth = document.querySelector('#pansionMinWealth') as HTMLElement;
+      const onlineAmount = document.querySelector('#onlineAmount') as HTMLElement;
       const field = this.fields[this.field];
       bankAmount.value = this.gameData.bank.toString();
       gbpAmount.value = this.gameData.gbp.toString();
@@ -182,6 +185,7 @@ export class GamePage implements OnInit {
       online5Amount.innerText = `${this.gameData.online5} db`;
       flatMinWealth.innerText = `$${((field.flatBuy - field.flatDebt) * 1000).toLocaleString('hu-HU')}`;
       pansionMinWealth.innerText = `$${((field.pansionBuy - field.pansionDebt) * 1000).toLocaleString('hu-HU')}`;
+      onlineAmount.innerText = `${this.currentOnline} db`;
     }
   }
 
@@ -797,7 +801,7 @@ export class GamePage implements OnInit {
         let cost: number = amount * this.fields[this.field].onlineBuy * 1000;
         if (cost > this.gameData.cash) throw ParseError;
         this.gameData.cash -= cost;
-        this.gameData.online1 += amount;
+        this.currentOnline += amount;
         this.update();
       }
     } catch (error) {
@@ -1089,16 +1093,16 @@ export class GamePage implements OnInit {
         if (this.gameData.eur > 0) this.gameData.cash += this.devisaRoll(this.gameData.eur, 'EUR/USD');
         if (this.gameData.usd > 0) this.gameData.cash += this.devisaRoll(this.gameData.usd, 'USD/JPY');
         this.gameData.cash += Math.round(this.gameData.bank / 1000 * 1.04) * 1000;
+        this.gameData.online5 += this.gameData.online4;
+        this.gameData.online4 = this.gameData.online3;
+        this.gameData.online3 = this.gameData.online2;
+        this.gameData.online2 = this.gameData.online1;
+        this.gameData.online1 = this.currentOnline;
         this.gameData.cash += this.fields[this.field].onlineIncome5 * 1000 * this.gameData.online5;
         this.gameData.cash += this.fields[this.field].onlineIncome4 * 1000 * this.gameData.online4;
         this.gameData.cash += this.fields[this.field].onlineIncome3 * 1000 * this.gameData.online3;
         this.gameData.cash += this.fields[this.field].onlineIncome2 * 1000 * this.gameData.online2;
         this.gameData.cash += this.fields[this.field].onlineIncome1 * 1000 * this.gameData.online1;
-        this.gameData.online5 += this.gameData.online4;
-        this.gameData.online4 = this.gameData.online3;
-        this.gameData.online3 = this.gameData.online2;
-        this.gameData.online2 = this.gameData.online1;
-        this.gameData.online1 = 0;
         this.gameData.cash += this.fields[this.field].flatRent * 1000 * this.gameData.flats.length;
         this.gameData.cash += this.fields[this.field].pansionIncome * 1000 * this.gameData.pansions.length;
         for (const flat of this.gameData.flats) {

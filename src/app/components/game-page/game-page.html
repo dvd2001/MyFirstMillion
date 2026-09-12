@@ -343,14 +343,13 @@
                 <div class="detail">
                     <p id="onlineTitle" class="title">Alapítási ár:</p>
                     <p id="onlinePrice" class="price"></p>
-                    <button *ngIf="!mobile" id="onlineBuyBtn" class="buy" (click)="onlineBuy()">
-                        <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/buy.png':'assets/images/buyWhite.png'"
-                            alt="Buy" class="btnIcon">
-                        <p>Alapítás</p>
-                    </button>
+                </div>
+                <div class="detail">
+                    <p class="title onlineAmount">Az éven alapított online üzletek:</p>
+                    <p id="onlineAmount" class="price onlineAmount"></p>
                 </div>
                 <div class="detail detailBtn">
-                    <button *ngIf="mobile" class="buy" (click)="onlineBuy()">
+                    <button class="buy" (click)="onlineBuy()">
                         <img [src]="themeService.getTheme()() === 'light' ? 'assets/images/buy.png':'assets/images/buyWhite.png'"
                             alt="Buy" class="btnIcon">
                         <p>Alapítás</p>
