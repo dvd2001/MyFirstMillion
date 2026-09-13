@@ -767,7 +767,7 @@ export class GamePage implements OnInit {
         const onlineToGold4 = document.querySelector('#onlineBasicToGold4') as HTMLElement;
         const onlineToGold5 = document.querySelector('#onlineBasicToGold5') as HTMLElement;
         const onlineToGold6 = document.querySelector('#onlineBasicToGold6') as HTMLElement;
-        const currentOnlinePrice = document.querySelector('#currentOnlineBasicPrice') as HTMLElement;
+        const currentOnlinePrice = document.querySelector('#currentOnlinePrice') as HTMLElement;
 
         if (!modalOnline1 || !modalOnline2 || !modalOnline3 || !modalOnline4 || !modalOnline5 || !modalOnline6 || !onlineToGold1 ||
           !onlineToGold2 || !onlineToGold3 || !onlineToGold4 || !onlineToGold5 || !onlineToGold6 || !currentOnlinePrice) {
