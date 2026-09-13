@@ -797,7 +797,7 @@ export class GamePage implements OnInit {
       if (text !== null) {
         let amount: number = parseInt(text);
         let owned: number = this.gameData.online1 + this.gameData.online2 + this.gameData.online3 + this.gameData.online4 + this.gameData.online5;
-        if (isNaN(amount) || (amount + owned) > this.maxOnline) throw ParseError;
+        if (isNaN(amount) || (amount + owned + this.currentOnline) > this.maxOnline) throw ParseError;
         let cost: number = amount * this.fields[this.field].onlineBuy * 1000;
         if (cost > this.gameData.cash) throw ParseError;
         this.gameData.cash -= cost;
