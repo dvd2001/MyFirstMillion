@@ -41,7 +41,7 @@ export class Accomodation {
             }
         }
         if (!isCalculate && cash < total) total = 0;
-        else if (total !== 0) {
+        else if (!isCalculate && total !== 0) {
             this.debt = 0;
             this.debtLevel = 0;
         }
