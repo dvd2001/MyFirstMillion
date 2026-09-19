@@ -544,7 +544,7 @@ export class GamePage implements OnInit {
       const price: number = this.fields[this.field].flatBuy * 1000;
       if ((price - this.fields[this.field].flatDebt * 1000) <= this.gameData.cash) {
         let text = prompt(`Mennyi hitelt szeretnél felvenni? A hitel összegének 100 000-rel oszthatónak kell lennie!` +
-          `(min: $${(price - this.gameData.cash) < 0 ? 0 : this.roundUp(price - this.gameData.cash)};` +
+          `(min: $${(price - this.gameData.cash) < 0 ? 0 : this.roundUp(price - this.gameData.cash).toLocaleString('hu-HU')};` +
           ` max: $${(this.fields[this.field].flatDebt * 1000).toLocaleString('hu-HU')})`, '0');
         if (text && text !== '') {
           let debt = parseInt(text);
