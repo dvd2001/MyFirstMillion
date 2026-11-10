@@ -575,7 +575,7 @@ export class GamePage implements OnInit {
       this.gameData.cash += (this.fields[this.field].flatBuy * 1000 * 0.95);
     }
     else {
-      const cash = this.gameData.cash + this.fields[this.field].flatBuy * 0.95;
+      const cash = this.gameData.cash + this.fields[this.field].flatBuy * 1000 * 0.95;
       let res = flat.totalRepay(cash);
       if (res === 0) {
         alert('Nem teljesíthető tranzakció! Nem tudod kifizatni az ingatlant terhelő hitelt.');
